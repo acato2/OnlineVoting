@@ -1,0 +1,5 @@
+C:\Users\ASUS\source\repos\VVS-Projekat\Zadaca1\Zadaca1\obj\Debug\net5.0\Zadaca1.csproj.AssemblyReference.cache
+C:\Users\ASUS\source\repos\VVS-Projekat\Zadaca1\Zadaca1\obj\Debug\net5.0\Zadaca1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ASUS\source\repos\VVS-Projekat\Zadaca1\Zadaca1\obj\Debug\net5.0\Zadaca1.AssemblyInfoInputs.cache
+C:\Users\ASUS\source\repos\VVS-Projekat\Zadaca1\Zadaca1\obj\Debug\net5.0\Zadaca1.AssemblyInfo.cs
+C:\Users\ASUS\source\repos\VVS-Projekat\Zadaca1\Zadaca1\obj\Debug\net5.0\Zadaca1.csproj.CoreCompileInputs.cache

@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "mE9qN0lPC4SoHvebDl0+c8vBfxUUm4qxy/bqFvq/JHbJEK1i/AV1tqp1+i8c+OWQIzr5HOFC3LrSeJkdXyab7Q==",
+  "dgSpecHash": "zlY7F/hxKZ6nt4VYA/JN3zdI/6OS/d0X8LFb/UgR4jVMBR01GdrC6JkwV9WqHNtkLoQ20+U8MI7lu4vaRFwr9Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\PC\\source\\repos\\Zadaca1\\Zadaca1\\Zadaca1.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\ASUS\\source\\repos\\VVS-Projekat\\Zadaca1\\Zadaca1\\Zadaca1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.17\\microsoft.netcore.app.host.win-x64.5.0.17.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
