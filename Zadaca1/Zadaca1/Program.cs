@@ -105,7 +105,7 @@ namespace Zadaca1
                                 
                                     Console.WriteLine("Odaberite redne brojeve kandidata stranke " 
                                     + "za kojeg želite glasati ili 0 za završetak\n"
-                                    + "Odabir kandidata mora biti u formi: 'redni_broj/redni_broj/redni_broj' itd. ");
+                                    + "Na primjer, odabir 1. i 2. kandidata mora biti u formi: '1/2' ");
                                     Console.WriteLine("");
                                     IspisKandidata(odabranaStranka.Kandidati);
                                     odabirKandidata = Console.ReadLine();
