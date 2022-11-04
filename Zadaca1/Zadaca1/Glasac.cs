@@ -23,17 +23,37 @@ public class Glasac
 	}
 	public string generisi_id (string ime, string prezime, string adresa, DateTime datum_rodenja, string br_licne, string jmbg)
 	{
-		return ime.Substring(2) + prezime.Substring(2) + adresa.Substring(2) + datum_rodenja.ToString().Substring(2)
-            + br_licne.Substring(2) + jmbg.Substring(2);
-
-    }
+		return ((ime.Length >= 2) ? ime.Substring(0, 2) : ime) 
+			+ ((prezime.Length >=2)? prezime.Substring(0,2):prezime)
+			+ ((adresa.Length >= 2) ? adresa.Substring(0, 2) : adresa)
+			+ datum_rodenja.ToString("dd/MM/yyyy").Substring(0, 2)
+			+ ((br_licne.Length >= 2) ? br_licne.Substring(0, 2) : br_licne)
+			+ ((jmbg.Length >= 2) ? jmbg.Substring(0, 2) : jmbg);
+	}
 	public void Glasaj()
 	{
+		if (glasao) throw new InvalidOperationException("Glasac ne moze dva puta glasati!");
 		glasao = true;
 	}
-	
-	public string getIme()
+	public void PrikaziGlasaca()
 	{
-		return ime;
+		Console.WriteLine(getId());
+	}
+
+	public string getId()
+	{
+		return id;
+	}
+	public bool Glasao
+	{
+		get
+		{
+			return glasao;
+		}
+
+		set
+		{
+			glasao = value;
+		}
 	}
 }
