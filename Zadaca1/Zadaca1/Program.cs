@@ -56,8 +56,10 @@ namespace Zadaca1
                 }
                 else if (unos == 2)
                 {
+                    /*U toku ispisa Stranaka,Kandidata i Nezavisnih kandidata prikazujem broj glasova
+                     Ovo koristim dok ne implementiramo oficijelni prikaz rezultata glasanja*/
                     Console.WriteLine("Unesite vas Id:");
-                    string id = Console.ReadLine(); //dok testiram ovo cu tretirati ko licnu
+                    string id = Console.ReadLine(); 
 
                     //Ovdje treba napraviti provjeru da li postoji glasac na listi sa tim Id-ijem i da li je vec glasao
                     //, ako ima nastavlja se sa glasanjem
