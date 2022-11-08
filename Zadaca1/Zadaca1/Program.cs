@@ -202,7 +202,7 @@ namespace Zadaca1
             foreach (Stranka s in stranke)
             {
                 Console.WriteLine("---------");
-                Console.WriteLine("Stranka " + i.ToString() + ": " + s.Naziv + " broj glasova: " + s.Broj_glasova);
+                Console.WriteLine("Stranka " + i.ToString() + ": " + s.Naziv);
                 s.ispisiKandidate();
                 Console.WriteLine(" ");
                 i++;
@@ -215,7 +215,7 @@ namespace Zadaca1
             int i = 1;
             foreach (Kandidat k in kandidati)
             {
-                Console.WriteLine(i.ToString() + ". " + k.Ime + " " + k.Prezime + " Broj glasova: " + k.Broj_glasova);
+                Console.WriteLine(i.ToString() + ". " + k.Ime + " " + k.Prezime);
                 i++;
             }
         }
