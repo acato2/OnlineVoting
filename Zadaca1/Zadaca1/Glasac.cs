@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections;
+using System.Runtime.ConstrainedExecution;
 
-public class Glasac
+public class Glasac : IComparable
 {
 	String ime { get; set; } 
 	String prezime { get; set; }
@@ -64,4 +66,9 @@ public class Glasac
 			glasao = value;
 		}
 	}
+    int IComparable.CompareTo(object obj)
+	{
+        Glasac c = (Glasac)obj;
+        return String.Compare(this.prezime, c.prezime);
+    }
 }

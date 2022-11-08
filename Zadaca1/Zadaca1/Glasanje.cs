@@ -58,11 +58,18 @@ public class Glasanje
     public void PrikaziGlasace() //Ispisuje listu glasaca, samo ime, prezime i Id, ostalo je zabranjeno u postavci
     {
         int brojac = 1;
+        //glasaci.Sort(delegate (Glasac x, Glasac y) { return x.getPrezime().CompareTo(y.getPrezime(); });
+        Console.WriteLine("Rb Ime             Prezime         ID Kod        Glasao/la");
+        glasaci.Sort();
         foreach (Glasac x in glasaci)
         {
-            Console.WriteLine(brojac.ToString() + ". " +x.getIme() + " "+ x.getPrezime()+ " "+ x.getId());
+            String glasao = "";
+            if (x.Glasao)
+                glasao = "+";
+            Console.WriteLine(brojac.ToString().PadLeft(2, ' ') + ". " +x.getIme().PadRight(15, ' ') +
+                " "+ x.getPrezime().PadRight(15, ' ') + " "+ x.getId() + " " + glasao);
             brojac++;
-
+            
         }
     }
     public Glasac DodajGlasaca(string ime, string prezime, string adresa, DateTime datum_rodenja, string br_licne, string jmbg)
@@ -114,5 +121,35 @@ public class Glasanje
         Glasac glasac = Glasaci.Find(g => g.getId().Equals(id));
         if (glasac!=null)return glasac;
         return null;
+    }
+    public void RezultatiGlasanja(Glasanje glasanje)
+    {
+        List<Stranka> st = new List<Stranka> (stranke);
+        st.Sort();
+        int i = 1;
+        Console.WriteLine("\n Rezultati glasanja za stranke:");
+        Console.WriteLine("Br Stranka  Broj Glasova");
+        foreach(Stranka s in st)
+        {
+            Console.WriteLine(i.ToString() + ". " + s.Naziv.PadRight(9, ' ') + s.Broj_glasova.ToString());
+            i++;
+        }
+        Console.WriteLine("Rezultati izbora po strankama: ");
+        i = 1;
+        foreach(Stranka s in st)
+        {
+            Console.WriteLine(i.ToString() + ". " + s.Naziv);
+            List<Kandidat> ka = new List<Kandidat> (s.Kandidati);
+            ka.Sort();
+            Console.WriteLine("Br Kandidat       Broj Glasova");
+            int j = 1;
+            foreach (Kandidat k in ka)
+            {
+                Console.WriteLine(j.ToString() + ". " + (k.Ime + " " + k.Prezime).PadRight(20, ' ') + k.Broj_glasova.ToString());
+                    j++;
+            }
+            i++;
+            Console.WriteLine("------------------------");
+        }
     }
 }

@@ -24,7 +24,7 @@ namespace Zadaca1
               "2. Glasanje\n" +
               "3. Rezultati izbora\n" +
               "4. Izlaznost izbora\n" +
-                "5. Izlistaj glasače\n" +
+              "5. Izlistaj glasače\n" +
               "6. Izlaz iz programa"
 
               );
@@ -80,7 +80,8 @@ namespace Zadaca1
                     }
                     else {
                         Console.WriteLine("");
-                        IspisKandidataIStranaka(glasanje); // ispisuje sve stranke i kandidate 
+                        IspisKandidataIStranaka(glasanje);
+                        IspisNezavisnihKandidata(glasanje);// ispisuje sve stranke i kandidate 
                         Console.WriteLine("Odaberite redni broj stranke za koju želite glasati ili listu neovisnih kandidata:");
                         int brStranka = IspisStranaka(glasanje); /*Ispis stranaka za odabir po rednom broju, 
                                                   u ovoj ce se metodi prikazati i opcija nezavisni kandidati
@@ -109,7 +110,7 @@ namespace Zadaca1
                                 string odabirKandidata = "";
 
                                 Console.WriteLine("Odaberite redne brojeve kandidata stranke "
-                                + "za kojeg želite glasati ili 0 za završetak\n"
+                                + "za kojeg želite glasati ili 0 ako hoćete samo za stranku\n"
                                 + "Na primjer, odabir 1. i 2. kandidata mora biti u formi: '1/2' ");
                                 Console.WriteLine("");
                                 IspisKandidata(odabranaStranka.Kandidati);
@@ -117,16 +118,27 @@ namespace Zadaca1
 
                                 odabiriKandidata = odabirKandidata.Split("/").Distinct().ToList().
                                                                  Select(int.Parse).ToList();
-                                if (odabirKandidata == "0") break;
 
-                                if (odabiriKandidata.Count != 0)
+                                if (odabirKandidata == "0" && odabiriKandidata.Count==1)
                                 {
+                                    GlasajZaStranku(odabranaStranka); //glas samo stranci
+                                    
+                                }
+
+                                else if (odabiriKandidata.Count != 0)
+                                {
+                                    if (odabiriKandidata.Contains(0))
+                                        odabiriKandidata.Remove(0);
                                     GlasajZaKandidata(odabranaStranka, odabiriKandidata, glasanje); //glas i stranci i kandidatima
                                 }
                             }
                         }
 
                     }
+                }
+                else if (unos == 3)
+                {
+                    glasanje.RezultatiGlasanja(glasanje);
                 }
                 else if (unos == 5)
                 {
@@ -188,7 +200,7 @@ namespace Zadaca1
             int i = 1;
             foreach (Kandidat k in nezavisni)
             {
-                Console.WriteLine(i.ToString() + ". " + k.Ime + " " + k.Prezime + " Broj glasova: " + k.Broj_glasova);
+                Console.WriteLine(i.ToString() + ". " + k.Ime + " " + k.Prezime);
                 i++;
             }
         }
@@ -207,6 +219,8 @@ namespace Zadaca1
                 Console.WriteLine(" ");
                 i++;
             }
+          
+           
         }
 
         private static void IspisKandidata(List<Kandidat> kandidati)
@@ -226,11 +240,13 @@ namespace Zadaca1
         }
         private static void GlasajZaKandidata(Stranka stranka, List<int> odabraniKandidati, Glasanje glasanje)
         {
+            
             glasanje.GlasajZaKandidateStranke(stranka, odabraniKandidati);
         }
         private static void GlasajZaNezavisnog(Glasac glasac, int odabirKandidata, Glasanje glasanje)
         {
             glasanje.izvrsiGlasanjeZaNezavisnog(glasac, odabirKandidata);
+            glasac.Glasao = true;
         }
 
         private static List<Kandidat> TestniNezavisniKandidati()

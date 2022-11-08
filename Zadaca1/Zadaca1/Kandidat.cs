@@ -1,6 +1,6 @@
 ﻿using System;
 
-public class Kandidat
+public class Kandidat : IComparable
 {
 	string ime, prezime, id;
 	int broj_glasova;
@@ -62,4 +62,16 @@ public class Kandidat
 	{
 		broj_glasova++;
 	}
+    int IComparable.CompareTo(object obj)
+    {
+        Kandidat c = (Kandidat)obj;
+        if (this.broj_glasova > c.broj_glasova)
+            return -1;
+
+        if (this.broj_glasova < c.broj_glasova)
+            return 1;
+
+        else
+            return 0;
+    }
 }

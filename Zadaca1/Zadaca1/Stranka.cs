@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.ConstrainedExecution;
 
-public class Stranka
+public class Stranka : IComparable
 {
 	string naziv;
 	List<Kandidat> kandidati;
@@ -66,4 +68,16 @@ public class Stranka
 			broj_glasova = value;
 		}
 	}
+    int IComparable.CompareTo(object obj)
+    {
+        Stranka c = (Stranka)obj;
+        if (this.broj_glasova > c.broj_glasova)
+            return -1;
+
+        if (this.broj_glasova < c.broj_glasova)
+            return 1;
+
+        else
+            return 0;
+    }
 }
