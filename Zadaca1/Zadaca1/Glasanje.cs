@@ -60,7 +60,7 @@ public class Glasanje
         int brojac = 1;
         foreach (Glasac x in glasaci)
         {
-            Console.WriteLine(brojac.ToString() + ". " + x.getId() + "\n");
+            Console.WriteLine(brojac.ToString() + ". " +x.getIme() + " "+ x.getPrezime()+ " "+ x.getId());
             brojac++;
 
         }

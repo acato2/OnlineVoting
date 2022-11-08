@@ -44,6 +44,14 @@ public class Glasac
 	{
 		return id;
 	}
+	public string getIme()
+	{
+		return ime;
+	}
+	public string getPrezime()
+	{
+		return prezime;
+	}
 	public bool Glasao
 	{
 		get
