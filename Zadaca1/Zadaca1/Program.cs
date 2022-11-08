@@ -23,12 +23,14 @@ namespace Zadaca1
               "2. Glasanje\n" +
               "3. Rezultati izbora\n" +
               "4. Izlaznost izbora\n" +
-              "5. Izlaz iz programa"
+                "5. Izlistaj glasače\n" +
+              "6. Izlaz iz programa"
+              
               );
             int unos ;
             while (true) {
             unos = Convert.ToInt32( Console.ReadLine());
-                if (unos == 5) break;
+                if (unos == 6) break;
 
                 if (unos == 1)
                 {
@@ -125,13 +127,28 @@ namespace Zadaca1
 
                     }
                 }
+                else if (unos == 5)
+                {
+                    if (glasanje.Glasaci.Count == 0)
+                    {
+                        Console.WriteLine("Nema glasača");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Lista glasača:\n");
+                        glasanje.PrikaziGlasace();
+                    }
+
+
+                }
                 Console.WriteLine("");
                 Console.WriteLine("Izabrerite jednu od opcija:\n" +
               "1. Unos novog glasača\n" +
               "2. Glasanje\n" +
               "3. Rezultati izbora\n" +
               "4. Izlaznost izbora\n" +
-              "5. Izlaz iz programa"
+               "5. Izlistaj glasače\n" +
+              "6. Izlaz iz programa"
               );
             }
 
@@ -219,10 +236,10 @@ namespace Zadaca1
         {
             List<Kandidat> nezavisni= new List<Kandidat>()
             {
-                    new Kandidat("Neko","Nekic1","1"),
-                    new Kandidat("Neko","Nekic2","2"),
-                    new Kandidat("Neko","Nekic3","3"),
-                    new Kandidat("Neko","Nekic4","4"),
+                    new Kandidat("Goran","Milošević","1"),
+                    new Kandidat("Ćamil","Duraković","2"),
+                    new Kandidat("Gazmend","Dačaj","3"),
+                    new Kandidat("Slavko","Sekulić","4"),
             };
 
             return nezavisni;
@@ -231,16 +248,42 @@ namespace Zadaca1
         {
             List<Stranka> stranke = new List<Stranka>()
             {
-                     new Stranka("Stranka1",new List<Kandidat>()
+                     new Stranka("SDA",new List<Kandidat>()
                     {
-                         new Kandidat("Meho","Mehic3","13"),
+                         new Kandidat("Bakir","Izetbegović","1"),
+                          new Kandidat("Šemsudin","Dedić","2"),
+                           new Kandidat("Sabina","Hotić","3"),
                     },0),
-                    new Stranka("Stranka2",new List<Kandidat>(){},0),
-                    new Stranka("Stranka1",new List<Kandidat>()
+                    new Stranka("SDP",new List<Kandidat>(){
+                        new Kandidat("Albin","Muslić","1"),
+                        new Kandidat("Edina","Šertović","2"),
+                        new Kandidat("Martin","Brdar","3"),
+                        new Kandidat("Edina","Osmanović","4")
+
+                    },0),
+                    new Stranka("NIP",new List<Kandidat>()
                     {
-                         new Kandidat("Meho","Mehic1","11"),
-                         new Kandidat("Meho","Mehic2","12"),
+                         new Kandidat("Nermin","Pračić","1"),
+                         new Kandidat("Jasminka","Hadžić","2"),
+                         new Kandidat("Denis","Zvizdić","3"),
+                    },0),
+                     new Stranka("SNSD",new List<Kandidat>()
+                    {
+                         new Kandidat("Milorad","Dodik","1"),
+                         new Kandidat("Željka","Cvijanović","2"),
+                         new Kandidat("Denis","Šulić","3"),
+                    },0),
+                      new Stranka("DF",new List<Kandidat>()
+                    {
+                         new Kandidat("Željko","Komšić","1")
+              
+                    },0),
+                       new Stranka("HDZ",new List<Kandidat>()
+                    {
+                         new Kandidat("Borjana","Krišto","1"),
+                         new Kandidat("Marinko","Čavara","2"),
                     },0)
+
             };
 
             return stranke;
