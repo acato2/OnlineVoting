@@ -131,25 +131,34 @@ public class Glasanje
         Console.WriteLine("Br Stranka  Broj Glasova");
         foreach(Stranka s in st)
         {
-            Console.WriteLine(i.ToString() + ". " + s.Naziv.PadRight(9, ' ') + s.Broj_glasova.ToString());
+            Console.WriteLine(i.ToString().PadLeft(2, ' ') + ". " + s.Naziv.PadRight(9, ' ') + s.Broj_glasova.ToString());
             i++;
         }
+        List<Kandidat> nk = new List<Kandidat>(nezavisniKandidati);
+        foreach (Kandidat k in nk)
+        {
+            Console.WriteLine(i.ToString().PadLeft(2, ' ') + ". " + (k.Ime + " " + k.Prezime).PadRight(20, ' ') + k.Broj_glasova.ToString());
+            i++;
+        }
+
         Console.WriteLine("Rezultati izbora po strankama: ");
         i = 1;
-        foreach(Stranka s in st)
+        foreach (Stranka s in st)
         {
             Console.WriteLine(i.ToString() + ". " + s.Naziv);
-            List<Kandidat> ka = new List<Kandidat> (s.Kandidati);
+            List<Kandidat> ka = new List<Kandidat>(s.Kandidati);
             ka.Sort();
             Console.WriteLine("Br Kandidat       Broj Glasova");
             int j = 1;
             foreach (Kandidat k in ka)
             {
                 Console.WriteLine(j.ToString() + ". " + (k.Ime + " " + k.Prezime).PadRight(20, ' ') + k.Broj_glasova.ToString());
-                    j++;
+                j++;
             }
             i++;
             Console.WriteLine("------------------------");
         }
+        
+
     }
 }

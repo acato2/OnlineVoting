@@ -22,7 +22,7 @@ public class Stranka : IComparable
 		//ispisuje kandidate sa rednim brojevima od 1 do n
 		foreach(Kandidat kandidat in kandidati)
         {
-			Console.WriteLine(i.ToString()+". "+kandidat.Ime+" "+kandidat.Prezime+" broj glasova: "+kandidat.Broj_glasova);
+			Console.WriteLine(i.ToString()+". "+kandidat.Ime+" "+kandidat.Prezime);
 			i++;
         }
 	}
