@@ -140,6 +140,10 @@ namespace Zadaca1
                 {
                     glasanje.RezultatiGlasanja(glasanje);
                 }
+                else if(unos == 4)
+                {
+                    Console.WriteLine("Trenutna izlaznost na izborima je " + Math.Round(((glasanje.Glasaci.Count / (double)3196511))*100, 3) + "%.");
+                }     
                 else if (unos == 5)
                 {
                     if (glasanje.Glasaci.Count == 0)
