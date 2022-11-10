@@ -162,8 +162,12 @@ public class Glasanje
 
     public String dajTrenutnuIzlaznost()
     {
-        return Math.Round(((glasaci.Count / (double)3196511)) * 100, 3) + "%"; 
-        //3196511 je broj stanovnika u BiH; za provjeru sam koristila manji broj jer i mi sami imamo malo glasaca
+        int oniKojiSuGlasali = 0;
+        foreach(Glasac g in glasaci)
+        {
+            if(g.Glasao) oniKojiSuGlasali++;
+        }
+        return Math.Round(((oniKojiSuGlasali / (double)glasaci.Count)) * 100, 3) + "%"; 
     }
 
     private int dajUkupanBrojGlasova()
