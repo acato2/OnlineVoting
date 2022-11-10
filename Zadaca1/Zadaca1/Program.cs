@@ -25,7 +25,8 @@ namespace Zadaca1
               "3. Rezultati izbora\n" +
               "4. Izlaznost izbora\n" +
               "5. Izlistaj glasače\n" +
-              "6. Izlaz iz programa"
+              "6. Trenutni mandati\n" +
+              "7. Izlaz iz programa"
 
               );
             int unos;
@@ -142,7 +143,7 @@ namespace Zadaca1
                 }
                 else if(unos == 4)
                 {
-                    Console.WriteLine("Trenutna izlaznost na izborima je " + Math.Round(((glasanje.Glasaci.Count / (double)3196511))*100, 3) + "%.");
+                    Console.WriteLine("Trenutna izlaznost na izborima je " + glasanje.dajTrenutnuIzlaznost() + ".");
                 }     
                 else if (unos == 5)
                 {
@@ -155,17 +156,24 @@ namespace Zadaca1
                         Console.WriteLine("Lista glasača:\n");
                         glasanje.PrikaziGlasace();
                     }
+                }
+                else if(unos == 6)
+                {
 
-
+                }
+                else if(unos == 7)
+                {
+                    break;
                 }
                 Console.WriteLine("");
                 Console.WriteLine("Izabrerite jednu od opcija:\n" +
-              "1. Unos novog glasača\n" +
-              "2. Glasanje\n" +
-              "3. Rezultati izbora\n" +
-              "4. Izlaznost izbora\n" +
-               "5. Izlistaj glasače\n" +
-              "6. Izlaz iz programa"
+                "1. Unos novog glasača\n" +
+                "2. Glasanje\n" +
+                "3. Rezultati izbora\n" +
+                "4. Izlaznost izbora\n" +
+                "5. Izlistaj glasače\n" +
+                "6. Trenutni mandati\n" +
+                "7. Izlaz iz programa"
               );
             }
 

@@ -158,7 +158,10 @@ public class Glasanje
             i++;
             Console.WriteLine("------------------------");
         }
-        
+    }
 
+    public String dajTrenutnuIzlaznost()
+    {
+        return Math.Round(((glasaci.Count / (double)12)) * 100, 3) + "%"; //3196511
     }
 }
