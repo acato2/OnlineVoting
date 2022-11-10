@@ -162,6 +162,69 @@ public class Glasanje
 
     public String dajTrenutnuIzlaznost()
     {
-        return Math.Round(((glasaci.Count / (double)12)) * 100, 3) + "%"; //3196511
+        return Math.Round(((glasaci.Count / (double)3196511)) * 100, 3) + "%"; 
+        //3196511 je broj stanovnika u BiH; za provjeru sam koristila manji broj jer i mi sami imamo malo glasaca
+    }
+
+    private int dajUkupanBrojGlasova()
+    {
+        int ukupanBrojGlasova = 0;
+        foreach (Stranka x in stranke)
+        {
+            ukupanBrojGlasova += x.Broj_glasova;
+
+        }
+        foreach (Kandidat x in nezavisniKandidati)
+        {
+            ukupanBrojGlasova += x.Broj_glasova;
+
+        }
+        return ukupanBrojGlasova;
+    }
+    public List<Stranka> dajStrankeSaMandatima()
+    {
+        List<Stranka> mandati = new List<Stranka>();
+        
+        foreach (Stranka x in stranke)
+        {
+            if (x.Broj_glasova / (double)dajUkupanBrojGlasova() >= 0.02)
+            {
+                mandati.Add(x);
+            }
+        }
+
+        return mandati;
+    }
+
+    public List<Kandidat> dajKandidateSaMandatima()
+    {
+        List<Kandidat> mandati = new List<Kandidat>();
+
+        foreach (Kandidat x in nezavisniKandidati)
+        {
+            if (x.Broj_glasova / (double)dajUkupanBrojGlasova() >= 0.02)
+            {
+                mandati.Add(x);
+            }
+        }
+        
+        return mandati;
+    }
+
+    public Dictionary<Kandidat,Stranka> dajKandidateSaMandatimaUnutarStranke()
+    {
+        Dictionary<Kandidat,Stranka> mandati = new Dictionary<Kandidat ,Stranka>();
+
+        foreach (Stranka s in stranke)
+        {
+            foreach(Kandidat k in s.Kandidati)
+            {
+                if (k.Broj_glasova / (double)s.Broj_glasova >= 0.2)
+                {  
+                    mandati.Add(k, s);
+                }
+            }
+        }
+        return mandati;
     }
 }

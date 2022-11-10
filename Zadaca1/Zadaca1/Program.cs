@@ -32,7 +32,6 @@ namespace Zadaca1
             int unos;
             while (true) {
                 unos = Convert.ToInt32(Console.ReadLine());
-                if (unos == 6) break;
 
                 if (unos == 1)
                 {
@@ -159,6 +158,31 @@ namespace Zadaca1
                 }
                 else if(unos == 6)
                 {
+                    int brojac = 0;
+
+                    //Prvo, mandati stranke ili nezavisnog kandidata
+
+                    Console.WriteLine("Stranke i nezavisni kandidati sa trenutnim mandatom:\n");
+                    foreach(Stranka s in glasanje.dajStrankeSaMandatima())
+                    {
+                        brojac++;
+                        Console.WriteLine(brojac + ". " + s.Naziv);
+                    }
+                    foreach (Kandidat k in glasanje.dajKandidateSaMandatima())
+                    {
+                        brojac++;
+                        Console.WriteLine(brojac + k.Ime + " " + k.Prezime);
+                    }
+
+                    brojac = 0;
+                    //Drugo, kandidati koji imaju mandat unutar neke stranke
+
+                    Console.WriteLine("\nKandidati koji su trenutno osvojili mandat stranke:\n");
+                    foreach (KeyValuePair<Kandidat, Stranka> m in glasanje.dajKandidateSaMandatimaUnutarStranke())
+                    {
+                        brojac++;
+                        Console.WriteLine(brojac + ". " + m.Key.Ime + " " + m.Key.Prezime + ", " + m.Value.Naziv);
+                    }
 
                 }
                 else if(unos == 7)
@@ -321,9 +345,11 @@ namespace Zadaca1
         {
             List<Glasac> glasaci = new List<Glasac>()
             {
-                new Glasac("Semina","Muratovic","Podigmanska 10",new DateTime(2001,06,07),"15987169","0706001175009"),
-                 new Glasac("Adna","Cato","Mrakusa 70",new DateTime(2001,04,11),"15987169","0706001175009"),
-                 new Glasac("Filip", "Maric", "Komari bb", new DateTime(2000,04,29), "5628795df", "290400176009")
+                    /*new Glasac("Semina","Muratovic","Podigmanska 10",new DateTime(2001,06,07),"15987169","0706001175009"),
+                    new Glasac("Adna","Cato","Mrakusa 70",new DateTime(2001,04,11),"15987169","0706001175009"),
+                    new Glasac("Filip", "Maric", "Komari bb", new DateTime(2000,04,29), "5628795df", "290400176009"),
+                    new Glasac("Harry","Potter","Glencoe",new DateTime(1995,05,07),"1123AB70","0705995175329"),
+                    new Glasac("Luke","Skywalker","Naboo",new DateTime(1990,11,11),"ASD78956","1111990175000")*/
 
             };
             return glasaci;
