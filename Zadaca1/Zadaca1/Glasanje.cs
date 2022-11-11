@@ -26,6 +26,8 @@ public class Glasanje
             nezavisniKandidati = value;
         }
     }
+    /*Funkcije dajNezavisne() i DajStranke() nisu potrebne jer imamo već definisane gettere Nezavisni i Stranke
+     - Feedback request je namijenjen Adni Ćato*/
     public List<Stranka> Stranke
     {
         get
@@ -50,7 +52,8 @@ public class Glasanje
             glasaci = value;
         }
     }
-    public Glasac dodajGlasaca(Glasac glasac)
+    //Imenovanje Funkcija velikim slovom
+    public Glasac DodajGlasaca(Glasac glasac)
     {
         glasaci.Add(glasac);
         return glasac;
@@ -107,16 +110,9 @@ public class Glasanje
             kandidati.ElementAt((int)i-1).dodajGlas();
         }
     }
-    public List<Kandidat> DajNezavisne()
-    {
-        return Nezavisni;
-    }
-
-    public List<Stranka> DajStranke()
-    {
-        return stranke;
-    }
-    public Glasac getGlasac(string id)
+    //Kako bi se držali jednog stila imenovanja funkcija, predlažem
+    //da ova metoda počinje velikim slovom (GetGlasac).
+    public Glasac GetGlasac(string id)
     {
         Glasac glasac = Glasaci.Find(g => g.getId().Equals(id));
         if (glasac!=null)return glasac;
@@ -172,18 +168,10 @@ public class Glasanje
 
     private int dajUkupanBrojGlasova()
     {
-        int ukupanBrojGlasova = 0;
-        foreach (Stranka x in stranke)
-        {
-            ukupanBrojGlasova += x.Broj_glasova;
-
-        }
-        foreach (Kandidat x in nezavisniKandidati)
-        {
-            ukupanBrojGlasova += x.Broj_glasova;
-
-        }
-        return ukupanBrojGlasova;
+        /* Nema potrebe implementirati for petlje kada već postoji gotova bibliotečna funkcija koja može sumu 
+         izračunati u jednoj liniji koda.
+         - Feedback request je namijenjen Anidi Nezović*/
+        return Stranke.Sum(s => s.Broj_glasova) + Nezavisni.Sum(k => k.Broj_glasova);
     }
     public List<Stranka> dajStrankeSaMandatima()
     {

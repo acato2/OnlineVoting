@@ -50,7 +50,7 @@ namespace Zadaca1
                     string jmbg = Console.ReadLine();
 
                     Glasac g = new Glasac(ime, prezime, adresa, datum, licnaKarta, jmbg);
-                    glasanje.dodajGlasaca(g);
+                    glasanje.DodajGlasaca(g);
 
                     Console.WriteLine("");
                     Console.WriteLine("ID unesenog glasaca je: ");
@@ -66,7 +66,7 @@ namespace Zadaca1
 
                     //Ovdje treba napraviti provjeru da li postoji glasac na listi sa tim Id-ijem i da li je vec glasao
                     //, ako ima nastavlja se sa glasanjem
-                    Glasac trenutniGlasac = glasanje.getGlasac(id);
+                    Glasac trenutniGlasac = glasanje.GetGlasac(id);
                     if (trenutniGlasac == null)
                     {
                         Console.WriteLine("Ne postoji glasac sa tim id-em");
@@ -100,7 +100,7 @@ namespace Zadaca1
                         else//odabrana stranka
                         {
                             GlasajZaStranku(trenutniGlasac, odabirStranke, glasanje);
-                            Stranka odabranaStranka = glasanje.DajStranke().ElementAt(odabirStranke - 1);
+                            Stranka odabranaStranka = glasanje.Stranke.ElementAt(odabirStranke - 1);
 
                             if (odabranaStranka.Kandidati.Count == 0)
                                 Console.WriteLine("Odabrana stranka nema kandidata");
@@ -230,7 +230,7 @@ namespace Zadaca1
         private static void IspisNezavisnihKandidata(Glasanje glasanje)
         {
             //Ispis nezavisnih kandidata
-            List<Kandidat> nezavisni = glasanje.DajNezavisne();
+            List<Kandidat> nezavisni = glasanje.Nezavisni;
 
             Console.WriteLine("Nezavisni kandidati su: ");
             int i = 1;
