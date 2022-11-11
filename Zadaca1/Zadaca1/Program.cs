@@ -59,8 +59,7 @@ namespace Zadaca1
                 }
                 else if (unos == 2)
                 {
-                    /*U toku ispisa Stranaka,Kandidata i Nezavisnih kandidata prikazujem broj glasova
-                     Ovo koristim dok ne implementiramo oficijelni prikaz rezultata glasanja*/
+                   
                     Console.WriteLine("Unesite vas Id:");
                     string id = Console.ReadLine();
 
@@ -138,7 +137,7 @@ namespace Zadaca1
                 }
                 else if (unos == 3)
                 {
-                    glasanje.RezultatiGlasanja(glasanje);
+                    glasanje.RezultatiGlasanja();
                 }
                 else if(unos == 4)
                 {
@@ -345,11 +344,11 @@ namespace Zadaca1
         {
             List<Glasac> glasaci = new List<Glasac>()
             {
-                    /*new Glasac("Semina","Muratovic","Podigmanska 10",new DateTime(2001,06,07),"15987169","0706001175009"),
+                    new Glasac("Semina","Muratovic","Podigmanska 10",new DateTime(2001,06,07),"15987169","0706001175009"),
                     new Glasac("Adna","Cato","Mrakusa 70",new DateTime(2001,04,11),"15987169","0706001175009"),
                     new Glasac("Filip", "Maric", "Komari bb", new DateTime(2000,04,29), "5628795df", "290400176009"),
                     new Glasac("Harry","Potter","Glencoe",new DateTime(1995,05,07),"1123AB70","0705995175329"),
-                    new Glasac("Luke","Skywalker","Naboo",new DateTime(1990,11,11),"ASD78956","1111990175000")*/
+                    new Glasac("Luke","Skywalker","Naboo",new DateTime(1990,11,11),"ASD78956","1111990175000")
 
             };
             return glasaci;

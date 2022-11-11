@@ -118,7 +118,7 @@ public class Glasanje
         if (glasac!=null)return glasac;
         return null;
     }
-    public void RezultatiGlasanja(Glasanje glasanje)
+    public void RezultatiGlasanja()
     {
         List<Stranka> st = new List<Stranka> (stranke);
         st.Sort();
