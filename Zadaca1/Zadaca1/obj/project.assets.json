@@ -8,19 +8,19 @@
     "net5.0": []
   },
   "packageFolders": {
-    "C:\\Users\\anida\\.nuget\\packages\\": {}
+    "C:\\Users\\Korisnik\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\anida\\Source\\Repos\\VVS-Projekat\\Zadaca1\\Zadaca1\\Zadaca1.csproj",
+      "projectUniqueName": "C:\\Users\\Korisnik\\Source\\Repos\\VVS-Projekat\\Zadaca1\\Zadaca1\\Zadaca1.csproj",
       "projectName": "Zadaca1",
-      "projectPath": "C:\\Users\\anida\\Source\\Repos\\VVS-Projekat\\Zadaca1\\Zadaca1\\Zadaca1.csproj",
-      "packagesPath": "C:\\Users\\anida\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\anida\\Source\\Repos\\VVS-Projekat\\Zadaca1\\Zadaca1\\obj\\",
+      "projectPath": "C:\\Users\\Korisnik\\Source\\Repos\\VVS-Projekat\\Zadaca1\\Zadaca1\\Zadaca1.csproj",
+      "packagesPath": "C:\\Users\\Korisnik\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Korisnik\\Source\\Repos\\VVS-Projekat\\Zadaca1\\Zadaca1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\anida\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Korisnik\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -60,7 +60,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }
