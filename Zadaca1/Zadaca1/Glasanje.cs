@@ -81,7 +81,9 @@ public class Glasanje
         glasaci.Add(glasac);
         return glasac;
     }
-    public void izvrsiGlasanjeZaNezavisnog(Glasac glasac, int odabirKandidata)
+
+    //Primjena jednog stila imenovanja metoda - nazivi pocinju velikim slovima
+    public void IzvrsiGlasanjeZaNezavisnog(Glasac glasac, int odabirKandidata)
     {
         glasac.Glasaj(); //kako bi oznacili da je glasao=true
         GlasajZaNezavisnog(odabirKandidata);
@@ -90,7 +92,9 @@ public class Glasanje
     {
         nezavisniKandidati.ElementAt(odabirKandidata - 1).dodajGlas();
     }
-    public void izvrsiGlasanjeZaStranku(Glasac glasac, int odabirStranke)
+
+    //Primjena jednog stila imenovanja metoda - nazivi pocinju velikim slovima
+    public void IzvrsiGlasanjeZaStranku(Glasac glasac, int odabirStranke)
     {
         glasac.Glasaj(); //kako bi oznacili da je glasao=true
         GlasajZaStranku(odabirStranke);
@@ -156,7 +160,8 @@ public class Glasanje
         }
     }
 
-    public String dajTrenutnuIzlaznost()
+    //Primjena jednog stila imenovanja metoda - nazivi pocinju velikim slovima
+    public String DajTrenutnuIzlaznost()
     {
         int oniKojiSuGlasali = 0;
         foreach(Glasac g in glasaci)
@@ -166,20 +171,23 @@ public class Glasanje
         return Math.Round(((oniKojiSuGlasali / (double)glasaci.Count)) * 100, 3) + "%"; 
     }
 
-    private int dajUkupanBrojGlasova()
+    //Primjena jednog stila imenovanja metoda - nazivi pocinju velikim slovima
+    private int DajUkupanBrojGlasova()
     {
         /* Nema potrebe implementirati for petlje kada već postoji gotova bibliotečna funkcija koja može sumu 
          izračunati u jednoj liniji koda.
          - Feedback request je namijenjen Anidi Nezović*/
         return Stranke.Sum(s => s.Broj_glasova) + Nezavisni.Sum(k => k.Broj_glasova);
     }
-    public List<Stranka> dajStrankeSaMandatima()
+
+    //Primjena jednog stila imenovanja metoda - nazivi pocinju velikim slovima
+    public List<Stranka> DajStrankeSaMandatima()
     {
         List<Stranka> mandati = new List<Stranka>();
         
         foreach (Stranka x in stranke)
         {
-            if (x.Broj_glasova / (double)dajUkupanBrojGlasova() >= 0.02)
+            if (x.Broj_glasova / (double)DajUkupanBrojGlasova() >= 0.02)
             {
                 mandati.Add(x);
             }
@@ -188,13 +196,14 @@ public class Glasanje
         return mandati;
     }
 
-    public List<Kandidat> dajKandidateSaMandatima()
+    //Primjena jednog stila imenovanja metoda - nazivi pocinju velikim slovima
+    public List<Kandidat> DajKandidateSaMandatima()
     {
         List<Kandidat> mandati = new List<Kandidat>();
 
         foreach (Kandidat x in nezavisniKandidati)
         {
-            if (x.Broj_glasova / (double)dajUkupanBrojGlasova() >= 0.02)
+            if (x.Broj_glasova / (double)DajUkupanBrojGlasova() >= 0.02)
             {
                 mandati.Add(x);
             }
@@ -203,7 +212,8 @@ public class Glasanje
         return mandati;
     }
 
-    public Dictionary<Kandidat,Stranka> dajKandidateSaMandatimaUnutarStranke()
+    //Primjena jednog stila imenovanja metoda - nazivi pocinju velikim slovima
+    public Dictionary<Kandidat,Stranka> DajKandidateSaMandatimaUnutarStranke()
     {
         Dictionary<Kandidat,Stranka> mandati = new Dictionary<Kandidat ,Stranka>();
 

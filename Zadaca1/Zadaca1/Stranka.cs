@@ -16,7 +16,8 @@ public class Stranka : IComparable
 		this.broj_glasova = broj_glasova;
 	}
 
-	public void ispisiKandidate()
+	//Primjena jednog stila imenovanja metoda - nazivi pocinju velikim slovima
+	public void IspisiKandidate()
 	{
 		int i = 1;
 		//ispisuje kandidate sa rednim brojevima od 1 do n

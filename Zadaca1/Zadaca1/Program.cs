@@ -141,7 +141,7 @@ namespace Zadaca1
                 }
                 else if(unos == 4)
                 {
-                    Console.WriteLine("Trenutna izlaznost na izborima je " + glasanje.dajTrenutnuIzlaznost() + ".");
+                    Console.WriteLine("Trenutna izlaznost na izborima je " + glasanje.DajTrenutnuIzlaznost() + ".");
                 }     
                 else if (unos == 5)
                 {
@@ -162,12 +162,12 @@ namespace Zadaca1
                     //Prvo, mandati stranke ili nezavisnog kandidata
 
                     Console.WriteLine("Stranke i nezavisni kandidati sa trenutnim mandatom:\n");
-                    foreach(Stranka s in glasanje.dajStrankeSaMandatima())
+                    foreach(Stranka s in glasanje.DajStrankeSaMandatima())
                     {
                         brojac++;
                         Console.WriteLine(brojac + ". " + s.Naziv);
                     }
-                    foreach (Kandidat k in glasanje.dajKandidateSaMandatima())
+                    foreach (Kandidat k in glasanje.DajKandidateSaMandatima())
                     {
                         brojac++;
                         Console.WriteLine(brojac + k.Ime + " " + k.Prezime);
@@ -177,7 +177,7 @@ namespace Zadaca1
                     //Drugo, kandidati koji imaju mandat unutar neke stranke
 
                     Console.WriteLine("\nKandidati koji su trenutno osvojili mandat stranke:\n");
-                    foreach (KeyValuePair<Kandidat, Stranka> m in glasanje.dajKandidateSaMandatimaUnutarStranke())
+                    foreach (KeyValuePair<Kandidat, Stranka> m in glasanje.DajKandidateSaMandatimaUnutarStranke())
                     {
                         brojac++;
                         Console.WriteLine(brojac + ". " + m.Key.Ime + " " + m.Key.Prezime + ", " + m.Value.Naziv);
@@ -250,7 +250,7 @@ namespace Zadaca1
             {
                 Console.WriteLine("---------");
                 Console.WriteLine("Stranka " + i.ToString() + ": " + s.Naziv);
-                s.ispisiKandidate();
+                s.IspisiKandidate();
                 Console.WriteLine(" ");
                 i++;
             }
@@ -271,7 +271,7 @@ namespace Zadaca1
 
         private static void GlasajZaStranku(Glasac glasac, int odabirStranke, Glasanje glasanje)
         {
-            glasanje.izvrsiGlasanjeZaStranku(glasac, odabirStranke);
+            glasanje.IzvrsiGlasanjeZaStranku(glasac, odabirStranke);
         }
         private static void GlasajZaKandidata(Stranka stranka, List<int> odabraniKandidati, Glasanje glasanje)
         {
@@ -280,7 +280,7 @@ namespace Zadaca1
         }
         private static void GlasajZaNezavisnog(Glasac glasac, int odabirKandidata, Glasanje glasanje)
         {
-            glasanje.izvrsiGlasanjeZaNezavisnog(glasac, odabirKandidata);
+            glasanje.IzvrsiGlasanjeZaNezavisnog(glasac, odabirKandidata);
             glasac.Glasao = true;
         }
 
