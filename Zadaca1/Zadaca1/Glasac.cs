@@ -4,13 +4,13 @@ using System.Runtime.ConstrainedExecution;
 
 public class Glasac : IComparable
 {
-	String ime { get; set; } 
-	String prezime { get; set; }
-	String adresa { get; set; }
-	DateTime datum_rodenja { get; set; }
-	String br_licne { get; set; }
-	String jmbg { get; set; }
-	String id { get; set; }
+	public String ime { get; set;}
+	public String prezime { get; set;}
+	String adresa { get; set;}
+	DateTime datum_rodenja{ get; set;}
+	String br_licne{ get; set;}
+	String jmbg{ get; set;}
+	public String id { get; set;}
 	bool glasao = false;
 
 	public Glasac(string ime, string prezime, string adresa, DateTime datum_rodenja, string br_licne, string jmbg)
@@ -39,21 +39,9 @@ public class Glasac : IComparable
 	}
 	public void PrikaziGlasaca()
 	{
-		Console.WriteLine(getId());
+		Console.WriteLine(id);
 	}
 
-	public string getId()
-	{
-		return id;
-	}
-	public string getIme()
-	{
-		return ime;
-	}
-	public string getPrezime()
-	{
-		return prezime;
-	}
 	public bool Glasao
 	{
 		get

@@ -69,8 +69,8 @@ public class Glasanje
             String glasao = "";
             if (x.Glasao)
                 glasao = "+";
-            Console.WriteLine(brojac.ToString().PadLeft(2, ' ') + ". " +x.getIme().PadRight(15, ' ') +
-                " "+ x.getPrezime().PadRight(15, ' ') + " "+ x.getId() + " " + glasao);
+            Console.WriteLine(brojac.ToString().PadLeft(2, ' ') + ". " +x.ime.PadRight(15, ' ') +
+                " "+ x.prezime.PadRight(15, ' ') + " "+ x.id + " " + glasao);
             brojac++;
             
         }
@@ -114,7 +114,7 @@ public class Glasanje
     //da ova metoda počinje velikim slovom (GetGlasac).
     public Glasac GetGlasac(string id)
     {
-        Glasac glasac = Glasaci.Find(g => g.getId().Equals(id));
+        Glasac glasac = Glasaci.Find(g => g.id.Equals(id));
         if (glasac!=null)return glasac;
         return null;
     }
