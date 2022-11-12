@@ -4,7 +4,9 @@ public class Kandidat : IComparable
 {
 	string ime, prezime, id;
 	int broj_glasova;
-	bool nezavisan;
+	
+
+
 
 	public Kandidat(string ime, string prezime, string id)
     {
@@ -49,13 +51,13 @@ public class Kandidat : IComparable
 			broj_glasova = value;
 		}
 	}
-	public Kandidat(string ime, string prezime, string id, bool nezavisan) 
+	public Kandidat(string ime, string prezime, string id) 
 	{
 		this.ime = ime;
 		this.prezime = prezime;
 		this.id = id;
 		this.broj_glasova = 0;
-		this.nezavisan = nezavisan;
+		
 	}
 
 	public void dodajGlas()
