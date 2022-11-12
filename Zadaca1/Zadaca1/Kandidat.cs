@@ -6,10 +6,13 @@ public class Kandidat : IComparable
 	int broj_glasova;
 	
 
+
+
 	public Kandidat(string ime, string prezime, string id)
     {
 		Ime= ime;
 		Prezime= prezime;
+		Broj_glasova = 0;
 		this.id = id;
     }
 	public string Ime
@@ -48,12 +51,7 @@ public class Kandidat : IComparable
 			broj_glasova = value;
 		}
 	}
-	public Kandidat(string ime, string prezime, string id) 
-	{
-		this.ime = ime;
-		this.prezime = prezime;
-		this.id = id;
-	}
+
 
 	public void dodajGlas()
 	{
