@@ -17,13 +17,17 @@ public class Stranka : IComparable
 	}
 
 	//Primjena jednog stila imenovanja metoda - nazivi pocinju velikim slovima
+
+	/* 
+	 * Da li je trebalo da se piše i.ToString()? Ispis radi korektno i bez funkcije ToString().
+	 */
 	public void IspisiKandidate()
 	{
 		int i = 1;
 		//ispisuje kandidate sa rednim brojevima od 1 do n
 		foreach(Kandidat kandidat in kandidati)
         {
-			Console.WriteLine(i.ToString()+". "+kandidat.Ime+" "+kandidat.Prezime);
+			Console.WriteLine(i + ". " + kandidat.Ime + " " + kandidat.Prezime);
 			i++;
         }
 	}
