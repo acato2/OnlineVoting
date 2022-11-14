@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.ConstrainedExecution;
 
 public class Stranka : IComparable
@@ -11,9 +12,18 @@ public class Stranka : IComparable
 
 	public Stranka(string naziv, List<Kandidat> kandidati, int broj_glasova)
 	{
+		if (!ValidateName(naziv)) throw new Exception("Naziv stranke nije validan!");
+		
+		//Kandidati se validiraju u klasi Kandidat
+
 		this.naziv = naziv;
 		this.kandidati = kandidati;
 		this.broj_glasova = broj_glasova;
+	}
+
+	public static bool ValidateName(string name)
+	{
+		return name.All(Char.IsLetter);
 	}
 
 	//Primjena jednog stila imenovanja metoda - nazivi pocinju velikim slovima

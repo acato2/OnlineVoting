@@ -387,14 +387,12 @@ namespace Zadaca1
         }
         public static bool ValidateBrLicne(string brLicne)
         {
-
             if (brLicne.ToCharArray().Count(Char.IsDigit) == 0 || brLicne.ToCharArray().Count(Char.IsLetter) == 0 || brLicne.Length != 10)
             {
                 return false;
             }
 
             return true;
-
         }
         public static bool ValidateJMBG(string jmbg)
         {
@@ -403,7 +401,6 @@ namespace Zadaca1
                 return false;
             }
             return true;
-
         }
     }
 }

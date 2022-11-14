@@ -79,7 +79,6 @@ public class Kandidat : IComparable
 	public static bool ValidateName(string name)
 	{
 		return name.All(Char.IsLetter);
-
 	}
 
 
