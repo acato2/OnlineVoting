@@ -30,7 +30,8 @@ namespace Zadaca1
 
               );
             int unos;
-            while (true) {
+            while (true)
+            {
                 unos = Convert.ToInt32(Console.ReadLine());
 
                 if (unos == 1)
@@ -38,16 +39,40 @@ namespace Zadaca1
                     //Dodat unos podataka (ime, prezime, itd.)
                     Console.WriteLine("Unesite Ime: ");
                     string ime = Console.ReadLine();
+                    while (ValidateName(ime) == false)
+                    {
+                        Console.WriteLine("Nevalidni podaci! Molimo unesite ponovo!");
+                        ime = Console.ReadLine();
+                    }
+
                     Console.WriteLine("Unesite prezime: ");
                     string prezime = Console.ReadLine();
+                    while (ValidateName(prezime) == false)
+                    {
+                        Console.WriteLine("Nevalidni podaci! Molimo unesite ponovo!");
+                        prezime = Console.ReadLine();
+                    }
+
                     Console.WriteLine("Unesite adresu stanovanja: ");
                     string adresa = Console.ReadLine();
                     Console.WriteLine("Unesite datum rodjenja u formatu MM/dd/yyyy: ");
                     DateTime datum = Convert.ToDateTime(Console.ReadLine());
+
                     Console.WriteLine("Unesite broj licne karte: ");
                     string licnaKarta = Console.ReadLine();
+                    while (ValidateBrLicne(licnaKarta) == false)
+                    {
+                        Console.WriteLine("Nevalidni podaci! Molimo unesite ponovo!");
+                        licnaKarta = Console.ReadLine();
+                    }
+
                     Console.WriteLine("Unesite JMBG: ");
                     string jmbg = Console.ReadLine();
+                    while (ValidateJMBG(jmbg) == false)
+                    {
+                        Console.WriteLine("Nevalidni podaci! Molimo unesite ponovo!");
+                        jmbg = Console.ReadLine();
+                    }
 
                     Glasac g = new Glasac(ime, prezime, adresa, datum, licnaKarta, jmbg);
                     glasanje.DodajGlasaca(g);
@@ -59,7 +84,7 @@ namespace Zadaca1
                 }
                 else if (unos == 2)
                 {
-                   
+
                     Console.WriteLine("Unesite vas Id:");
                     string id = Console.ReadLine();
 
@@ -77,7 +102,8 @@ namespace Zadaca1
                         Console.WriteLine("Glasac sa datim id-om je već glasao!");
                         Console.WriteLine("");
                     }
-                    else {
+                    else
+                    {
                         Console.WriteLine("");
                         IspisKandidataIStranaka(glasanje);
                         IspisNezavisnihKandidata(glasanje);// ispisuje sve stranke i kandidate 
@@ -118,10 +144,10 @@ namespace Zadaca1
                                 odabiriKandidata = odabirKandidata.Split("/").Distinct().ToList().
                                                                  Select(int.Parse).ToList();
 
-                                if (odabirKandidata == "0" && odabiriKandidata.Count==1)
+                                if (odabirKandidata == "0" && odabiriKandidata.Count == 1)
                                 {
                                     GlasajZaStranku(odabranaStranka); //glas samo stranci
-                                    
+
                                 }
 
                                 else if (odabiriKandidata.Count != 0)
@@ -139,10 +165,10 @@ namespace Zadaca1
                 {
                     glasanje.RezultatiGlasanja();
                 }
-                else if(unos == 4)
+                else if (unos == 4)
                 {
                     Console.WriteLine("Trenutna izlaznost na izborima je " + glasanje.DajTrenutnuIzlaznost() + ".");
-                }     
+                }
                 else if (unos == 5)
                 {
                     if (glasanje.Glasaci.Count == 0)
@@ -155,14 +181,14 @@ namespace Zadaca1
                         glasanje.PrikaziGlasace();
                     }
                 }
-                else if(unos == 6)
+                else if (unos == 6)
                 {
                     int brojac = 0;
 
                     //Prvo, mandati stranke ili nezavisnog kandidata
 
                     Console.WriteLine("Stranke i nezavisni kandidati sa trenutnim mandatom:\n");
-                    foreach(Stranka s in glasanje.DajStrankeSaMandatima())
+                    foreach (Stranka s in glasanje.DajStrankeSaMandatima())
                     {
                         brojac++;
                         Console.WriteLine(brojac + ". " + s.Naziv);
@@ -184,7 +210,7 @@ namespace Zadaca1
                     }
 
                 }
-                else if(unos == 7)
+                else if (unos == 7)
                 {
                     break;
                 }
@@ -254,8 +280,8 @@ namespace Zadaca1
                 Console.WriteLine(" ");
                 i++;
             }
-          
-           
+
+
         }
 
         private static void IspisKandidata(List<Kandidat> kandidati)
@@ -275,7 +301,7 @@ namespace Zadaca1
         }
         private static void GlasajZaKandidata(Stranka stranka, List<int> odabraniKandidati, Glasanje glasanje)
         {
-            
+
             glasanje.GlasajZaKandidateStranke(stranka, odabraniKandidati);
         }
         private static void GlasajZaNezavisnog(Glasac glasac, int odabirKandidata, Glasanje glasanje)
@@ -352,6 +378,31 @@ namespace Zadaca1
 
             };
             return glasaci;
+
+        }
+        public static bool ValidateName(string name)
+        {
+            return name.All(Char.IsLetter);
+
+        }
+        public static bool ValidateBrLicne(string brLicne)
+        {
+
+            if (brLicne.ToCharArray().Count(Char.IsDigit) == 0 || brLicne.ToCharArray().Count(Char.IsLetter) == 0 || brLicne.Length != 10)
+            {
+                return false;
+            }
+
+            return true;
+
+        }
+        public static bool ValidateJMBG(string jmbg)
+        {
+            if (!jmbg.All(Char.IsDigit) || jmbg.Length != 13)
+            {
+                return false;
+            }
+            return true;
 
         }
     }
