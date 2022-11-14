@@ -187,7 +187,8 @@ public class Glasanje
         
         foreach (Stranka x in stranke)
         {
-            if (x.Broj_glasova / (double)DajUkupanBrojGlasova() >= 0.02)
+            double vrijednost = x.Broj_glasova / (double)DajUkupanBrojGlasova();
+            if (vrijednost > 0.02 || Math.Abs(vrijednost - 0.02) < 0.00000000001)
             {
                 mandati.Add(x);
             }
@@ -203,7 +204,8 @@ public class Glasanje
 
         foreach (Kandidat x in nezavisniKandidati)
         {
-            if (x.Broj_glasova / (double)DajUkupanBrojGlasova() >= 0.02)
+            double vrijednost = x.Broj_glasova / (double)DajUkupanBrojGlasova();
+            if (vrijednost > 0.02 || Math.Abs(vrijednost - 0.02) < 0.00000000001)
             {
                 mandati.Add(x);
             }
@@ -221,7 +223,8 @@ public class Glasanje
         {
             foreach(Kandidat k in s.Kandidati)
             {
-                if (k.Broj_glasova / (double)s.Broj_glasova >= 0.2)
+                double vrijednost = k.Broj_glasova / (double)s.Broj_glasova;
+                if (vrijednost > 0.2 || Math.Abs(vrijednost - 0.2) < 0.00000000001)
                 {  
                     mandati.Add(k, s);
                 }
