@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 public class Kandidat : IComparable
 {
@@ -10,8 +11,25 @@ public class Kandidat : IComparable
 
 	public Kandidat(string ime, string prezime, string id)
     {
-		Ime= ime;
-		Prezime= prezime;
+	
+
+		if (ValidateName(ime) == false)
+		{
+			throw new Exception("Nevalidni podaci");
+		}
+        else
+        {
+			this.ime = ime;
+        }
+
+		if (ValidateName(prezime) == false)
+		{
+			throw new Exception("Nevalidni podaci");
+		}
+		else
+		{
+			this.prezime = prezime;
+		}
 		Broj_glasova = 0;
 		this.id = id;
     }
@@ -57,7 +75,15 @@ public class Kandidat : IComparable
 	{
 		broj_glasova++;
 	}
-    int IComparable.CompareTo(object obj)
+
+	public static bool ValidateName(string name)
+	{
+		return name.All(Char.IsLetter);
+
+	}
+
+
+	int IComparable.CompareTo(object obj)
     {
         Kandidat c = (Kandidat)obj;
         if (this.broj_glasova > c.broj_glasova)
