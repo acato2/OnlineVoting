@@ -85,18 +85,19 @@ public class Glasanje
     //Primjena jednog stila imenovanja metoda - nazivi pocinju velikim slovima
     public void IzvrsiGlasanjeZaNezavisnog(Glasac glasac, int odabirKandidata)
     {
-        glasac.Glasaj(); //kako bi oznacili da je glasao=true
+
         GlasajZaNezavisnog(odabirKandidata);
     }
-   public void GlasajZaNezavisnog(int odabirKandidata)
+    public void GlasajZaNezavisnog(int odabirKandidata)
     {
         nezavisniKandidati.ElementAt(odabirKandidata - 1).dodajGlas();
+
     }
 
     //Primjena jednog stila imenovanja metoda - nazivi pocinju velikim slovima
     public void IzvrsiGlasanjeZaStranku(Glasac glasac, int odabirStranke)
     {
-        glasac.Glasaj(); //kako bi oznacili da je glasao=true
+
         GlasajZaStranku(odabirStranke);
     }
     public Stranka GlasajZaStranku(int odabirStranke)
@@ -106,12 +107,12 @@ public class Glasanje
         stranka.DodajGlas();
         return stranka;
     }
-    public void GlasajZaKandidateStranke(Stranka stranka,List<int>odabiriKandidata)
+    public void GlasajZaKandidateStranke(Stranka stranka, List<int> odabiriKandidata)
     {
         List<Kandidat> kandidati = stranka.Kandidati;
-        foreach(int i in odabiriKandidata)
+        foreach (int i in odabiriKandidata)
         {
-            kandidati.ElementAt((int)i-1).dodajGlas();
+            kandidati.ElementAt((int)i - 1).dodajGlas();
         }
     }
     //Kako bi se držali jednog stila imenovanja funkcija, predlažem

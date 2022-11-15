@@ -117,14 +117,14 @@ namespace Zadaca1
                         if (odabirStranke == brStranka + 1) //slucaj da su odabrani nezavisni kandidati
                         {
                             Console.WriteLine("");
-                            Console.WriteLine("Odabrali ste glasanje za neovisnog kandidata");
+                            Console.WriteLine("Odabrali ste glasanje za nezavisnog kandidata");
                             IspisNezavisnihKandidata(glasanje);//ispisuje Nezavisne clanove sa rednim brojevima
                             int odabirKandidata = Convert.ToInt32(Console.ReadLine()); // Upis odabira kandidata (za pocetak se moze izabrati samo jedan, kasnije cemo prosirit funkcionalnost)
-                            GlasajZaNezavisnog(trenutniGlasac, odabirKandidata, glasanje); //izvrsava se glasanje
+                            glasanje.GlasajZaNezavisnog(odabirKandidata);//izvrsava se glasanje
+                            trenutniGlasac.Glasaj();
                         }
                         else//odabrana stranka
                         {
-                            GlasajZaStranku(trenutniGlasac, odabirStranke, glasanje);
                             Stranka odabranaStranka = glasanje.Stranke.ElementAt(odabirStranke - 1);
 
                             if (odabranaStranka.Kandidati.Count == 0)
@@ -146,7 +146,8 @@ namespace Zadaca1
 
                                 if (odabirKandidata == "0" && odabiriKandidata.Count == 1)
                                 {
-                                    GlasajZaStranku(odabranaStranka); //glas samo stranci
+                                    odabranaStranka.DodajGlas(); //glas samo stranci
+                                    trenutniGlasac.Glasaj();
 
                                 }
 
@@ -154,13 +155,17 @@ namespace Zadaca1
                                 {
                                     if (odabiriKandidata.Contains(0))
                                         odabiriKandidata.Remove(0);
-                                    GlasajZaKandidata(odabranaStranka, odabiriKandidata, glasanje); //glas i stranci i kandidatima
+                                    glasanje.GlasajZaKandidateStranke(odabranaStranka, odabiriKandidata); //glas i stranci i kandidatima
+                                    odabranaStranka.DodajGlas();
+                                    trenutniGlasac.Glasaj();
+
                                 }
                             }
                         }
 
                     }
                 }
+
                 else if (unos == 3)
                 {
                     glasanje.RezultatiGlasanja();
@@ -228,16 +233,7 @@ namespace Zadaca1
 
         }
 
-        private static void GlasajZaStranku(Stranka odabranaStranka)
-        {
-            odabranaStranka.DodajGlas();
-        }
-
-        private static void GlasajZaStrankuIKandidata(Stranka odabranaStranka, int odabirKandidata)
-        {
-            GlasajZaStranku(odabranaStranka);
-            odabranaStranka.Kandidati.ElementAt(odabirKandidata - 1).dodajGlas();
-        }
+        
 
         private static int IspisStranaka(Glasanje glasanje)
         {
@@ -295,20 +291,7 @@ namespace Zadaca1
             }
         }
 
-        private static void GlasajZaStranku(Glasac glasac, int odabirStranke, Glasanje glasanje)
-        {
-            glasanje.IzvrsiGlasanjeZaStranku(glasac, odabirStranke);
-        }
-        private static void GlasajZaKandidata(Stranka stranka, List<int> odabraniKandidati, Glasanje glasanje)
-        {
-
-            glasanje.GlasajZaKandidateStranke(stranka, odabraniKandidati);
-        }
-        private static void GlasajZaNezavisnog(Glasac glasac, int odabirKandidata, Glasanje glasanje)
-        {
-            glasanje.IzvrsiGlasanjeZaNezavisnog(glasac, odabirKandidata);
-            glasac.Glasao = true;
-        }
+        
 
         private static List<Kandidat> TestniNezavisniKandidati()
         {
