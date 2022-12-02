@@ -36,45 +36,100 @@ namespace Zadaca1
 
                 if (unos == 1)
                 {
+                    Glasac g=new Glasac();
                     //Dodat unos podataka (ime, prezime, itd.)
                     Console.WriteLine("Unesite Ime: ");
-                    string ime = Console.ReadLine();
-                    while (ValidateName(ime) == false)
+                    while (true)
                     {
-                        Console.WriteLine("Nevalidni podaci! Molimo unesite ponovo!");
-                        ime = Console.ReadLine();
+                        try {
+                            g.Ime = Console.ReadLine();
+                            break;
+                        }catch(Exception e)
+                        {
+                            Console.WriteLine(e.Message);
+                            Console.WriteLine("Pokušajte ponovo!");
+                            continue;
+                        }
                     }
 
                     Console.WriteLine("Unesite prezime: ");
-                    string prezime = Console.ReadLine();
-                    while (ValidateName(prezime) == false)
+                    while (true)
                     {
-                        Console.WriteLine("Nevalidni podaci! Molimo unesite ponovo!");
-                        prezime = Console.ReadLine();
+                        try
+                        {
+                            g.Prezime = Console.ReadLine();
+                            break;
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine(e.Message);
+                            Console.WriteLine("Pokušajte ponovo!");
+                            continue;
+                        }
                     }
 
                     Console.WriteLine("Unesite adresu stanovanja: ");
                     string adresa = Console.ReadLine();
+                    g.Adresa = adresa;
+
                     Console.WriteLine("Unesite datum rodjenja u formatu MM/dd/yyyy: ");
-                    DateTime datum = Convert.ToDateTime(Console.ReadLine());
+
+                    while (true)
+                    {
+                        try
+                        {
+                            g.DatumRodjenja = Convert.ToDateTime(Console.ReadLine());
+                            break;
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine(e.Message);
+                            Console.WriteLine("Pokušajte ponovo!");
+                            continue;
+                        }
+                    }
 
                     Console.WriteLine("Unesite broj licne karte: ");
-                    string licnaKarta = Console.ReadLine();
-                    while (ValidateBrLicne(licnaKarta) == false)
+
+                    while (true)
                     {
-                        Console.WriteLine("Nevalidni podaci! Molimo unesite ponovo!");
-                        licnaKarta = Console.ReadLine();
+                        try
+                        {
+                            g.BrojLicne = Console.ReadLine();
+                            break;
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine(e.Message);
+                            Console.WriteLine("Pokušajte ponovo!");
+                            continue;
+                        }
                     }
 
                     Console.WriteLine("Unesite JMBG: ");
-                    string jmbg = Console.ReadLine();
-                    while (ValidateJMBG(jmbg) == false)
-                    {
-                        Console.WriteLine("Nevalidni podaci! Molimo unesite ponovo!");
-                        jmbg = Console.ReadLine();
-                    }
 
-                    Glasac g = new Glasac(ime, prezime, adresa, datum, licnaKarta, jmbg);
+                    while (true)
+                    {
+                        try
+                        {
+                            g.Jmbg = Console.ReadLine();
+                            break;
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine(e.Message);
+                            Console.WriteLine("Pokušajte ponovo!");
+                            continue;
+                        }
+                    }
+                    try
+                    {
+                        g.Id = g.generisi_id();
+                    }catch(Exception e)
+                    {
+                        Console.WriteLine(e);
+                    }
+                    
                     glasanje.DodajGlasaca(g);
 
                     Console.WriteLine("");
@@ -353,37 +408,16 @@ namespace Zadaca1
         {
             List<Glasac> glasaci = new List<Glasac>()
             {
-                    new Glasac("Semina","Muratovic","Podigmanska 10",new DateTime(2001,06,07),"15987169","0706001175009"),
-                    new Glasac("Adna","Cato","Mrakusa 70",new DateTime(2001,04,11),"15987169","0706001175009"),
-                    new Glasac("Filip", "Maric", "Komari bb", new DateTime(2000,04,29), "5628795df", "290400176009"),
-                    new Glasac("Harry","Potter","Glencoe",new DateTime(1995,05,07),"1123AB70","0705995175329"),
-                    new Glasac("Luke","Skywalker","Naboo",new DateTime(1990,11,11),"ASD78956","1111990175000")
+                    new Glasac("Semina","Muratovic","Podigmanska 10",new DateTime(2001,06,07),"159E716","0706001175009"),
+                    new Glasac("Adna","Cato","Mrakusa 70",new DateTime(2001,04,11),"159K716","1104001175009"),
+                    new Glasac("Filip", "Maric", "Komari bb", new DateTime(2000,04,29), "259E716", "2904000760097"),
+                    new Glasac("Harry","Potter","Glencoe",new DateTime(1995,05,07),"157E716","0705995175329"),
+                    new Glasac("Luke","Skywalker","Naboo",new DateTime(1990,11,11),"149E716","1111990175000")
 
             };
             return glasaci;
 
         }
-        public static bool ValidateName(string name)
-        {
-            return name.All(Char.IsLetter);
-
-        }
-        public static bool ValidateBrLicne(string brLicne)
-        {
-            if (brLicne.ToCharArray().Count(Char.IsDigit) == 0 || brLicne.ToCharArray().Count(Char.IsLetter) == 0 || brLicne.Length != 10)
-            {
-                return false;
-            }
-
-            return true;
-        }
-        public static bool ValidateJMBG(string jmbg)
-        {
-            if (!jmbg.All(Char.IsDigit) || jmbg.Length != 13)
-            {
-                return false;
-            }
-            return true;
-        }
+       
     }
 }
