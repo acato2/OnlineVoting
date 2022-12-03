@@ -41,9 +41,6 @@ namespace TestProject
         public void ValidniKarakteriUImenu()
         {
             Glasac g = new Glasac();
-            Exception ex1 = null;
-            try
-            {
                 g.Ime = "Naida-nozic";
                 g.Ime = "---nn";
                 g.Ime = "n-n";
@@ -51,12 +48,7 @@ namespace TestProject
                 g.Ime = "nn";
                 g.Ime = "nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn";
                 Assert.AreEqual(g.Ime, "nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn");
-            }
-            catch(Exception ex)
-            {
-                ex1 = ex;
-            }
-            Assert.IsNull(ex1);
+
         }
         [TestMethod]
         public void PraznoINullPrezimeTest()
@@ -95,9 +87,6 @@ namespace TestProject
         public void ValidniKarakteriUPrezimenu()
         {
             Glasac g = new Glasac();
-            Exception ex1 = null;
-            try
-            {
                 g.Prezime = "Naida-nozic";
                 g.Prezime = "---nnn";
                 g.Prezime = "n-nn";
@@ -105,12 +94,6 @@ namespace TestProject
                 g.Prezime = "nnn";
                 g.Prezime = "gggggggggg-gggggggggg-gggggggggg-gggggggggg-gggggggggg";
                 Assert.AreEqual(g.Prezime, "gggggggggg-gggggggggg-gggggggggg-gggggggggg-gggggggggg");
-            }
-            catch (Exception ex)
-            {
-                ex1 = ex;
-            }
-            Assert.IsNull(ex1);
         }
         [TestMethod]
         [ExpectedException(typeof(Exception))]
@@ -119,14 +102,12 @@ namespace TestProject
             try
             {
                 Glasac g = new Glasac();
-                g.DatumRodjenja = new DateTime(2005, 06, 07);
-            }
+                g.DatumRodjenja = new DateTime(2005, 06, 07);}
             catch(Exception ex)
             {
                 Assert.AreEqual(ex.Message, "Glasac mora biti punoljetan");
-                throw;
-            }
-        }
+                throw;}}
+
         [TestMethod]
         [ExpectedException(typeof(Exception))]
         public void DatumUBuducnostiTest()
@@ -134,29 +115,19 @@ namespace TestProject
             try
             {
                 Glasac g = new Glasac();
-                g.DatumRodjenja = new DateTime(2023, 06, 07);
-            }
+                g.DatumRodjenja = new DateTime(2023, 06, 07); }
             catch (Exception ex)
             {
                 Assert.AreEqual(ex.Message, "Datum ne moze biti u buducnosti!");
-                throw;
-            }
-        }
+                throw;}}
+
         [TestMethod]
         public void IspravanDatumTest()
         {
             Glasac g = new Glasac();
-            Exception ex1 = null;
-            try
-            {
                 g.DatumRodjenja = new DateTime(2001, 06, 07);
                 g.DatumRodjenja = new DateTime(2004, 12, 03);
                 Assert.IsTrue(DateTime.Compare(g.DatumRodjenja, new DateTime(2004, 12, 03))==0);
-            }catch(Exception ex)
-            {
-                ex1 = ex;
-            }
-            Assert.IsNull(ex1);
         }
         [TestMethod]
         public void NevalidnaDuzinaLicneKarteTest()
@@ -180,19 +151,10 @@ namespace TestProject
         [TestMethod]
         public void ValidniFormatLicneKarteTest()
         {
-            Exception ex1 = null;
-            try
-            {
                 Glasac g = new Glasac();
                 g.BrojLicne = "123K456";
                 g.BrojLicne = "000E000";
                 Assert.AreEqual(g.BrojLicne, "000E000");
-            }
-            catch(Exception ex)
-            {
-                ex1 = ex;
-            }
-            Assert.IsNull(ex1);
         }
         [TestMethod]
         public void NevalidnaDuzinaMaticnogBrojaTest()
@@ -217,20 +179,12 @@ namespace TestProject
         [TestMethod]
         public void ValidniMaticniBrojevi()
         {
-            Exception ex = null;
-            try
-            {
                 Glasac g = new Glasac();
                 g.DatumRodjenja = new DateTime(2001, 1, 1);
                 g.Jmbg = "0101001899999";
                 g.DatumRodjenja = new DateTime(2000, 7, 18);
                 g.Jmbg = "1807000999999";
                 Assert.AreEqual(g.Jmbg, "1807000999999");
-            }catch(Exception ex1)
-            {
-                ex = ex1;
-            }
-            Assert.IsNull(ex);
         }
         [TestMethod]
         public void NevalidnaAdresa()
@@ -242,6 +196,8 @@ namespace TestProject
             Assert.AreEqual(ex.Message, "Adresa ne moze biti prazna!");
             Assert.AreEqual(ex1.Message, "Adresa ne moze biti prazna!");
             Assert.AreEqual(ex2.Message, "Adresa mora biti duza od 2 karaktera!");
+            g.Adresa = "Validna adresa";
+            Assert.AreEqual(g.Adresa, "Validna adresa");
         }
         [TestMethod]
         public void IdTest()
