@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Naida\\Source\\Repos\\VVS-Projekat\\Zadaca1\\Zadaca1\\Zadaca1.csproj": {}
+    "C:\\Users\\Naida\\source\\repos\\VVS-Projekat\\Zadaca1\\Zadaca1\\Zadaca1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Naida\\Source\\Repos\\VVS-Projekat\\Zadaca1\\Zadaca1\\Zadaca1.csproj": {
+    "C:\\Users\\Naida\\source\\repos\\VVS-Projekat\\Zadaca1\\Zadaca1\\Zadaca1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Naida\\Source\\Repos\\VVS-Projekat\\Zadaca1\\Zadaca1\\Zadaca1.csproj",
+        "projectUniqueName": "C:\\Users\\Naida\\source\\repos\\VVS-Projekat\\Zadaca1\\Zadaca1\\Zadaca1.csproj",
         "projectName": "Zadaca1",
-        "projectPath": "C:\\Users\\Naida\\Source\\Repos\\VVS-Projekat\\Zadaca1\\Zadaca1\\Zadaca1.csproj",
+        "projectPath": "C:\\Users\\Naida\\source\\repos\\VVS-Projekat\\Zadaca1\\Zadaca1\\Zadaca1.csproj",
         "packagesPath": "C:\\Users\\Naida\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Naida\\Source\\Repos\\VVS-Projekat\\Zadaca1\\Zadaca1\\obj\\",
+        "outputPath": "C:\\Users\\Naida\\source\\repos\\VVS-Projekat\\Zadaca1\\Zadaca1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Naida\\AppData\\Roaming\\NuGet\\NuGet.Config",

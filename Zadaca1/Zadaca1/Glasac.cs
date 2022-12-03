@@ -79,7 +79,7 @@ public class Glasac : IComparable
 
 		set
 		{
-			if(value == null) throw new Exception("Ime ne smije biti prazno!");
+			if(String.IsNullOrEmpty(value)) throw new Exception("Ime ne smije biti prazno!");
 
 			int bezCrtica = value.Length-value.Count(x => x.Equals('-'));
 			int samoSlova= value.Where(x => Char.IsLetter(x)).ToList().Count;
