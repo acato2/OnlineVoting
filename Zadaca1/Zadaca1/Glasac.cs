@@ -83,8 +83,10 @@ public class Glasac : IComparable
 
 			int bezCrtica = value.Length-value.Count(x => x.Equals('-'));
 			int samoSlova= value.Where(x => Char.IsLetter(x)).ToList().Count;
-			if (bezCrtica == samoSlova && samoSlova >= 2 && samoSlova <= 40) ime = value;
-
+			if (bezCrtica == samoSlova && samoSlova >= 2 && samoSlova <= 40)
+			{
+				ime = value;
+			}
 			else throw new Exception("Pogrešan format imena!");
 		}
 	}
@@ -97,7 +99,7 @@ public class Glasac : IComparable
         }
         set
         {
-			if (value == null) throw new Exception("Prezime ne smije biti prazno!");
+			if (String.IsNullOrEmpty(value)) throw new Exception("Prezime ne smije biti prazno!");
 
 			int bezCrtica = value.Length - value.Count(x => x.Equals('-'));
 			int samoSlova = value.Where(x => Char.IsLetter(x)).ToList().Count;
@@ -116,8 +118,8 @@ public class Glasac : IComparable
 		}
         set
         {
-			if (DateTime.Now.Year - value.Year <= 18) throw new Exception("Glasac mora biti punoljetan");
-			if(DateTime.Compare(DateTime.Now,value)<0) throw new Exception("Datum ne može biti u budućnosti!");
+			if (DateTime.Compare(DateTime.Now, value) < 0) throw new Exception("Datum ne moze biti u buducnosti!");
+			if (DateTime.Compare(value.AddYears(18),DateTime.Now)>0) throw new Exception("Glasac mora biti punoljetan");
 			datum_rodenja = value;
 
 		}
@@ -131,6 +133,8 @@ public class Glasac : IComparable
         }
         set
         {
+			if (String.IsNullOrEmpty(value)) throw new Exception("Adresa ne moze biti prazna!");
+			if (value.Length < 2) throw new Exception("Adresa mora biti duza od 2 karaktera!");
 			adresa = value;
         }
     }
@@ -144,6 +148,7 @@ public class Glasac : IComparable
         set
         {
 			String dozvoljeni = "EJKMT";
+			if (String.IsNullOrEmpty(value)) throw new Exception("Broj licne karte ne smije biti prazan!");
 			if (value.Length > 7 || value.Length < 7) throw new Exception("Broj licne mora imati 7 karaktera!");
 			if (value.Substring(0, 3).All(Char.IsDigit) && value.Substring(4, 3).All(Char.IsDigit) &&
 				dozvoljeni.Contains(value.ElementAt(3))) br_licne = value;
@@ -159,8 +164,9 @@ public class Glasac : IComparable
         }
         set
         {
-			if (value.Length != 13) throw new Exception("Matični broj se mora sastojati od 13 brojeva!");
-			if (!value.All(Char.IsDigit)) throw new Exception("Matični broj se mora sastojati od brojeva!");
+			if (String.IsNullOrEmpty(value)) throw new Exception("Maticni broj ne smije biti prazan!");
+			if (value.Length != 13) throw new Exception("Maticni broj se mora sastojati od 13 brojeva!");
+			if (!value.All(Char.IsDigit)) throw new Exception("Maticni broj se mora sastojati od brojeva!");
 			int dan = int.Parse(value.Substring(0, 2));
 			int mjesec=int.Parse(value.Substring(2, 2));
 			int godina=int.Parse(value.Substring(4, 3));
@@ -168,7 +174,7 @@ public class Glasac : IComparable
 			if(dan==datum_rodenja.Day && mjesec==datum_rodenja.Month && 
 			   godina==int.Parse(datum_rodenja.Year.ToString().Substring(4-3))) jmbg = value;
 			else
-			throw new Exception("Neispravan format matičnog broja!");
+			throw new Exception("Neispravan format maticnog broja!");
 		}
     }
 
@@ -180,18 +186,18 @@ public class Glasac : IComparable
         }
         set
         {
-			if (!((ime.Length < 2 && value.Substring(0, 2).Equals(ime)) || value.Substring(0, 2).Equals(ime.Substring(0, 2))))
-				throw new Exception("1Neispravan id!");
-			if (!((prezime.Length < 2 && value.Substring(2, 2).Equals(prezime)) || value.Substring(2, 2).Equals(prezime.Substring(0, 2))))
-				throw new Exception("2Neispravan id!");
-			if (!((adresa.Length < 2 && value.Substring(4, 2).Equals(adresa)) || value.Substring(4, 2).Equals(adresa.Substring(0, 2))))
-				throw new Exception("3Neispravan id!");
+			if ( !value.Substring(0, 2).Equals(ime.Substring(0, 2)) )
+				throw new Exception("Neispravan id!");
+			if ( !value.Substring(2, 2).Equals(prezime.Substring(0, 2)) )
+				throw new Exception("Neispravan id!");
+			if ( !value.Substring(4, 2).Equals(adresa.Substring(0, 2)) )
+				throw new Exception("Neispravan id!");
 			if (!(value.Substring(6, 2).Equals(datum_rodenja.ToString("dd/MM/yyyy").Substring(0, 2))))
-				throw new Exception("4Neispravan id!");
-			if (!((br_licne.Length < 2 && value.Substring(8, 2).Equals(br_licne)) || value.Substring(8, 2).Equals(br_licne.Substring(0, 2))))
-				throw new Exception("5Neispravan id!");
-			if (!((jmbg.Length < 2 && value.Substring(10, 2).Equals(jmbg)) || value.Substring(10, 2).Equals(jmbg.Substring(0, 2))))
-				throw new Exception("6Neispravan id!");
+				throw new Exception("Neispravan id!");
+			if ( !value.Substring(8, 2).Equals(br_licne.Substring(0, 2)) )
+				throw new Exception("Neispravan id!");
+			if ( !value.Substring(10, 2).Equals(jmbg.Substring(0, 2)) )
+				throw new Exception("Neispravan id!");
 			id = value;
         }
     }
