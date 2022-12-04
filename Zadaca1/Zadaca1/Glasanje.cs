@@ -90,7 +90,7 @@ public class Glasanje
     }
     public void GlasajZaNezavisnog(int odabirKandidata)
     {
-        nezavisniKandidati.ElementAt(odabirKandidata - 1).dodajGlas();
+        nezavisniKandidati.ElementAt(odabirKandidata - 1).DodajGlas();
 
     }
 
@@ -112,8 +112,9 @@ public class Glasanje
         List<Kandidat> kandidati = stranka.Kandidati;
         foreach (int i in odabiriKandidata)
         {
-            kandidati.ElementAt((int)i - 1).dodajGlas();
+            kandidati.ElementAt((int)i - 1).DodajGlas();
         }
+        stranka.Ukupan_BrojGlasova_Kandidata++;
     }
     //Kako bi se držali jednog stila imenovanja funkcija, predlažem
     //da ova metoda počinje velikim slovom (GetGlasac).
@@ -132,18 +133,20 @@ public class Glasanje
         Console.WriteLine("Br Stranka  Broj Glasova");
         foreach(Stranka s in st)
         {
-            Console.WriteLine(i.ToString().PadLeft(2, ' ') + ". " + s.Naziv.PadRight(9, ' ') + s.Broj_glasova.ToString());
+            Console.WriteLine(i.ToString().PadLeft(2, ' ') + ". " + s.Naziv.PadRight(9, ' ') + s.BrojGlasova.ToString());
             i++;
         }
         List<Kandidat> nk = new List<Kandidat>(nezavisniKandidati);
         foreach (Kandidat k in nk)
         {
-            Console.WriteLine(i.ToString().PadLeft(2, ' ') + ". " + (k.Ime + " " + k.Prezime).PadRight(20, ' ') + k.Broj_glasova.ToString());
+            Console.WriteLine(i.ToString().PadLeft(2, ' ') + ". " + (k.Ime + " " + k.Prezime).PadRight(20, ' ') + k.BrojGlasova.ToString());
             i++;
         }
 
         Console.WriteLine("Rezultati izbora po strankama: ");
         i = 1;
+        int brojacGlasova = 0;
+        int brojacKandidata = 0;
         foreach (Stranka s in st)
         {
             Console.WriteLine(i.ToString() + ". " + s.Naziv);
@@ -153,10 +156,16 @@ public class Glasanje
             int j = 1;
             foreach (Kandidat k in ka)
             {
-                Console.WriteLine(j.ToString() + ". " + (k.Ime + " " + k.Prezime).PadRight(20, ' ') + k.Broj_glasova.ToString());
+                Console.WriteLine(j.ToString() + ". " + (k.Ime + " " + k.Prezime).PadRight(20, ' ') + k.BrojGlasova.ToString());
+                brojacGlasova += k.BrojGlasova;
                 j++;
+                brojacKandidata++;
             }
             i++;
+            Console.WriteLine("\nUkupan broj glasova je: " + brojacGlasova);
+            Console.WriteLine("Ukupan broj glasova u postotcima je: " + (brojacGlasova/ (double)brojacKandidata) * 100 +"%");
+            brojacGlasova = 0;
+            brojacKandidata = 0;
             Console.WriteLine("------------------------");
         }
     }
@@ -178,7 +187,7 @@ public class Glasanje
         /* Nema potrebe implementirati for petlje kada već postoji gotova bibliotečna funkcija koja može sumu 
          izračunati u jednoj liniji koda.
          - Feedback request je namijenjen Anidi Nezović*/
-        return Stranke.Sum(s => s.Broj_glasova) + Nezavisni.Sum(k => k.Broj_glasova);
+        return Stranke.Sum(s => s.BrojGlasova) + Nezavisni.Sum(k => k.BrojGlasova);
     }
 
     //Primjena jednog stila imenovanja metoda - nazivi pocinju velikim slovima
@@ -188,7 +197,7 @@ public class Glasanje
         
         foreach (Stranka x in stranke)
         {
-            double vrijednost = x.Broj_glasova / (double)DajUkupanBrojGlasova();
+            double vrijednost = x.BrojGlasova / (double)DajUkupanBrojGlasova();
             if (vrijednost > 0.02 || Math.Abs(vrijednost - 0.02) < 0.00000000001)
             {
                 mandati.Add(x);
@@ -205,7 +214,7 @@ public class Glasanje
 
         foreach (Kandidat x in nezavisniKandidati)
         {
-            double vrijednost = x.Broj_glasova / (double)DajUkupanBrojGlasova();
+            double vrijednost = x.BrojGlasova / (double)DajUkupanBrojGlasova();
             if (vrijednost > 0.02 || Math.Abs(vrijednost - 0.02) < 0.00000000001)
             {
                 mandati.Add(x);
@@ -224,7 +233,7 @@ public class Glasanje
         {
             foreach(Kandidat k in s.Kandidati)
             {
-                double vrijednost = k.Broj_glasova / (double)s.Broj_glasova;
+                double vrijednost = k.BrojGlasova / (double)s.BrojGlasova;
                 if (vrijednost > 0.2 || Math.Abs(vrijednost - 0.2) < 0.00000000001)
                 {  
                     mandati.Add(k, s);

@@ -30,7 +30,7 @@ public class Kandidat : IComparable
 		{
 			this.prezime = prezime;
 		}
-		Broj_glasova = 0;
+		BrojGlasova = 0;
 		this.id = id;
     }
 	public string Ime
@@ -57,7 +57,7 @@ public class Kandidat : IComparable
 			prezime = value;
 		}
 	}
-	public int Broj_glasova
+	public int BrojGlasova
 	{
 		get
 		{
@@ -71,7 +71,7 @@ public class Kandidat : IComparable
 	}
 
 
-	public void dodajGlas()
+	public void DodajGlas()
 	{
 		broj_glasova++;
 	}

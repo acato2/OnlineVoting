@@ -252,6 +252,7 @@ namespace Zadaca1
                     {
                         brojac++;
                         Console.WriteLine(brojac + ". " + s.Naziv);
+
                     }
                     foreach (Kandidat k in glasanje.DajKandidateSaMandatima())
                     {
@@ -267,7 +268,10 @@ namespace Zadaca1
                     {
                         brojac++;
                         Console.WriteLine(brojac + ". " + m.Key.Ime + " " + m.Key.Prezime + ", " + m.Value.Naziv);
+                        Console.WriteLine("\nUkupan broj glasova je: "+ m.Key.BrojGlasova);
+                        Console.WriteLine("Ukupan broj glasova glasova u postotcima je: " + (m.Key.BrojGlasova/(double)m.Value.Ukupan_BrojGlasova_Kandidata) * 100 + "%\n");
                     }
+
 
                 }
                 else if (unos == 7)

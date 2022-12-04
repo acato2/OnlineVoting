@@ -9,6 +9,7 @@ public class Stranka : IComparable
 	string naziv;
 	List<Kandidat> kandidati;
 	int broj_glasova;
+	int ukupan_brojGlasova_kandidata = 0;
 
 	public Stranka(string naziv, List<Kandidat> kandidati, int broj_glasova)
 	{
@@ -71,7 +72,7 @@ public class Stranka : IComparable
 			kandidati = value;
 		}
 	}
-	public int Broj_glasova
+	public int BrojGlasova
 	{
 		get
 		{
@@ -83,7 +84,19 @@ public class Stranka : IComparable
 			broj_glasova = value;
 		}
 	}
-    int IComparable.CompareTo(object obj)
+	public int Ukupan_BrojGlasova_Kandidata
+	{
+		get
+		{
+			return ukupan_brojGlasova_kandidata;
+		}
+
+		set
+		{
+			ukupan_brojGlasova_kandidata = value;
+		}
+	}
+	int IComparable.CompareTo(object obj)
     {
         Stranka c = (Stranka)obj;
         if (this.broj_glasova > c.broj_glasova)
