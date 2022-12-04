@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-public class Kandidat : IComparable
+public class Kandidat : Glasac, IComparable
 {
 	string ime, prezime, id;
 	int broj_glasova;

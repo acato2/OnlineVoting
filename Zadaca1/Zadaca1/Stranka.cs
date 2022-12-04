@@ -10,6 +10,8 @@ public class Stranka : IComparable
 	List<Kandidat> kandidati;
 	int broj_glasova;
 	int ukupan_brojGlasova_kandidata = 0;
+	List<Kandidat> rukovodstvo;
+
 
 	public Stranka(string naziv, List<Kandidat> kandidati, int broj_glasova)
 	{
@@ -20,6 +22,7 @@ public class Stranka : IComparable
 		this.naziv = naziv;
 		this.kandidati = kandidati;
 		this.broj_glasova = broj_glasova;
+		this.rukovodstvo = new List<Kandidat>();
 	}
 
 	public static bool ValidateName(string name)
@@ -95,6 +98,23 @@ public class Stranka : IComparable
 		{
 			ukupan_brojGlasova_kandidata = value;
 		}
+	}
+	public List<Kandidat> Rukovodstvo { get => rukovodstvo; set => rukovodstvo = value; }
+	public string RezultatiRukovodstva()
+	{
+		string ispis = "";
+		ispis = ispis + "Naziv stranke: " + naziv;
+		int ukupnoGlasova = 0;
+		foreach (Kandidat k in rukovodstvo)
+		{
+			ukupnoGlasova +=  k.BrojGlasova;
+		}
+		ispis = ispis + "\nUkupan broj glasova: " + ukupnoGlasova + "\nKandidati: ";
+		foreach (Kandidat k in rukovodstvo)
+		{
+			ispis = ispis + "\nIdentifikacioni broj: " + k.id;
+		}
+		return ispis;
 	}
 	int IComparable.CompareTo(object obj)
     {

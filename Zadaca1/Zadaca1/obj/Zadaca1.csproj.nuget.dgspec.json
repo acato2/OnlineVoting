@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Korisnik\\Source\\Repos\\VVS-Projekat\\Zadaca1\\Zadaca1\\Zadaca1.csproj": {}
+    "C:\\Users\\PC\\Source\\Repos\\VVS-Projekat2\\Zadaca1\\Zadaca1\\Zadaca1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Korisnik\\Source\\Repos\\VVS-Projekat\\Zadaca1\\Zadaca1\\Zadaca1.csproj": {
+    "C:\\Users\\PC\\Source\\Repos\\VVS-Projekat2\\Zadaca1\\Zadaca1\\Zadaca1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Korisnik\\Source\\Repos\\VVS-Projekat\\Zadaca1\\Zadaca1\\Zadaca1.csproj",
+        "projectUniqueName": "C:\\Users\\PC\\Source\\Repos\\VVS-Projekat2\\Zadaca1\\Zadaca1\\Zadaca1.csproj",
         "projectName": "Zadaca1",
-        "projectPath": "C:\\Users\\Korisnik\\Source\\Repos\\VVS-Projekat\\Zadaca1\\Zadaca1\\Zadaca1.csproj",
-        "packagesPath": "C:\\Users\\Korisnik\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Korisnik\\Source\\Repos\\VVS-Projekat\\Zadaca1\\Zadaca1\\obj\\",
+        "projectPath": "C:\\Users\\PC\\Source\\Repos\\VVS-Projekat2\\Zadaca1\\Zadaca1\\Zadaca1.csproj",
+        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\PC\\Source\\Repos\\VVS-Projekat2\\Zadaca1\\Zadaca1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Korisnik\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
