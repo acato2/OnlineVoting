@@ -212,5 +212,53 @@ namespace TestProject
             g = new Glasac("Nn", "nozic", "ob", new DateTime(2001, 07, 8), "123E123", "0807001999999");
             Assert.AreEqual(g.Id, "Nnnoob081208");
         }
+
+        #region Inline Testovi
+        static System.Collections.Generic.IEnumerable<object[]> Glasaci
+        {
+            get
+            {
+                return new[]
+                {
+                new object[]{"","Prezime","Adresa",new DateTime(2001,1,1),123E123,0101001891234},
+                new object[]{"Ime","","Adresa",new DateTime(2001,1,1),123E123,0101001891234},
+                new object[]{"n-","Prezime","Adresa",new DateTime(2001,1,1),123E123,0101001891234},
+                new object[]{"naida-nozic","-pp-","Adresa",new DateTime(2001,1,1),123E123,0101001891234},
+                new object[]{"nai-da","Prezime","Adresa",new DateTime(2022,1,1),123E123,0101001891234},
+                new object[]{"naida-da","Prezime","Adresa",new DateTime(2023,1,1),123E123,0101001891234},
+                new object[]{"naid-da","Prezime","Adresa",new DateTime(2001,1,1),123e123,0101001891234},
+                new object[]{"naid-da","Prezime","Adresa",new DateTime(2002,1,1),123e123,0101011891234},
+                new object[]{"naid-da","Prezime","Adresa",new DateTime(2041,1,1),123E123,0101001891245734},
+                new object[]{"naid-da","Prezime","Adresa",new DateTime(2001,1,1),123e123,""}
+                };
+            }
+        }
+        static System.Collections.Generic.IEnumerable<object[]> IspravniGlasaci
+        {
+            get
+            {
+                return new[]
+                {
+                new object[]{"n-n","Pre-zime","Adresa",new DateTime(2001,1,1),123E123,0101001891234}
+                };
+            }
+        }
+
+        [TestMethod]
+        [DynamicData("Glasaci")]
+        [ExpectedException(typeof(ArgumentException))]
+        public void TestKonstruktoraGlasaca(String ime, String prezime,String adresa, DateTime datum_rodenja, String licna, String jmbg)
+        {
+            Glasac p = new Glasac(ime, prezime, adresa, datum_rodenja, licna, jmbg);
+        }
+
+        [TestMethod]
+        [DynamicData("IspravniGlasaci")]
+        [ExpectedException(typeof(ArgumentException))]
+        public void TestKonstruktoraIspravnogGlasaca(String ime, String prezime, String adresa, DateTime datum_rodenja, String licna, String jmbg)
+        {
+            Glasac p = new Glasac(ime, prezime, adresa, datum_rodenja, licna, jmbg);
+        }
+        #endregion
     }
 }
