@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.ConstrainedExecution;
 
@@ -13,6 +14,9 @@ public class Glasac : IComparable
 	String jmbg;
 	public String id;
 	bool glasao = false;
+	int glas_stranci;
+	List<int> glas_kandidatima ;
+	int glas_nezavisnom;
 
 	public Glasac(string ime, string prezime, string adresa, DateTime datum_rodenja, string br_licne, string jmbg)
 	{
@@ -23,6 +27,9 @@ public class Glasac : IComparable
 		BrojLicne = br_licne;
 		Jmbg = jmbg;
 		Id = generisi_id();
+		glas_stranci = -1;
+		glas_kandidatima = new List<int> ();
+		glas_nezavisnom = -1;
 	}
 	public Glasac()
     {
@@ -41,10 +48,13 @@ public class Glasac : IComparable
 			+ ((br_licne.Length >= 2) ? br_licne.Substring(0, 2) : br_licne)
 			+ ((jmbg.Length >= 2) ? jmbg.Substring(0, 2) : jmbg);
 	}
-	public void Glasaj()
+	public void Glasaj(int stranka, List<int> kandidati, int nezavisni=-1)
 	{
 		if (glasao) throw new InvalidOperationException("Glasac ne moze dva puta glasati!");
 		glasao = true;
+		glas_stranci = stranka;
+		glas_kandidatima = kandidati;
+		glas_nezavisnom  = nezavisni;
 	}
 	public void PrikaziGlasaca()
 	{
@@ -201,6 +211,45 @@ public class Glasac : IComparable
 			id = value;
         }
     }
+
+	public int Glas_stranci
+	{
+		get
+		{
+			return glas_stranci;
+		}
+		set
+		{
+			glas_stranci = value;
+		}
+	}
+
+	public int Glas_nezavisnom
+	{
+		get
+		{
+			return glas_nezavisnom;
+		}
+		set
+		{
+			glas_nezavisnom = value;
+		}
+	}
+
+	public List<int> Glas_kadnidatima
+	{
+		get
+		{
+			return glas_kandidatima;
+		}
+		set
+		{
+			glas_kandidatima = value;
+		}
+	}
+
+
+
 	int IComparable.CompareTo(object obj)
 	{
         Glasac c = (Glasac)obj;
