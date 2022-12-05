@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v5.0": {
       "TestProject/1.0.0": {
         "dependencies": {
+          "CsvHelper": "30.0.1",
           "MSTest.TestAdapter": "2.2.7",
           "MSTest.TestFramework": "2.2.7",
           "Microsoft.NET.Test.Sdk": "16.11.0",
@@ -19,6 +20,14 @@
         }
       },
       "coverlet.collector/3.1.0": {},
+      "CsvHelper/30.0.1": {
+        "runtime": {
+          "lib/net5.0/CsvHelper.dll": {
+            "assemblyVersion": "30.0.0.0",
+            "fileVersion": "30.0.1.0"
+          }
+        }
+      },
       "Microsoft.CodeCoverage/16.11.0": {
         "runtime": {
           "lib/netcoreapp1.0/Microsoft.VisualStudio.CodeCoverage.Shim.dll": {
@@ -1096,6 +1105,13 @@
       "sha512": "sha512-YzYqSRrjoP5lULBhTDcTOjuM4IDPPi6PhFsl4w8EI4WdZhE6llt7E38Tg4CHyrS+QKwyu1+9OwkdDgluOdoBTw==",
       "path": "coverlet.collector/3.1.0",
       "hashPath": "coverlet.collector.3.1.0.nupkg.sha512"
+    },
+    "CsvHelper/30.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rcZtgbWR+As4G3Vpgx0AMNmShGuQLFjkHAPIIflzrfkJCx8/AOd4m96ZRmiU1Wi39qS5UVjV0P8qdgqOo5Cwyg==",
+      "path": "csvhelper/30.0.1",
+      "hashPath": "csvhelper.30.0.1.nupkg.sha512"
     },
     "Microsoft.CodeCoverage/16.11.0": {
       "type": "package",

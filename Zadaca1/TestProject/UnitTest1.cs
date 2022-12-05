@@ -1,5 +1,11 @@
+using CsvHelper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+
 
 namespace TestProject
 {
@@ -214,7 +220,7 @@ namespace TestProject
         }
 
         #region Inline Testovi
-        static System.Collections.Generic.IEnumerable<object[]> Glasaci
+        static IEnumerable<object[]> Glasaci
         {
             get
             {
@@ -233,7 +239,7 @@ namespace TestProject
                 };
             }
         }
-        static System.Collections.Generic.IEnumerable<object[]> IspravniGlasaci
+        static IEnumerable<object[]> IspravniGlasaci
         {
             get
             {
@@ -259,6 +265,41 @@ namespace TestProject
         {
             Glasac p = new Glasac(ime, prezime, adresa, datum_rodenja, licna, jmbg);
         }
+        #endregion
+
+        #region CSV Testovi
+
+        static IEnumerable<object[]> GlasaciCSV
+        {
+            get
+            {
+                return UcitajPodatkeCSV();
+            }
+        }
+
+        public static IEnumerable<object[]> UcitajPodatkeCSV()
+        {
+            using (var reader = new StreamReader("podaci.csv"))
+            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+            {
+                var rows = csv.GetRecords<dynamic>();
+                foreach (var row in rows)
+                {
+                    var values = ((IDictionary<String, Object>)row).Values;
+                    var elements = values.Select(elem => elem.ToString()).ToList();
+                    yield return new object[] { elements[0], elements[1],elements[2], DateTime.Parse(elements[3]), elements[4], elements[5] };
+                }
+            }
+        }
+
+        [TestMethod]
+        [DynamicData("GlasaciCSV")]
+        [ExpectedException(typeof(Exception))]
+        public void TestKonstruktoraGlasacCSV(String ime, String prezime, String adresa, DateTime datum_rodenja, String licna, String jmbg)
+        {
+            Glasac p = new Glasac(ime, prezime, adresa, datum_rodenja, licna, jmbg);
+        }
+
         #endregion
     }
 }

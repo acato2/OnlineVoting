@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "7GkFwY2MoqHy8vWcMi5u/GKn8QYI6xvy1GOQNq+k9/wMS1lmWeLTyH8wRzfaKfB2ddxxOerhGYDgcIUdwp3gXw==",
+  "dgSpecHash": "mxJsYsTU0opTBO6bDgHr7H5+V2wy3dmFtC+yNiE/zmGP571P/jc70IRG8ZRRiyG2DuiwOZOtERfgbsLGRdqBlg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Naida\\Source\\Repos\\VVS-Projekat\\Zadaca1\\TestProject\\TestProject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Naida\\.nuget\\packages\\coverlet.collector\\3.1.0\\coverlet.collector.3.1.0.nupkg.sha512",
+    "C:\\Users\\Naida\\.nuget\\packages\\csvhelper\\30.0.1\\csvhelper.30.0.1.nupkg.sha512",
     "C:\\Users\\Naida\\.nuget\\packages\\microsoft.codecoverage\\16.11.0\\microsoft.codecoverage.16.11.0.nupkg.sha512",
     "C:\\Users\\Naida\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",
     "C:\\Users\\Naida\\.nuget\\packages\\microsoft.net.test.sdk\\16.11.0\\microsoft.net.test.sdk.16.11.0.nupkg.sha512",
