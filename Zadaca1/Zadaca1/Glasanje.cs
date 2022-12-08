@@ -203,13 +203,14 @@ public class Glasanje
         ispis += "\nKandidati koji su trenutno osvojili mandat stranke:\n";
         foreach (KeyValuePair<Kandidat, Stranka> m in DajKandidateSaMandatimaUnutarStranke())
         {
+            
             brojac++;
             ispis += brojac + ". " + m.Key.Ime + " " + m.Key.Prezime + ", " + m.Value.Naziv;
             ispis += "\nUkupan broj glasova je: " + m.Key.BrojGlasova + "\n";
             ispis += "Ukupan broj glasova glasova u postotcima je: " + (m.Key.BrojGlasova / (double)m.Value.Ukupan_BrojGlasova_Kandidata) * 100 + "%\n";
         }
         return ispis;
-            }
+    }
 
     //Primjena jednog stila imenovanja metoda - nazivi pocinju velikim slovima
     public String DajTrenutnuIzlaznost()

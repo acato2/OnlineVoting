@@ -41,12 +41,17 @@ namespace TestProject
                           new Kandidat("Šemsudin","Dedić","2"),
                            new Kandidat("Sabina","Hotić","3"),
                     }, 0);
-            Kandidat k = new Kandidat("Bakir", "Izetbegović", "1");
-            List<int> lista = new List<int>(1);
+            Kandidat k = new Kandidat("Bakir", "Izetbegović", "1"); //nezavisni kanidat
+
+            g.Nezavisni = new List<Kandidat>() {k};
+            g.Stranke = new List<Stranka>() {s1};
+
+            List<int> lista = new List<int>() {1};
+
             g.GlasajZaKandidateStranke(s1, lista);
             s1.DodajGlas();
             glasac.Glasaj(1, lista);
-            StringAssert.Contains(g.RezultatiMandata(), "Bakir Izetbegovic");
+            StringAssert.Contains(g.RezultatiMandata(), "Bakir Izetbegović");
 
         }
 
