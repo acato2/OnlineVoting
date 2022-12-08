@@ -4,8 +4,8 @@ using System.Linq;
 
 public class Glasanje
 {
-	List<Kandidat> nezavisniKandidati;
-	List<Stranka> stranke;
+    List<Kandidat> nezavisniKandidati;
+    List<Stranka> stranke;
     List<Glasac> glasaci;
 
     public Glasanje()
@@ -69,10 +69,10 @@ public class Glasanje
             String glasao = "";
             if (x.Glasao)
                 glasao = "+";
-            Console.WriteLine(brojac.ToString().PadLeft(2, ' ') + ". " +x.ime.PadRight(15, ' ') +
-                " "+ x.prezime.PadRight(15, ' ') + " "+ x.id + " " + glasao);
+            Console.WriteLine(brojac.ToString().PadLeft(2, ' ') + ". " + x.ime.PadRight(15, ' ') +
+                " " + x.prezime.PadRight(15, ' ') + " " + x.id + " " + glasao);
             brojac++;
-            
+
         }
     }
     public Glasac DodajGlasaca(string ime, string prezime, string adresa, DateTime datum_rodenja, string br_licne, string jmbg)
@@ -121,17 +121,17 @@ public class Glasanje
     public Glasac GetGlasac(string id)
     {
         Glasac glasac = Glasaci.Find(g => g.id.Equals(id));
-        if (glasac!=null)return glasac;
+        if (glasac != null) return glasac;
         return null;
     }
     public void RezultatiGlasanja()
     {
-        List<Stranka> st = new List<Stranka> (stranke);
+        List<Stranka> st = new List<Stranka>(stranke);
         st.Sort();
         int i = 1;
         Console.WriteLine("\n Rezultati glasanja za stranke:");
         Console.WriteLine("Br Stranka  Broj Glasova");
-        foreach(Stranka s in st)
+        foreach (Stranka s in st)
         {
             Console.WriteLine(i.ToString().PadLeft(2, ' ') + ". " + s.Naziv.PadRight(9, ' ') + s.BrojGlasova.ToString());
             i++;
@@ -162,23 +162,64 @@ public class Glasanje
                 brojacKandidata++;
             }
             i++;
-            Console.WriteLine("\nUkupan broj glasova je: " + brojacGlasova);
-            Console.WriteLine("Ukupan broj glasova u postotcima je: " + (brojacGlasova/ (double)brojacKandidata) * 100 +"%");
+            Console.WriteLine(ispisiUkupanBrojGlasova(brojacGlasova, brojacKandidata));
             brojacGlasova = 0;
             brojacKandidata = 0;
             Console.WriteLine("------------------------");
         }
     }
 
+    public string ispisiUkupanBrojGlasova(int brojacGlasova,int brojacKandidata)
+    {
+        String ispis = "";
+        ispis = "\nUkupan broj glasova je: " + brojacGlasova +"\n";
+        ispis += "Ukupan broj glasova u postotcima je: " + (brojacGlasova / (double)brojacKandidata) * 100 + "%";
+        return ispis;
+    }
+
+    public string RezultatiMandata()
+    {
+        string ispis = "";
+        int brojac = 0;
+
+        //Prvo, mandati stranke ili nezavisnog kandidata
+
+        ispis = "Stranke i nezavisni kandidati sa trenutnim mandatom:\n";
+        foreach (Stranka s in DajStrankeSaMandatima())
+        {
+            brojac++;
+            ispis += brojac + ". " + s.Naziv;
+
+        }
+        foreach (Kandidat k in DajKandidateSaMandatima())
+        {
+            brojac++;
+            ispis += brojac + k.Ime + " " + k.Prezime;
+        }
+
+        brojac = 0;
+        //Drugo, kandidati koji imaju mandat unutar neke stranke
+
+        ispis += "\nKandidati koji su trenutno osvojili mandat stranke:\n";
+        foreach (KeyValuePair<Kandidat, Stranka> m in DajKandidateSaMandatimaUnutarStranke())
+        {
+            brojac++;
+            ispis += brojac + ". " + m.Key.Ime + " " + m.Key.Prezime + ", " + m.Value.Naziv;
+            ispis += "\nUkupan broj glasova je: " + m.Key.BrojGlasova + "\n";
+            ispis += "Ukupan broj glasova glasova u postotcima je: " + (m.Key.BrojGlasova / (double)m.Value.Ukupan_BrojGlasova_Kandidata) * 100 + "%\n";
+        }
+        return ispis;
+            }
+
     //Primjena jednog stila imenovanja metoda - nazivi pocinju velikim slovima
     public String DajTrenutnuIzlaznost()
     {
         int oniKojiSuGlasali = 0;
-        foreach(Glasac g in glasaci)
+        foreach (Glasac g in glasaci)
         {
-            if(g.Glasao) oniKojiSuGlasali++;
+            if (g.Glasao) oniKojiSuGlasali++;
         }
-        return Math.Round(((oniKojiSuGlasali / (double)glasaci.Count)) * 100, 3) + "%"; 
+        return Math.Round(((oniKojiSuGlasali / (double)glasaci.Count)) * 100, 3) + "%";
     }
 
     //Primjena jednog stila imenovanja metoda - nazivi pocinju velikim slovima
@@ -194,7 +235,7 @@ public class Glasanje
     public List<Stranka> DajStrankeSaMandatima()
     {
         List<Stranka> mandati = new List<Stranka>();
-        
+
         foreach (Stranka x in stranke)
         {
             double vrijednost = x.BrojGlasova / (double)DajUkupanBrojGlasova();
@@ -220,22 +261,22 @@ public class Glasanje
                 mandati.Add(x);
             }
         }
-        
+
         return mandati;
     }
 
     //Primjena jednog stila imenovanja metoda - nazivi pocinju velikim slovima
-    public Dictionary<Kandidat,Stranka> DajKandidateSaMandatimaUnutarStranke()
+    public Dictionary<Kandidat, Stranka> DajKandidateSaMandatimaUnutarStranke()
     {
-        Dictionary<Kandidat,Stranka> mandati = new Dictionary<Kandidat ,Stranka>();
+        Dictionary<Kandidat, Stranka> mandati = new Dictionary<Kandidat, Stranka>();
 
         foreach (Stranka s in stranke)
         {
-            foreach(Kandidat k in s.Kandidati)
+            foreach (Kandidat k in s.Kandidati)
             {
                 double vrijednost = k.BrojGlasova / (double)s.BrojGlasova;
                 if (vrijednost > 0.2 || Math.Abs(vrijednost - 0.2) < 0.00000000001)
-                {  
+                {
                     mandati.Add(k, s);
                 }
             }

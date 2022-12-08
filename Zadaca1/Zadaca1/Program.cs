@@ -245,36 +245,8 @@ namespace Zadaca1
                 }
                 else if (unos == 6)
                 {
-                    int brojac = 0;
-
-                    //Prvo, mandati stranke ili nezavisnog kandidata
-
-                    Console.WriteLine("Stranke i nezavisni kandidati sa trenutnim mandatom:\n");
-                    foreach (Stranka s in glasanje.DajStrankeSaMandatima())
-                    {
-                        brojac++;
-                        Console.WriteLine(brojac + ". " + s.Naziv);
-
-                    }
-                    foreach (Kandidat k in glasanje.DajKandidateSaMandatima())
-                    {
-                        brojac++;
-                        Console.WriteLine(brojac + k.Ime + " " + k.Prezime);
-                    }
-
-                    brojac = 0;
-                    //Drugo, kandidati koji imaju mandat unutar neke stranke
-
-                    Console.WriteLine("\nKandidati koji su trenutno osvojili mandat stranke:\n");
-                    foreach (KeyValuePair<Kandidat, Stranka> m in glasanje.DajKandidateSaMandatimaUnutarStranke())
-                    {
-                        brojac++;
-                        Console.WriteLine(brojac + ". " + m.Key.Ime + " " + m.Key.Prezime + ", " + m.Value.Naziv);
-                        Console.WriteLine("\nUkupan broj glasova je: "+ m.Key.BrojGlasova);
-                        Console.WriteLine("Ukupan broj glasova glasova u postotcima je: " + (m.Key.BrojGlasova/(double)m.Value.Ukupan_BrojGlasova_Kandidata) * 100 + "%\n");
-                    }
-
-
+                    Console.WriteLine(glasanje.RezultatiMandata());
+                    
                 }
                 else if (unos == 7)
                 {

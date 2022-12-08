@@ -10,6 +10,7 @@ namespace TestProject
         [TestMethod]
        public void TestPrikazaInformacijaORukovodstvu()
         {
+        
             Stranka s1 = new Stranka("SDA", new List<Kandidat>()
                     {
                          new Kandidat("Bakir","Izetbegović","1"),
