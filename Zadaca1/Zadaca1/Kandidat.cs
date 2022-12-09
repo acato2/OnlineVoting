@@ -69,6 +69,18 @@ public class Kandidat : Glasac, IComparable
 			broj_glasova = value;
 		}
 	}
+	public string Id
+	{
+		get
+		{
+			return id;
+		}
+
+		set
+		{
+			id = value;
+		}
+	}
 
 
 	public void DodajGlas()

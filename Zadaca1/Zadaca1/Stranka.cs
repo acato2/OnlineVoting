@@ -16,13 +16,41 @@ public class Stranka : IComparable
 	public Stranka(string naziv, List<Kandidat> kandidati, int broj_glasova)
 	{
 		if (!ValidateName(naziv)) throw new Exception("Naziv stranke nije validan!");
-		
+
 		//Kandidati se validiraju u klasi Kandidat
 
 		this.naziv = naziv;
 		this.kandidati = kandidati;
 		this.broj_glasova = broj_glasova;
 		this.rukovodstvo = new List<Kandidat>();
+
+
+	}
+
+	public Stranka(string naziv, List<Kandidat> kandidati, List<Kandidat> rukovodstvo)
+	{
+		if (!ValidateName(naziv)) throw new Exception("Naziv stranke nije validan!");
+
+		this.naziv = naziv;
+		this.kandidati = kandidati;
+		this.rukovodstvo = rukovodstvo;
+	}
+	public Stranka(string naziv,int broj_glasova)
+	{
+		if (!ValidateName(naziv)) throw new Exception("Naziv stranke nije validan!");
+
+		this.naziv = naziv;
+		this.broj_glasova = broj_glasova;
+		
+	}
+	public Stranka(string naziv, List<Kandidat> kandidati, List<Kandidat> rukovodstvo,int broj_glasova)
+	{
+		if (!ValidateName(naziv)) throw new Exception("Naziv stranke nije validan!");
+
+		this.naziv = naziv;
+		this.kandidati = kandidati;
+		this.rukovodstvo = rukovodstvo;
+		this.broj_glasova = broj_glasova;
 	}
 
 	public static bool ValidateName(string name)
@@ -39,11 +67,11 @@ public class Stranka : IComparable
 	{
 		int i = 1;
 		//ispisuje kandidate sa rednim brojevima od 1 do n
-		foreach(Kandidat kandidat in kandidati)
-        {
+		foreach (Kandidat kandidat in kandidati)
+		{
 			Console.WriteLine(i + ". " + kandidat.Ime + " " + kandidat.Prezime);
 			i++;
-        }
+		}
 	}
 
 
@@ -99,7 +127,17 @@ public class Stranka : IComparable
 			ukupan_brojGlasova_kandidata = value;
 		}
 	}
-	public List<Kandidat> Rukovodstvo { get => rukovodstvo; set => rukovodstvo = value; }
+	public List<Kandidat> Rukovodstvo {
+		get
+		{
+			return rukovodstvo;
+		}
+
+		set
+		{
+			rukovodstvo = value;
+		}
+	}
 	public string RezultatiRukovodstva()
 	{
 		string ispis = "";
@@ -107,25 +145,25 @@ public class Stranka : IComparable
 		int ukupnoGlasova = 0;
 		foreach (Kandidat k in rukovodstvo)
 		{
-			ukupnoGlasova +=  k.BrojGlasova;
+			ukupnoGlasova += k.BrojGlasova;
 		}
 		ispis = ispis + "\nUkupan broj glasova: " + ukupnoGlasova + "\nKandidati: ";
 		foreach (Kandidat k in rukovodstvo)
 		{
-			ispis = ispis + "\nIdentifikacioni broj: " + k.id;
+			ispis = ispis + "\nIdentifikacioni broj: " + k.Id;
 		}
 		return ispis;
 	}
 	int IComparable.CompareTo(object obj)
-    {
-        Stranka c = (Stranka)obj;
-        if (this.broj_glasova > c.broj_glasova)
-            return -1;
+	{
+		Stranka c = (Stranka)obj;
+		if (this.broj_glasova > c.broj_glasova)
+			return -1;
 
-        if (this.broj_glasova < c.broj_glasova)
-            return 1;
+		if (this.broj_glasova < c.broj_glasova)
+			return 1;
 
-        else
-            return 0;
-    }
+		else
+			return 0;
+	}
 }
