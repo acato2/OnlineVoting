@@ -118,7 +118,7 @@ namespace TestProject
 
         [TestMethod]
         [DynamicData("StrankeCSV")]
-        public void Test2(string naziv, int broj_glasova)
+        public void Test2(string naziv, string broj_glasova)
         {
       
             Glasanje g = new Glasanje();
@@ -126,12 +126,12 @@ namespace TestProject
             lista.Add(new Kandidat("Bakir", "Izetbegović", "1"));
             lista.Add(new Kandidat("Šemsudin", "Dedić", "2"));
             lista.Add(new Kandidat("Sabina", "Hotić", "3"));
-            Stranka stranka = new Stranka(naziv, broj_glasova);
+            Stranka stranka = new Stranka(naziv, Int32.Parse(broj_glasova));
             stranka.Kandidati = lista;
             String ispis = "";
-            ispis = "\nUkupan broj glasova je: " + broj_glasova + "\n";
-            ispis += "Ukupan broj glasova u postotcima je: " + (broj_glasova / (double)lista.Count) * 100 + "%";
-            Assert.AreEqual(ispis, g.ispisiUkupanBrojGlasova(broj_glasova, lista.Count));
+            ispis = "\nUkupan broj glasova je: " + Int32.Parse(broj_glasova) + "\n";
+            ispis += "Ukupan broj glasova u postotcima je: " + (Int32.Parse(broj_glasova) / (double)lista.Count) * 100 + "%";
+            Assert.AreEqual(ispis, g.ispisiUkupanBrojGlasova(Int32.Parse(broj_glasova), lista.Count));
         }
 
         #endregion
