@@ -89,12 +89,57 @@ namespace TestProject
                 Assert.AreEqual(ispis, g.ispisiUkupanBrojGlasova(broj_glasova,lista.Count));
             }
 
-            #endregion
+        #endregion
 
+        #region CSV Testovi
 
-
+        static IEnumerable<object[]> StrankeCSV
+        {
+            get
+            {
+                return UcitajPodatkeCSV();
+            }
         }
+
+        public static IEnumerable<object[]> UcitajPodatkeCSV()
+        {
+            using (var reader = new StreamReader("podaci3.csv"))
+            using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+            {
+                var rows = csv.GetRecords<dynamic>();
+                foreach (var row in rows)
+                {
+                    var values = ((IDictionary<String, Object>)row).Values;
+                    var elements = values.Select(elem => elem.ToString()).ToList();
+                    yield return new object[] { elements[0], elements[1] };
+                }
+            }
+        }
+
+        [TestMethod]
+        [DynamicData("StrankeCSV")]
+        public void Test2(string naziv, int broj_glasova)
+        {
+      
+            Glasanje g = new Glasanje();
+            List<Kandidat> lista = new List<Kandidat>();
+            lista.Add(new Kandidat("Bakir", "Izetbegović", "1"));
+            lista.Add(new Kandidat("Šemsudin", "Dedić", "2"));
+            lista.Add(new Kandidat("Sabina", "Hotić", "3"));
+            Stranka stranka = new Stranka(naziv, broj_glasova);
+            stranka.Kandidati = lista;
+            String ispis = "";
+            ispis = "\nUkupan broj glasova je: " + broj_glasova + "\n";
+            ispis += "Ukupan broj glasova u postotcima je: " + (broj_glasova / (double)lista.Count) * 100 + "%";
+            Assert.AreEqual(ispis, g.ispisiUkupanBrojGlasova(broj_glasova, lista.Count));
+        }
+
+        #endregion
+
+
+
     }
+}
 
 
 

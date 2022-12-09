@@ -43,6 +43,7 @@ public class Stranka : IComparable
 		this.broj_glasova = broj_glasova;
 		
 	}
+
 	public Stranka(string naziv, List<Kandidat> kandidati, List<Kandidat> rukovodstvo,int broj_glasova)
 	{
 		if (!ValidateName(naziv)) throw new Exception("Naziv stranke nije validan!");

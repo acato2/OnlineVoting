@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
+using CsvHelper;
 
 
 namespace TestProject
@@ -61,6 +62,7 @@ namespace TestProject
             Assert.AreEqual(rezultatPovratkaFunkcije, stranka.RezultatiRukovodstva());
 
         }
+
         #endregion
 
 
