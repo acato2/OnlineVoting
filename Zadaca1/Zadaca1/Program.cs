@@ -11,7 +11,7 @@ namespace Zadaca1
     {
         static void Main(string[] args)
         {
-
+            
             Glasanje glasanje = new Glasanje();
 
             //INICIJALIZIRAT CU TESTNE PODATKE
