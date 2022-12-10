@@ -7,8 +7,9 @@ using System.IO;
 using System.Linq;
 
 namespace TestProject
-    {
-        [TestClass]
+{
+    /*Unit testove za funkcionalnost 3 je pisala Semina Muratović*/
+    [TestClass]
         public class UnitTest3
         {
             [TestMethod]

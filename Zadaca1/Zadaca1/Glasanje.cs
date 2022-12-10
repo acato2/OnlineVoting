@@ -161,6 +161,10 @@ public class Glasanje
         }
     }
 
+    /*Implementaciju Funkcionalnosti 3 i njeno Unit testiranje je radila Semina Muratović*/
+
+    /*Informacije o rezultatima za neku stranku uključuju informaciju o ukupnom broju i postotku osvojenih glasova*/
+    /* Pokrivenost ove funkcionalnost - zeleno sve*/
     public string ispisiUkupanBrojGlasova(int brojacGlasova,int brojacKandidata)
     {
         String ispis = "";
@@ -169,6 +173,8 @@ public class Glasanje
         return ispis;
     }
 
+    
+   
     public string RezultatiMandata()
     {
         string ispis = "";
@@ -183,6 +189,10 @@ public class Glasanje
             ispis += brojac + ". " + s.Naziv;
 
         }
+
+        /*broj osvojenih mandata i imena i prezimena kandidata koji su osvojili mandate
+         (uključujući i informacije o broju i postotku osvojenih glasova kandidata).*/
+        /* Pokrivenost ove funkcionalnost */
         foreach (Kandidat k in DajKandidateSaMandatima())
         {
             brojac++;
@@ -190,6 +200,7 @@ public class Glasanje
         }
 
         brojac = 0;
+
         //Drugo, kandidati koji imaju mandat unutar neke stranke
 
         ispis += "\nKandidati koji su trenutno osvojili mandat stranke:\n";
@@ -235,7 +246,7 @@ public class Glasanje
     public List<Kandidat> DajKandidateSaMandatima()
     {
         List<Kandidat> mandati = new List<Kandidat>();
-
+        
         foreach (Kandidat x in nezavisniKandidati)
         {
             double vrijednost = x.BrojGlasova / (double)DajUkupanBrojGlasova();
