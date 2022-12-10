@@ -275,57 +275,69 @@ public class Kandidat : Glasac, IComparable
 	}
 	public String PrikazPrethodnogClanstva()
     {
-		ProvjeraOpisa();
-
 		String prikaz = "";
-		bool stranka = false;
-		bool odDatum = false;
-		bool doDatum = false;
 
-		List<String> stranke = new List<String>();
-		List<String> pocetak = new List<String>();
-		List<String> kraj = new List<String>();
-
-		foreach(String podatak in opis.Split(" "))
+		if (ProvjeraOpisa())
         {
-			if (podatak == "Kandidat" || podatak == "je" || podatak == "član") continue;
-            
-			if(podatak == "stranke") stranka = true;
-			if (podatak == "od") odDatum = true;
-			if (podatak == "do") doDatum = true;
+			bool stranka = false;
+			bool odDatum = false;
+			bool doDatum = false;
+
+			List<String> stranke = new List<String>();
+			List<String> pocetak = new List<String>();
+			List<String> kraj = new List<String>();
+
+			foreach (String podatak in opis.Split(" "))
+			{
+				if (podatak == "Kandidat" || podatak == "je" || podatak == "član") continue;
+
+				if (podatak == "stranke") stranka = true;
+				if (podatak == "od") odDatum = true;
+				if (podatak == "do") doDatum = true;
 
 
-			if (stranka && podatak != "stranke")
-			{
-				stranke.Add(podatak);
-				stranka = false;
+				if (stranka && podatak != "stranke")
+				{
+					stranke.Add(podatak);
+					stranka = false;
+				}
+				if (odDatum && podatak != "od")
+				{
+					pocetak.Add(podatak);
+					odDatum = false;
+				}
+				if (doDatum && podatak != "do")
+				{
+					kraj.Add(podatak);
+					doDatum = false;
+				}
 			}
-			if (odDatum && podatak != "od")
+
+			for (int i = 0; i < kraj.Count(); i++)
 			{
-				pocetak.Add(podatak);
-				odDatum = false;
+				if (kraj[i][kraj[i].Length - 1] == ',')
+				{
+					kraj[i] = kraj[i].Remove(kraj[i].Length - 1, 1);
+				}
 			}
-			if (doDatum && podatak != "do")
-			{
-				kraj.Add(podatak);
-				doDatum = false;
+
+			if(ProvjeraOpisa(stranke, pocetak, kraj))
+            {
+				for (int i = 0; i < stranke.Count(); i++)
+				{
+					prikaz += "Stranka: " + stranke[i] + ", Članstvo od: " + pocetak[i] + ", Članstvo do: " + kraj[i] + "\n";
+				}
+			}
+			else
+            {
+				prikaz = "Greška u unosu detaljnih informacija o kandidatu!";
 			}
 		}
-
-		for (int i = 0; i < kraj.Count(); i++)
-		{
-			if (kraj[i][kraj[i].Length - 1] == ',')
-			{
-				kraj[i] = kraj[i].Remove(kraj[i].Length - 1, 1);
-			}
-		}
-
-		ProvjeraOpisa(stranke, pocetak, kraj);
-
-		for (int i = 0; i < stranke.Count(); i++)
+		else
         {
-			prikaz += "Stranka: " + stranke[i] + ", Članstvo od: " + pocetak[i] + ", Članstvo do: " + kraj[i] + "\n";
-        }
+			prikaz = "Greška u unosu detaljnih informacija o kandidatu!";
+
+		}
 
 		return prikaz;
 	}
