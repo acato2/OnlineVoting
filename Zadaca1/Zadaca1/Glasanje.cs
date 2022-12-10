@@ -173,8 +173,10 @@ public class Glasanje
         return ispis;
     }
 
-    
-   
+
+    /*broj osvojenih mandata i imena i prezimena kandidata koji su osvojili mandate
+         (uključujući i informacije o broju i postotku osvojenih glasova kandidata).*/
+    /* Pokrivenost ove funkcionalnost - sve pokriveno */
     public string RezultatiMandata()
     {
         string ispis = "";
@@ -190,9 +192,7 @@ public class Glasanje
 
         }
 
-        /*broj osvojenih mandata i imena i prezimena kandidata koji su osvojili mandate
-         (uključujući i informacije o broju i postotku osvojenih glasova kandidata).*/
-        /* Pokrivenost ove funkcionalnost */
+       
         foreach (Kandidat k in DajKandidateSaMandatima())
         {
             brojac++;
