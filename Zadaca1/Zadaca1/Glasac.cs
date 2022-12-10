@@ -18,6 +18,14 @@ public class Glasac : IComparable
 	List<int> glas_kandidatima ;
 	int glas_nezavisnom;
 
+	/*Zadatak 2*/
+	public bool VjerodostojnostGlasaca(IProvjera sigurnosnaProvjera)
+	{
+		if (sigurnosnaProvjera.DaLiJeVecGlasao(Id))
+			throw new Exception("Glasač je već izvršio glasanje!");
+		return true;
+	}
+	/**/
 	public Glasac(string ime, string prezime, string adresa, DateTime datum_rodenja, string br_licne, string jmbg)
 	{
 		Ime = ime;

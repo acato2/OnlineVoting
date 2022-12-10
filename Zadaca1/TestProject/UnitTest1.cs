@@ -1,4 +1,4 @@
-using CsvHelper;
+﻿using CsvHelper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
@@ -12,6 +12,31 @@ namespace TestProject
     [TestClass]
     public class UnitTest1
     {
+        [TestMethod]
+        [ExpectedException(typeof(Exception))]
+        public void StubTest1()
+        {
+            try
+            {
+                Glasac g = new Glasac();
+                JesteGlasaoZamjenski jeste = new JesteGlasaoZamjenski();
+                g.VjerodostojnostGlasaca(jeste);
+            }
+            catch(Exception ex)
+            {
+                Assert.AreEqual(ex.Message, "Glasač je već izvršio glasanje!");
+                throw;
+            }
+        }
+
+        [TestMethod]
+        public void StubTes2t()
+        {
+            Glasac g = new Glasac();
+            NijeGlasaoZamjenski nije = new NijeGlasaoZamjenski();
+            Assert.IsTrue(g.VjerodostojnostGlasaca(nije));
+        }
+
         [TestMethod]
         public void PraznoINullImeTest()
         {
@@ -27,8 +52,8 @@ namespace TestProject
             Glasac g = new Glasac();
             Exception ex=Assert.ThrowsException<Exception>(() => g.Ime="n");
             Exception ex1=Assert.ThrowsException<Exception>(() => g.Ime = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaNN");
-            Assert.AreEqual(ex.Message, "Pogre�an format imena!");
-            Assert.AreEqual(ex1.Message, "Pogre�an format imena!");
+            Assert.AreEqual(ex.Message, "Pogrešan format imena!");
+            Assert.AreEqual(ex1.Message, "Pogrešan format imena!");
         }
         [TestMethod]
         public void NevalidniKarakteriUImenu()
@@ -72,8 +97,8 @@ namespace TestProject
             Exception ex = Assert.ThrowsException<Exception>(() => g.Prezime = "n");
             Exception ex1 = Assert.ThrowsException<Exception>(() => g.Prezime = "N-");
             Exception ex2 = Assert.ThrowsException<Exception>(() => g.Prezime = "NNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNg");
-            Assert.AreEqual(ex.Message, "Pogre�an format prezimena!");
-            Assert.AreEqual(ex1.Message, "Pogre�an format prezimena!");
+            Assert.AreEqual(ex.Message, "Pogrešan format prezimena!");
+            Assert.AreEqual(ex1.Message, "Pogrešan format prezimena!");
         }
         [TestMethod]
         public void NevalidniKarakteriUPrezimenu()
