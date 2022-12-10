@@ -18,6 +18,8 @@ public class Glasac : IComparable
 	List<int> glas_kandidatima ;
 	int glas_nezavisnom;
 
+	/*Implementaciju Funkcionalnosti 1 i njeno Unit testiranje je radila Naida Nožić*/
+
 	/*Zadatak 2*/
 	public bool VjerodostojnostGlasaca(IProvjera sigurnosnaProvjera)
 	{

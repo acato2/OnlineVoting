@@ -59,11 +59,6 @@ public class Stranka : IComparable
 		return name.All(Char.IsLetter);
 	}
 
-	//Primjena jednog stila imenovanja metoda - nazivi pocinju velikim slovima
-
-	/* 
-	 * Da li je trebalo da se piše i.ToString()? Ispis radi korektno i bez funkcije ToString().
-	 */
 	public void IspisiKandidate()
 	{
 		int i = 1;

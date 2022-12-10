@@ -26,8 +26,7 @@ public class Glasanje
             nezavisniKandidati = value;
         }
     }
-    /*Funkcije dajNezavisne() i DajStranke() nisu potrebne jer imamo već definisane gettere Nezavisni i Stranke
-     - Feedback request je namijenjen Adni Ćato*/
+
     public List<Stranka> Stranke
     {
         get
@@ -52,16 +51,14 @@ public class Glasanje
             glasaci = value;
         }
     }
-    //Imenovanje Funkcija velikim slovom
     public Glasac DodajGlasaca(Glasac glasac)
     {
         glasaci.Add(glasac);
         return glasac;
     }
-    public void PrikaziGlasace() //Ispisuje listu glasaca, samo ime, prezime i Id, ostalo je zabranjeno u postavci
+    public void PrikaziGlasace()
     {
         int brojac = 1;
-        //glasaci.Sort(delegate (Glasac x, Glasac y) { return x.getPrezime().CompareTo(y.getPrezime(); });
         Console.WriteLine("Rb Ime             Prezime         ID Kod        Glasao/la");
         glasaci.Sort();
         foreach (Glasac x in glasaci)
@@ -82,7 +79,6 @@ public class Glasanje
         return glasac;
     }
 
-    //Primjena jednog stila imenovanja metoda - nazivi pocinju velikim slovima
     public void IzvrsiGlasanjeZaNezavisnog(Glasac glasac, int odabirKandidata)
     {
 
@@ -94,7 +90,6 @@ public class Glasanje
 
     }
 
-    //Primjena jednog stila imenovanja metoda - nazivi pocinju velikim slovima
     public void IzvrsiGlasanjeZaStranku(Glasac glasac, int odabirStranke)
     {
 
@@ -102,7 +97,6 @@ public class Glasanje
     }
     public Stranka GlasajZaStranku(int odabirStranke)
     {
-        //prvo glasa za stranku te onda za pojedinacne kandidate stranke ukoliko zeli
         Stranka stranka = stranke.ElementAt(odabirStranke - 1);
         stranka.DodajGlas();
         return stranka;
@@ -116,8 +110,6 @@ public class Glasanje
         }
         stranka.Ukupan_BrojGlasova_Kandidata++;
     }
-    //Kako bi se držali jednog stila imenovanja funkcija, predlažem
-    //da ova metoda počinje velikim slovom (GetGlasac).
     public Glasac GetGlasac(string id)
     {
         Glasac glasac = Glasaci.Find(g => g.id.Equals(id));
@@ -211,8 +203,6 @@ public class Glasanje
         }
         return ispis;
     }
-
-    //Primjena jednog stila imenovanja metoda - nazivi pocinju velikim slovima
     public String DajTrenutnuIzlaznost()
     {
         int oniKojiSuGlasali = 0;
@@ -222,17 +212,10 @@ public class Glasanje
         }
         return Math.Round(((oniKojiSuGlasali / (double)glasaci.Count)) * 100, 3) + "%";
     }
-
-    //Primjena jednog stila imenovanja metoda - nazivi pocinju velikim slovima
     private int DajUkupanBrojGlasova()
     {
-        /* Nema potrebe implementirati for petlje kada već postoji gotova bibliotečna funkcija koja može sumu 
-         izračunati u jednoj liniji koda.
-         - Feedback request je namijenjen Anidi Nezović*/
         return Stranke.Sum(s => s.BrojGlasova) + Nezavisni.Sum(k => k.BrojGlasova);
     }
-
-    //Primjena jednog stila imenovanja metoda - nazivi pocinju velikim slovima
     public List<Stranka> DajStrankeSaMandatima()
     {
         List<Stranka> mandati = new List<Stranka>();
@@ -249,7 +232,6 @@ public class Glasanje
         return mandati;
     }
 
-    //Primjena jednog stila imenovanja metoda - nazivi pocinju velikim slovima
     public List<Kandidat> DajKandidateSaMandatima()
     {
         List<Kandidat> mandati = new List<Kandidat>();
@@ -265,8 +247,6 @@ public class Glasanje
 
         return mandati;
     }
-
-    //Primjena jednog stila imenovanja metoda - nazivi pocinju velikim slovima
     public Dictionary<Kandidat, Stranka> DajKandidateSaMandatimaUnutarStranke()
     {
         Dictionary<Kandidat, Stranka> mandati = new Dictionary<Kandidat, Stranka>();

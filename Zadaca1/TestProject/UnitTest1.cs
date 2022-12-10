@@ -6,9 +6,9 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 
-
 namespace TestProject
 {
+    /*Unit testove za funkcionalnost 1 je pisala Naida Nožić*/
     [TestClass]
     public class UnitTest1
     {

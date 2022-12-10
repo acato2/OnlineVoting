@@ -39,7 +39,6 @@ namespace Zadaca1
                 if (unos == 1)
                 {
                     Glasac g=new Glasac();
-                    //Dodat unos podataka (ime, prezime, itd.)
                     Console.WriteLine("Unesite Ime: ");
                     while (true)
                     {
