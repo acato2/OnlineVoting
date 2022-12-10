@@ -10,9 +10,6 @@ public class Kandidat : Glasac, IComparable
 	int broj_glasova;
 	private String opis;
 	
-
-
-
 	public Kandidat(string ime, string prezime, string id)
     {
 	
@@ -99,7 +96,6 @@ public class Kandidat : Glasac, IComparable
 		}
 	}
 
-    public object Integer { get; private set; }
 
     public void DodajGlas()
 	{
@@ -110,7 +106,6 @@ public class Kandidat : Glasac, IComparable
 	{
 		return name.All(Char.IsLetter);
 	}
-
 
 	int IComparable.CompareTo(object obj)
     {
@@ -145,55 +140,45 @@ public class Kandidat : Glasac, IComparable
     }
 	private bool ProvjeraOpisa(List<String> stranke, List<String> pocetak, List<String> kraj)
 	{
-		bool validno = true;
 
-		/* Slučaj 1: Veličine listi nisu iste */
-
-		if(stranke.Count != pocetak.Count && pocetak.Count != kraj.Count)
-        {
-			validno = false;
-        }
-		/* Slučaj 2: Veličine listi moraju biti jednake broju ponavljanja stringa 'član stranke' */
+		/* Slučaj 1: Veličine listi moraju biti jednake broju ponavljanja stringa 'član stranke' */
 
 		string regex = @"\bčlan stranke\b";
 		int brojPonavljanja = Regex.Matches(opis, regex).Count;
 
 		if(stranke.Count != brojPonavljanja || pocetak.Count != brojPonavljanja || kraj.Count != brojPonavljanja)
         {
-			validno = false;
-        }
+			return false;
+		}
 
-		/* Slučaj 3: Nazivi stranaka mogu biti samo slova (ne smiju adržavati brojeve niti znakove) */
+		/* Slučaj 2: Nazivi stranaka mogu biti samo slova (ne smiju adržavati brojeve niti znakove) */
 
 		foreach (String naziv in stranke)
         {
 			if(!naziv.All(Char.IsLetter))
             {
-				validno = false;
-				break;
+				return false;
             }
         }
 
-		/* Slučaj 4: Datumi smiju biti samo brojevi te tačke između dana, mjeseca i godine */
+		/* Slučaj 3: Datumi smiju biti samo brojevi te tačke između dana, mjeseca i godine */
 
 		foreach (String datum in pocetak)
 		{
 			if (datum.Any(Char.IsLetter))
 			{
-				validno = false;
-				break;
+				return false;
 			}
 		}
 		foreach (String datum in kraj)
 		{
 			if (datum.Any(Char.IsLetter))
 			{
-				validno = false;
-				break;
+				return false;
 			}
 		}
 
-		/* Slučaj 5: Provjera ispravnosti dana, mjeseca i godine */
+		/* Slučaj 4: Provjera ispravnosti dana, mjeseca i godine */
 		/* Pretpostavljamo da se datum unosi kao 1.1.2000. */
 
 		String[] pomocniPocetak = new String[3];
@@ -206,18 +191,15 @@ public class Kandidat : Glasac, IComparable
 
 			if (Int16.Parse(pomocniPocetak[0]) < 1 || Int16.Parse(pomocniPocetak[0]) > 31)
 			{
-				validno = false;
-				break;
+				return false;
 			}
 			if (Int16.Parse(pomocniPocetak[1]) < 1 || Int16.Parse(pomocniPocetak[1]) > 12)
 			{
-				validno = false;
-				break;
+				return false;
 			}
 			if(Int16.Parse(pomocniPocetak[2]) < 0 || Int16.Parse(pomocniPocetak[2]) > Int16.Parse(trenutnaGodina))
 			{
-				validno = false;
-				break;
+				return false;
 			}
 		}
 
@@ -227,22 +209,19 @@ public class Kandidat : Glasac, IComparable
 
 			if (Int16.Parse(pomocniKraj[0]) < 1 || Int16.Parse(pomocniKraj[0]) > 31)
 			{
-				validno = false;
-				break;
+				return false;
 			}
 			if (Int16.Parse(pomocniKraj[1]) < 1 || Int16.Parse(pomocniKraj[1]) > 12)
             {
-				validno = false;
-				break;
+				return false;
 			}
 			if (Int16.Parse(pomocniKraj[2]) < 0 || Int16.Parse(pomocniKraj[2]) > Int16.Parse(trenutnaGodina))
 			{
-				validno = false;
-				break;
+				return false;
 			}
 		}
 
-		/* Slučaj 6: Datum početka ne može biti poslije datuma kraja članstva */
+		/* Slučaj 5: Datum početka ne može biti poslije datuma kraja članstva */
 
 		for (int i = 0; i < pocetak.Count(); i++)
 		{
@@ -251,27 +230,24 @@ public class Kandidat : Glasac, IComparable
 
 			if(Int16.Parse(pomocniPocetak[2]) > Int16.Parse(pomocniKraj[2]))
             {
-				validno = false;
-				break;
+				return false;
 			}
 			else if (Int16.Parse(pomocniPocetak[2]) == Int16.Parse(pomocniKraj[2]))
             {
 				if (Int16.Parse(pomocniPocetak[1]) > Int16.Parse(pomocniKraj[1]))
                 {
-					validno = false;
-					break;
+					return false;
 				}
 				else if(Int16.Parse(pomocniPocetak[1]) == Int16.Parse(pomocniKraj[1]))
                 {
 					if (Int16.Parse(pomocniPocetak[0]) > Int16.Parse(pomocniKraj[0]))
 					{
-						validno = false;
-						break;
+						return false;
 					}
 				}
 			}
 		}
-			return validno;
+			return true;
 	}
 	public String PrikazPrethodnogClanstva()
     {
@@ -296,12 +272,12 @@ public class Kandidat : Glasac, IComparable
 				if (podatak == "do") doDatum = true;
 
 
-				if (stranka && podatak != "stranke")
+				if (stranka && podatak != "stranke" && podatak != "od")
 				{
 					stranke.Add(podatak);
 					stranka = false;
 				}
-				if (odDatum && podatak != "od")
+				if (odDatum && podatak != "od" && podatak != "do")
 				{
 					pocetak.Add(podatak);
 					odDatum = false;
