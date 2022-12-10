@@ -9,6 +9,7 @@ using System.Linq;
 
 namespace TestProject
 {
+    /* Unit testovi za funkcionalnost 4 - Adna Ćato */
     [TestClass]
     public class UnitTest4
     {
@@ -26,7 +27,7 @@ namespace TestProject
             s1.Rukovodstvo.Add(k);
             StringAssert.StartsWith(s1.RezultatiRukovodstva(), "Naziv stranke: SDA");
             StringAssert.Contains(s1.RezultatiRukovodstva(), "Ukupan broj glasova: 0");
-            StringAssert.Contains(s1.RezultatiRukovodstva(), "Identifikacioni broj");
+            StringAssert.Contains(s1.RezultatiRukovodstva(), "Identifikacioni broj: 1");
         }
         
         #region InlineTestovi

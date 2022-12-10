@@ -543,3 +543,7 @@ C:\Users\PC\Source\Repos\VVS-Projekat1\Zadaca1\TestProject\bin\Release\net5.0\po
 C:\Users\Naida\Source\Repos\VVS-Projekat\Zadaca1\TestProject\bin\Release\net5.0\podaci3.csv
 C:\Users\Naida\Source\Repos\VVS-Projekat\Zadaca1\TestProject\bin\Release\net5.0\podaci4.csv
 C:\Users\Korisnik\Source\Repos\VVS-Projekat\Zadaca1\TestProject\bin\Release\net5.0\podaci4.csv
+C:\Users\PC\Source\Repos\VVS-Projekat2\Zadaca1\TestProject\bin\Release\net5.0\podaci.csv
+C:\Users\PC\Source\Repos\VVS-Projekat2\Zadaca1\TestProject\bin\Release\net5.0\podaci3.csv
+C:\Users\PC\Source\Repos\VVS-Projekat2\Zadaca1\TestProject\bin\Release\net5.0\podaci4.csv
+C:\Users\PC\Source\Repos\VVS-Projekat2\Zadaca1\TestProject\bin\Release\net5.0\CsvHelper.dll

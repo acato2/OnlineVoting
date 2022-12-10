@@ -10,6 +10,8 @@ public class Stranka : IComparable
 	List<Kandidat> kandidati;
 	int broj_glasova;
 	int ukupan_brojGlasova_kandidata = 0;
+
+	// dodana lista kandidata koji su u rukovodstvu - funkcionalnost 4 - Adna Ćato */
 	List<Kandidat> rukovodstvo;
 
 
@@ -134,6 +136,8 @@ public class Stranka : IComparable
 			rukovodstvo = value;
 		}
 	}
+
+	/* Ispis rezultata o rukovodstvu - funkcionalnost 4 - Adna Ćato */
 	public string RezultatiRukovodstva()
 	{
 		string ispis = "";
