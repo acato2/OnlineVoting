@@ -1,0 +1,514 @@
+TpTrace Verbose: 0 : 10408, 1, 2022/12/11, 09:50:09.660, 25976294699142, datacollector.dll, Version: 17.1.0-release-20220113-05
+TpTrace Information: 0 : 10408, 1, 2022/12/11, 09:50:09.673, 25976294769109, datacollector.dll, DataCollectorMain.Run: Starting data collector run with args: --port,61994,--parentprocessid,8348,--diag,C:\Users\anida\Source\Repos\VVS-Projekat\Zadaca1\TestProject\bin\Release\net5.0\fine-code-coverage\coverage-tool-output\diagnostics.datacollector.22-12-11_09-50-09_45791_5.log,--tracelevel,4
+TpTrace Information: 0 : 10408, 1, 2022/12/11, 09:50:09.673, 25976294773783, datacollector.dll, DataCollector: Monitoring parent process with id: '8348'
+TpTrace Information: 0 : 10408, 1, 2022/12/11, 09:50:09.689, 25976294930431, datacollector.dll, Trying to connect to server on socket : 127.0.0.1:61994 
+TpTrace Verbose: 0 : 10408, 1, 2022/12/11, 09:50:09.702, 25976295058035, datacollector.dll, SocketCommunicationManager : SetupClientAsync : Attempting to connect to the server.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:09.717, 25976295214998, datacollector.dll, Connected to the server successfully 
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:09.717, 25976295216636, datacollector.dll, Using the buffer size of 16384 bytes
+TpTrace Information: 0 : 10408, 1, 2022/12/11, 09:50:09.811, 25976296153011, datacollector.dll, DataCollector: Start Request Processing.
+TpTrace Information: 0 : 10408, 1, 2022/12/11, 09:50:09.816, 25976296199514, datacollector.dll, DataCollectionRequestHandler.ProcessRequests : Datacollector received message: (DataCollection.BeforeTestRunStart) -> {
+  "SettingsXml": "<RunSettings><RunConfiguration><ResultsDirectory>C:\\Users\\anida\\Source\\Repos\\VVS-Projekat\\Zadaca1\\TestProject\\bin\\Release\\net5.0\\fine-code-coverage\\coverage-tool-output</ResultsDirectory><TargetPlatform>X64</TargetPlatform><TargetFrameworkVersion>.NETCoreApp,Version=v5.0</TargetFrameworkVersion><DesignMode>False</DesignMode><CollectSourceInformation>False</CollectSourceInformation><TestAdaptersPaths>C:\\Program Files\\dotnet\\sdk\\6.0.201\\Extensions</TestAdaptersPaths></RunConfiguration><LoggerRunSettings><Loggers><Logger friendlyName=\"blame\" enabled=\"True\" /><Logger friendlyName=\"Console\" uri=\"logger://microsoft/TestPlatform/ConsoleLogger/v1\" assemblyQualifiedName=\"Microsoft.VisualStudio.TestPlatform.CommandLine.Internal.ConsoleLogger, vstest.console, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a\" codeBase=\"C:\\Program Files\\dotnet\\sdk\\6.0.201\\vstest.console.dll\" enabled=\"True\" /></Loggers></LoggerRunSettings><DataCollectionRunSettings><DataCollectors><DataCollector friendlyName=\"blame\" enabled=\"True\"><Configuration><ResultsDirectory>C:\\Users\\anida\\Source\\Repos\\VVS-Projekat\\Zadaca1\\TestProject\\bin\\Release\\net5.0\\fine-code-coverage\\coverage-tool-output</ResultsDirectory></Configuration></DataCollector></DataCollectors></DataCollectionRunSettings></RunSettings>",
+  "Sources": [
+    "C:\\Users\\anida\\Source\\Repos\\VVS-Projekat\\Zadaca1\\TestProject\\bin\\Release\\net5.0\\fine-code-coverage\\build-output\\TestProject.dll"
+  ],
+  "IsTelemetryOptedIn": false
+}
+TpTrace Verbose: 0 : 10408, 1, 2022/12/11, 09:50:09.866, 25976296700734, datacollector.dll, TestPluginCache: Update extensions started. Skip filter = False
+TpTrace Verbose: 0 : 10408, 1, 2022/12/11, 09:50:09.867, 25976296709567, datacollector.dll, TestPluginCache: Using directories for assembly resolution 'C:\Program Files\dotnet\sdk\6.0.201\Extensions'.
+TpTrace Verbose: 0 : 10408, 1, 2022/12/11, 09:50:09.867, 25976296710272, datacollector.dll, TestPluginCache: Updated the available extensions to 'C:\Program Files\dotnet\sdk\6.0.201\Extensions\Microsoft.TestPlatform.Extensions.BlameDataCollector.dll,C:\Program Files\dotnet\sdk\6.0.201\Extensions\Microsoft.TestPlatform.Extensions.EventLogCollector.dll'.
+TpTrace Verbose: 0 : 10408, 1, 2022/12/11, 09:50:09.877, 25976296817249, datacollector.dll, TestPluginCache.DiscoverTestExtensions: finding test extensions in assemblies ends with: Collector.dll TPluginInfo: Microsoft.VisualStudio.TestPlatform.Common.DataCollector.DataCollectorConfig TExtension: Microsoft.VisualStudio.TestPlatform.ObjectModel.DataCollection.DataCollector
+TpTrace Verbose: 0 : 10408, 1, 2022/12/11, 09:50:09.878, 25976296821337, datacollector.dll, TestPluginCache.GetExtensionPaths: Filtered extension paths: C:\Program Files\dotnet\sdk\6.0.201\Extensions\Microsoft.TestPlatform.Extensions.BlameDataCollector.dll
+C:\Program Files\dotnet\sdk\6.0.201\Extensions\Microsoft.TestPlatform.Extensions.EventLogCollector.dll
+TpTrace Verbose: 0 : 10408, 1, 2022/12/11, 09:50:09.878, 25976296821914, datacollector.dll, TestPluginCache.GetExtensionPaths: Added default extension paths: 
+TpTrace Verbose: 0 : 10408, 1, 2022/12/11, 09:50:09.878, 25976296822372, datacollector.dll, TestPluginCache.GetExtensionPaths: Added unfilterableExtensionPaths: 
+TpTrace Information: 0 : 10408, 1, 2022/12/11, 09:50:09.879, 25976296830646, datacollector.dll, AssemblyResolver.ctor: Creating AssemblyResolver with searchDirectories C:\Program Files\dotnet\sdk\6.0.201\Extensions,C:\Program Files\dotnet\sdk\6.0.201
+TpTrace Verbose: 0 : 10408, 1, 2022/12/11, 09:50:09.882, 25976296859157, datacollector.dll, TestPluginCache.DiscoverTestExtensions: Discovering the extensions using extension path.
+TpTrace Verbose: 0 : 10408, 1, 2022/12/11, 09:50:09.882, 25976296862070, datacollector.dll, TestPluginCache.GetExtensionPaths: Filtered extension paths: C:\Program Files\dotnet\sdk\6.0.201\Extensions\Microsoft.TestPlatform.Extensions.BlameDataCollector.dll
+C:\Program Files\dotnet\sdk\6.0.201\Extensions\Microsoft.TestPlatform.Extensions.EventLogCollector.dll
+TpTrace Verbose: 0 : 10408, 1, 2022/12/11, 09:50:09.882, 25976296862537, datacollector.dll, TestPluginCache.GetExtensionPaths: Added default extension paths: 
+TpTrace Verbose: 0 : 10408, 1, 2022/12/11, 09:50:09.882, 25976296862840, datacollector.dll, TestPluginCache.GetExtensionPaths: Added unfilterableExtensionPaths: 
+TpTrace Verbose: 0 : 10408, 1, 2022/12/11, 09:50:09.882, 25976296863458, datacollector.dll, TestPluginCache.DiscoverTestExtensions: Discovering the extensions using allExtensionPaths: C:\Program Files\dotnet\sdk\6.0.201\Extensions\Microsoft.TestPlatform.Extensions.BlameDataCollector.dll
+C:\Program Files\dotnet\sdk\6.0.201\Extensions\Microsoft.TestPlatform.Extensions.EventLogCollector.dll
+TpTrace Information: 0 : 10408, 1, 2022/12/11, 09:50:09.882, 25976296864818, datacollector.dll, AssemblyResolver.AddSearchDirectories: Adding more searchDirectories C:\Program Files\dotnet\sdk\6.0.201\Extensions,C:\Program Files\dotnet\sdk\6.0.201
+TpTrace Information: 0 : 10408, 1, 2022/12/11, 09:50:09.882, 25976296865447, datacollector.dll, AssemblyResolver.AddSearchDirectories: Adding more searchDirectories C:\Program Files\dotnet\sdk\6.0.201\Extensions,C:\Program Files\dotnet\sdk\6.0.201
+TpTrace Information: 0 : 10408, 1, 2022/12/11, 09:50:09.883, 25976296870614, datacollector.dll, AssemblyResolver.OnResolve: Microsoft.TestPlatform.Extensions.BlameDataCollector: Resolving assembly.
+TpTrace Information: 0 : 10408, 1, 2022/12/11, 09:50:09.883, 25976296871470, datacollector.dll, AssemblyResolver.OnResolve: Microsoft.TestPlatform.Extensions.BlameDataCollector: Searching in: 'C:\Program Files\dotnet\sdk\6.0.201\Extensions'.
+TpTrace Information: 0 : 10408, 1, 2022/12/11, 09:50:09.884, 25976296881810, datacollector.dll, AssemblyResolver.OnResolve: Microsoft.TestPlatform.Extensions.BlameDataCollector: Loading assembly 'C:\Program Files\dotnet\sdk\6.0.201\Extensions\Microsoft.TestPlatform.Extensions.BlameDataCollector.dll'.
+TpTrace Information: 0 : 10408, 1, 2022/12/11, 09:50:09.885, 25976296893105, datacollector.dll, AssemblyResolver.OnResolve: Resolved assembly: Microsoft.TestPlatform.Extensions.BlameDataCollector, from path: C:\Program Files\dotnet\sdk\6.0.201\Extensions\Microsoft.TestPlatform.Extensions.BlameDataCollector.dll
+TpTrace Error: 0 : 10408, 1, 2022/12/11, 09:50:09.891, 25976296953035, datacollector.dll, The type "Microsoft.TestPlatform.Extensions.BlameDataCollector.BlameCollector" defined in "Microsoft.TestPlatform.Extensions.BlameDataCollector.dll" does not have ExtensionUri attribute.
+TpTrace Information: 0 : 10408, 1, 2022/12/11, 09:50:09.893, 25976296969824, datacollector.dll, AssemblyResolver.OnResolve: Microsoft.TestPlatform.Extensions.EventLogCollector: Resolving assembly.
+TpTrace Information: 0 : 10408, 1, 2022/12/11, 09:50:09.893, 25976296970679, datacollector.dll, AssemblyResolver.OnResolve: Microsoft.TestPlatform.Extensions.EventLogCollector: Searching in: 'C:\Program Files\dotnet\sdk\6.0.201\Extensions'.
+TpTrace Information: 0 : 10408, 1, 2022/12/11, 09:50:09.894, 25976296980312, datacollector.dll, AssemblyResolver.OnResolve: Microsoft.TestPlatform.Extensions.EventLogCollector: Loading assembly 'C:\Program Files\dotnet\sdk\6.0.201\Extensions\Microsoft.TestPlatform.Extensions.EventLogCollector.dll'.
+TpTrace Information: 0 : 10408, 1, 2022/12/11, 09:50:09.895, 25976296988227, datacollector.dll, AssemblyResolver.OnResolve: Resolved assembly: Microsoft.TestPlatform.Extensions.EventLogCollector, from path: C:\Program Files\dotnet\sdk\6.0.201\Extensions\Microsoft.TestPlatform.Extensions.EventLogCollector.dll
+TpTrace Error: 0 : 10408, 1, 2022/12/11, 09:50:09.897, 25976297017788, datacollector.dll, The type "Microsoft.TestPlatform.Extensions.EventLogCollector.EventLogDataCollector" defined in "Microsoft.TestPlatform.Extensions.EventLogCollector.dll" does not have ExtensionUri attribute.
+TpTrace Verbose: 0 : 10408, 1, 2022/12/11, 09:50:09.898, 25976297023158, datacollector.dll, TestPluginCache: Discovered the extensions using extension path 'C:\Program Files\dotnet\sdk\6.0.201\Extensions\Microsoft.TestPlatform.Extensions.BlameDataCollector.dll,C:\Program Files\dotnet\sdk\6.0.201\Extensions\Microsoft.TestPlatform.Extensions.EventLogCollector.dll'.
+TpTrace Verbose: 0 : 10408, 1, 2022/12/11, 09:50:09.898, 25976297023814, datacollector.dll, TestPluginCache: Discoverers are ''.
+TpTrace Verbose: 0 : 10408, 1, 2022/12/11, 09:50:09.898, 25976297024128, datacollector.dll, TestPluginCache: Executors are ''.
+TpTrace Verbose: 0 : 10408, 1, 2022/12/11, 09:50:09.898, 25976297024418, datacollector.dll, TestPluginCache: Executors2 are ''.
+TpTrace Verbose: 0 : 10408, 1, 2022/12/11, 09:50:09.898, 25976297024699, datacollector.dll, TestPluginCache: Setting providers are ''.
+TpTrace Verbose: 0 : 10408, 1, 2022/12/11, 09:50:09.898, 25976297025070, datacollector.dll, TestPluginCache: Loggers are ''.
+TpTrace Information: 0 : 10408, 1, 2022/12/11, 09:50:09.900, 25976297039379, datacollector.dll, TestPluginManager.CreateTestExtension: Attempting to load test extension: Microsoft.TestPlatform.Extensions.BlameDataCollector.BlameCollector
+TpTrace Error: 0 : 10408, 1, 2022/12/11, 09:50:09.900, 25976297043889, datacollector.dll, The type "Microsoft.TestPlatform.Extensions.BlameDataCollector.BlameCollector" defined in "Microsoft.TestPlatform.Extensions.BlameDataCollector.dll" does not have ExtensionUri attribute.
+TpTrace Information: 0 : 10408, 1, 2022/12/11, 09:50:09.908, 25976297119079, datacollector.dll, Listening on Endpoint : 127.0.0.1:61996
+TpTrace Information: 0 : 10408, 1, 2022/12/11, 09:50:09.918, 25976297224543, datacollector.dll, DataCollectionRequestHandler.ProcessRequests : DataCollection started.
+TpTrace Information: 0 : 10408, 1, 2022/12/11, 09:50:09.946, 25976297502588, datacollector.dll, DataCollectionRequestHandler.ProcessRequests : Datacollector received message: (DataCollection.TestHostLaunched) -> {
+  "ProcessId": 16196
+}
+TpTrace Information: 0 : 10408, 7, 2022/12/11, 09:50:10.269, 25976300734893, datacollector.dll, Using the buffer size of 16384 bytes
+TpTrace Information: 0 : 10408, 7, 2022/12/11, 09:50:10.269, 25976300736477, datacollector.dll, Accepted Client request and set the flag
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:10.975, 25976307788841, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.028, 25976308322160, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.028, 25976308326438, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'StubTest1 - 8e984606-2292-2171-51ba-e8fed4a61512' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.071, 25976308753675, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.076, 25976308805688, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.080, 25976308841369, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'StubTest1 - 8e984606-2292-2171-51ba-e8fed4a61512' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.095, 25976308991611, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.096, 25976308998318, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.096, 25976308999764, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'StubTes2t - 7d358f08-4594-500c-7aa7-ccfb114527f3' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.097, 25976309015167, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.098, 25976309021692, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.098, 25976309023221, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'StubTes2t - 7d358f08-4594-500c-7aa7-ccfb114527f3' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.099, 25976309034958, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.100, 25976309047402, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.101, 25976309050854, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'PraznoINullImeTest - 6609534f-d1cd-b234-dffc-967099c1f96a' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.104, 25976309082397, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.105, 25976309088979, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.105, 25976309090347, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'PraznoINullImeTest - 6609534f-d1cd-b234-dffc-967099c1f96a' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.106, 25976309100822, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.106, 25976309107691, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.107, 25976309109434, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'NevalidnaDuzinaImenaTest - b45cbfbd-0511-5ad0-9383-920d402db8bf' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.111, 25976309152790, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.112, 25976309164011, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.112, 25976309166366, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'NevalidnaDuzinaImenaTest - b45cbfbd-0511-5ad0-9383-920d402db8bf' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.114, 25976309179477, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.114, 25976309186663, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.115, 25976309188324, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'NevalidniKarakteriUImenu - bf53f62e-c433-9f53-22fb-4e982d4c62da' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.119, 25976309228445, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.119, 25976309236913, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.120, 25976309239890, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'NevalidniKarakteriUImenu - bf53f62e-c433-9f53-22fb-4e982d4c62da' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.121, 25976309252270, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.122, 25976309259440, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.122, 25976309261211, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'ValidniKarakteriUImenu - 83da6666-a23c-97b8-7fab-4e27e730aae2' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.124, 25976309277969, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.124, 25976309284902, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.124, 25976309286602, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'ValidniKarakteriUImenu - 83da6666-a23c-97b8-7fab-4e27e730aae2' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.126, 25976309298380, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.126, 25976309305549, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.126, 25976309307157, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'PraznoINullPrezimeTest - f153ffb9-e6a7-46eb-e019-18ace723b046' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.129, 25976309328202, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.129, 25976309335661, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.129, 25976309337263, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'PraznoINullPrezimeTest - f153ffb9-e6a7-46eb-e019-18ace723b046' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.131, 25976309348763, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.131, 25976309355940, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.131, 25976309357416, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'NevalidnaDuzinaPrezimenaTest - bed12e12-4709-e3f0-99a5-9004f248a182' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.135, 25976309389996, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.136, 25976309398703, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.136, 25976309401034, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'NevalidnaDuzinaPrezimenaTest - bed12e12-4709-e3f0-99a5-9004f248a182' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.137, 25976309413018, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.138, 25976309420316, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.138, 25976309422190, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'NevalidniKarakteriUPrezimenu - 00a27b9e-5d38-49b7-f061-73e92d4b262d' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.145, 25976309494480, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.146, 25976309505703, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.146, 25976309507768, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'NevalidniKarakteriUPrezimenu - 00a27b9e-5d38-49b7-f061-73e92d4b262d' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.192, 25976309964341, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.193, 25976309971492, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.193, 25976309973405, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'ValidniKarakteriUPrezimenu - 19d1c68d-6cd9-6d97-9a9a-12110743e4d1' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.195, 25976309991465, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.196, 25976309998340, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.196, 25976309999889, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'ValidniKarakteriUPrezimenu - 19d1c68d-6cd9-6d97-9a9a-12110743e4d1' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.197, 25976310011498, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.198, 25976310018003, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.198, 25976310019370, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'NijePunoljetanGlasacTest - 8f2e477d-f338-9ad7-940f-59de403c0ec8' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.202, 25976310061530, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.203, 25976310069307, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.203, 25976310072121, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'NijePunoljetanGlasacTest - 8f2e477d-f338-9ad7-940f-59de403c0ec8' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.204, 25976310083888, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.205, 25976310090918, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.205, 25976310092672, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'DatumUBuducnostiTest - 93f72a4f-3df5-7c85-5e2e-cba595a7225c' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.207, 25976310115433, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.208, 25976310122639, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.208, 25976310124724, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'DatumUBuducnostiTest - 93f72a4f-3df5-7c85-5e2e-cba595a7225c' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.209, 25976310136180, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.210, 25976310143183, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.210, 25976310144928, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'IspravanDatumTest - 29489784-b375-b520-63b2-05f95bd82507' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.212, 25976310160262, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.213, 25976310168085, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.213, 25976310170101, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'IspravanDatumTest - 29489784-b375-b520-63b2-05f95bd82507' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.214, 25976310184981, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.215, 25976310195889, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.216, 25976310200894, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'NevalidnaDuzinaLicneKarteTest - d46b9494-8628-aa3a-b00c-b0091165537c' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.219, 25976310229989, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.219, 25976310236964, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.220, 25976310238763, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'NevalidnaDuzinaLicneKarteTest - d46b9494-8628-aa3a-b00c-b0091165537c' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.221, 25976310255309, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.222, 25976310264845, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.222, 25976310266882, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'NevalidniFormatLicneKarteTest - 47b7ec83-ae56-4a9e-8ee3-60f65d711ac8' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.226, 25976310302345, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.227, 25976310313454, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.227, 25976310316411, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'NevalidniFormatLicneKarteTest - 47b7ec83-ae56-4a9e-8ee3-60f65d711ac8' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.229, 25976310329159, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.229, 25976310336222, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.230, 25976310337983, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'ValidniFormatLicneKarteTest - ab31ea7d-d7f1-85e6-d67c-4d9570cac11f' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.231, 25976310356289, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.232, 25976310363325, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.232, 25976310365313, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'ValidniFormatLicneKarteTest - ab31ea7d-d7f1-85e6-d67c-4d9570cac11f' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.234, 25976310378251, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.235, 25976310388616, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.235, 25976310391132, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'NevalidnaDuzinaMaticnogBrojaTest - cf2b636c-3ba9-4990-d3fd-7435fa3f1b5a' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.237, 25976310414231, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.238, 25976310424395, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.238, 25976310426481, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'NevalidnaDuzinaMaticnogBrojaTest - cf2b636c-3ba9-4990-d3fd-7435fa3f1b5a' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.239, 25976310437741, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.240, 25976310444592, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.240, 25976310446098, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'NevalidanFormatMaticnogBroja - 3c6520c2-788d-09f8-8ca2-c466abeec3f4' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.243, 25976310469730, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.243, 25976310477113, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.244, 25976310479213, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'NevalidanFormatMaticnogBroja - 3c6520c2-788d-09f8-8ca2-c466abeec3f4' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.247, 25976310516491, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.248, 25976310523854, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.248, 25976310525717, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'ValidniMaticniBrojevi - 9a7f2a3b-42d3-eb9b-333a-eb6c6de5b097' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.250, 25976310543548, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.251, 25976310553855, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.251, 25976310556545, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'ValidniMaticniBrojevi - 9a7f2a3b-42d3-eb9b-333a-eb6c6de5b097' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.253, 25976310568183, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.253, 25976310575005, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.253, 25976310576652, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'NevalidnaAdresa - bcb7ef84-03b1-456b-d2cf-96d37e4fedac' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.256, 25976310601073, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.257, 25976310611636, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.257, 25976310613641, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'NevalidnaAdresa - bcb7ef84-03b1-456b-d2cf-96d37e4fedac' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.258, 25976310627005, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.259, 25976310633759, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.259, 25976310635297, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'IdTest - a247832e-5625-2e86-59bd-dcd4b15dcb32' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.262, 25976310666409, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.263, 25976310677172, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.264, 25976310679921, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'IdTest - a247832e-5625-2e86-59bd-dcd4b15dcb32' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.265, 25976310694489, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.268, 25976310719305, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.268, 25976310721632, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestKonstruktoraGlasaca (,Prezime,Adresa,1. 1. 2001. 00:00:00,1,23E+125,101001891234) - 65e76059-66db-cc4a-5837-d2e30c68faea' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.277, 25976310808556, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.278, 25976310821988, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.278, 25976310824350, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestKonstruktoraGlasaca (,Prezime,Adresa,1. 1. 2001. 00:00:00,1,23E+125,101001891234) - 65e76059-66db-cc4a-5837-d2e30c68faea' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.280, 25976310841685, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.284, 25976310884939, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.284, 25976310887268, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestKonstruktoraGlasaca (Ime,,Adresa,1. 1. 2001. 00:00:00,1,23E+125,101001891234) - 75ad52ac-2840-5813-f0be-71bd9c3a1641' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.286, 25976310903728, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.287, 25976310911973, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.287, 25976310914000, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestKonstruktoraGlasaca (Ime,,Adresa,1. 1. 2001. 00:00:00,1,23E+125,101001891234) - 75ad52ac-2840-5813-f0be-71bd9c3a1641' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.288, 25976310925812, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.289, 25976310933731, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.289, 25976310935404, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestKonstruktoraGlasaca (n-,Prezime,Adresa,1. 1. 2001. 00:00:00,1,23E+125,101001891234) - eb881e9a-4f71-8e69-4daf-cdf7850bbcb4' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.291, 25976310950624, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.292, 25976310958491, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.292, 25976310959944, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestKonstruktoraGlasaca (n-,Prezime,Adresa,1. 1. 2001. 00:00:00,1,23E+125,101001891234) - eb881e9a-4f71-8e69-4daf-cdf7850bbcb4' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.293, 25976310974327, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.294, 25976310982037, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.294, 25976310983846, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestKonstruktoraGlasaca (naida-nozic,-pp-,Adresa,1. 1. 2001. 00:00:00,1,23E+125,101001891234) - 39b390b0-38d3-98a5-ed5d-67dde3620b2b' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.296, 25976311002356, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.297, 25976311010699, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.297, 25976311012611, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestKonstruktoraGlasaca (naida-nozic,-pp-,Adresa,1. 1. 2001. 00:00:00,1,23E+125,101001891234) - 39b390b0-38d3-98a5-ed5d-67dde3620b2b' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.298, 25976311027548, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.299, 25976311037929, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.300, 25976311041477, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestKonstruktoraGlasaca (nai-da,Prezime,Adresa,1. 1. 2022. 00:00:00,1,23E+125,101001891234) - 3fd10ba1-af43-e08c-fd86-2446f04571df' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.302, 25976311060415, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.303, 25976311068536, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.303, 25976311070175, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestKonstruktoraGlasaca (nai-da,Prezime,Adresa,1. 1. 2022. 00:00:00,1,23E+125,101001891234) - 3fd10ba1-af43-e08c-fd86-2446f04571df' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.304, 25976311082366, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.305, 25976311089690, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.305, 25976311090832, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestKonstruktoraGlasaca (naida-da,Prezime,Adresa,1. 1. 2023. 00:00:00,1,23E+125,101001891234) - d13e3db5-5f1c-e82f-e9c4-4302027b2e83' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.307, 25976311109017, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.307, 25976311116555, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.307, 25976311117906, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestKonstruktoraGlasaca (naida-da,Prezime,Adresa,1. 1. 2023. 00:00:00,1,23E+125,101001891234) - d13e3db5-5f1c-e82f-e9c4-4302027b2e83' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.315, 25976311192505, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.316, 25976311201582, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.316, 25976311203751, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestKonstruktoraGlasaca (naid-da,Prezime,Adresa,1. 1. 2001. 00:00:00,1,23E+125,101001891234) - 5ad49a6b-3825-f715-f2b1-adeac1452bef' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.318, 25976311219596, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.318, 25976311227494, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.319, 25976311228939, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestKonstruktoraGlasaca (naid-da,Prezime,Adresa,1. 1. 2001. 00:00:00,1,23E+125,101001891234) - 5ad49a6b-3825-f715-f2b1-adeac1452bef' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.320, 25976311243534, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.321, 25976311254284, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.321, 25976311255499, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestKonstruktoraGlasaca (naid-da,Prezime,Adresa,1. 1. 2002. 00:00:00,1,23E+125,101011891234) - c0dc6d95-af3e-1c31-81ab-5f6ebcd93bd2' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.323, 25976311272946, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.324, 25976311283973, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.324, 25976311285657, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestKonstruktoraGlasaca (naid-da,Prezime,Adresa,1. 1. 2002. 00:00:00,1,23E+125,101011891234) - c0dc6d95-af3e-1c31-81ab-5f6ebcd93bd2' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.326, 25976311300673, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.327, 25976311308807, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.327, 25976311311092, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestKonstruktoraGlasaca (naid-da,Prezime,Adresa,1. 1. 2041. 00:00:00,1,23E+125,101001891245734) - 1f6ad41c-fd69-0cc4-15cb-cac37bfb3b74' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.328, 25976311326834, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.329, 25976311334720, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.329, 25976311336153, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestKonstruktoraGlasaca (naid-da,Prezime,Adresa,1. 1. 2041. 00:00:00,1,23E+125,101001891245734) - 1f6ad41c-fd69-0cc4-15cb-cac37bfb3b74' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.331, 25976311350501, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.332, 25976311359216, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.332, 25976311361184, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestKonstruktoraGlasaca (naid-da,Prezime,Adresa,1. 1. 2001. 00:00:00,1,23E+125,) - 86a1f99d-0769-8aa6-97bc-1bb9e970506e' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.334, 25976311381044, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.335, 25976311388956, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.335, 25976311390316, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestKonstruktoraGlasaca (naid-da,Prezime,Adresa,1. 1. 2001. 00:00:00,1,23E+125,) - 86a1f99d-0769-8aa6-97bc-1bb9e970506e' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.336, 25976311407593, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.337, 25976311416647, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.337, 25976311417773, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestKonstruktoraIspravnogGlasaca (n-n,Pre-zime,Adresa,1. 1. 2001. 00:00:00,1,23E+125,101001891234) - 2412dee8-59a7-c373-fc02-3329abbfe2e5' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.339, 25976311431820, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.340, 25976311439451, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.340, 25976311440882, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestKonstruktoraIspravnogGlasaca (n-n,Pre-zime,Adresa,1. 1. 2001. 00:00:00,1,23E+125,101001891234) - 2412dee8-59a7-c373-fc02-3329abbfe2e5' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.341, 25976311457096, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.342, 25976311464853, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.342, 25976311466422, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestKonstruktoraGlasacCSV (,Prezime,Adresa,1. 1. 2001. 00:00:00,123E123,0101001891234) - 0ed65529-33cd-aee5-153e-966ea187f3a9' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.345, 25976311488261, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.345, 25976311496497, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.346, 25976311498425, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestKonstruktoraGlasacCSV (,Prezime,Adresa,1. 1. 2001. 00:00:00,123E123,0101001891234) - 0ed65529-33cd-aee5-153e-966ea187f3a9' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.347, 25976311514307, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.348, 25976311522787, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.348, 25976311524683, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestKonstruktoraGlasacCSV (Ime,,Adresa,1. 1. 2001. 00:00:00,123E123,0101001891234) - 722320db-d56b-b663-2e8e-afe445ec0665' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.350, 25976311546796, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.351, 25976311554685, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.351, 25976311556034, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestKonstruktoraGlasacCSV (Ime,,Adresa,1. 1. 2001. 00:00:00,123E123,0101001891234) - 722320db-d56b-b663-2e8e-afe445ec0665' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.352, 25976311566706, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.353, 25976311573874, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.353, 25976311575014, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestKonstruktoraGlasacCSV (n-,Prezime,Adresa,1. 1. 2001. 00:00:00,123E123,0101001891234) - 441a393d-9d14-7ac0-114e-3fabd1de7f07' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.355, 25976311593110, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.356, 25976311604448, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.356, 25976311605789, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestKonstruktoraGlasacCSV (n-,Prezime,Adresa,1. 1. 2001. 00:00:00,123E123,0101001891234) - 441a393d-9d14-7ac0-114e-3fabd1de7f07' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.358, 25976311621530, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.359, 25976311630097, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.359, 25976311631952, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestKonstruktoraGlasacCSV (naida-nozic,-pp-,Adresa,1. 1. 2001. 00:00:00,123E123,0101001891234) - 9f4c4fc3-b9a9-bdb5-2e08-e569c485e893' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.361, 25976311655472, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.362, 25976311663673, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.362, 25976311665386, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestKonstruktoraGlasacCSV (naida-nozic,-pp-,Adresa,1. 1. 2001. 00:00:00,123E123,0101001891234) - 9f4c4fc3-b9a9-bdb5-2e08-e569c485e893' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.367, 25976311709706, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.368, 25976311718053, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.368, 25976311719727, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestKonstruktoraGlasacCSV (nai-da,Prezime,Adresa,1. 1. 2022. 00:00:00,123E123,0101001891234) - 280b0e75-77f6-6648-841a-bec59c9b4cb7' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.370, 25976311739259, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.370, 25976311747189, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.371, 25976311748658, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestKonstruktoraGlasacCSV (nai-da,Prezime,Adresa,1. 1. 2022. 00:00:00,123E123,0101001891234) - 280b0e75-77f6-6648-841a-bec59c9b4cb7' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.372, 25976311765630, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.373, 25976311773900, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.373, 25976311775291, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestKonstruktoraGlasacCSV (naida-da,Prezime,Adresa,1. 1. 2023. 00:00:00,123E123,0101001891234) - 60aaa306-7508-0ae7-f543-753994714c6b' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.376, 25976311801449, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.377, 25976311813911, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.377, 25976311815903, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestKonstruktoraGlasacCSV (naida-da,Prezime,Adresa,1. 1. 2023. 00:00:00,123E123,0101001891234) - 60aaa306-7508-0ae7-f543-753994714c6b' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.379, 25976311833285, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.380, 25976311841531, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.380, 25976311843617, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestKonstruktoraGlasacCSV (naid-da,Prezime,Adresa,1. 1. 2001. 00:00:00,123e123,0101001891234) - 3c84f1f1-bfae-cfdb-c807-95cdefa23eac' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.382, 25976311863452, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.383, 25976311871730, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.383, 25976311873647, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestKonstruktoraGlasacCSV (naid-da,Prezime,Adresa,1. 1. 2001. 00:00:00,123e123,0101001891234) - 3c84f1f1-bfae-cfdb-c807-95cdefa23eac' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.384, 25976311885340, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.385, 25976311893017, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.385, 25976311894442, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestKonstruktoraGlasacCSV (naid-da,Prezime,Adresa,1. 1. 2002. 00:00:00,123e123,0101011891234) - 4beea7e6-d730-a254-213b-535bd9ddde38' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.387, 25976311916634, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.388, 25976311925279, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.388, 25976311927403, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestKonstruktoraGlasacCSV (naid-da,Prezime,Adresa,1. 1. 2002. 00:00:00,123e123,0101011891234) - 4beea7e6-d730-a254-213b-535bd9ddde38' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.390, 25976311940185, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.391, 25976311948806, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.391, 25976311951367, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestKonstruktoraGlasacCSV (naid-da,Prezime,Adresa,1. 1. 2041. 00:00:00,123E123,0101001891245734) - 882315c5-4132-156a-3278-0338dd323548' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.393, 25976311971015, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.394, 25976311979386, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.394, 25976311980803, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestKonstruktoraGlasacCSV (naid-da,Prezime,Adresa,1. 1. 2041. 00:00:00,123E123,0101001891245734) - 882315c5-4132-156a-3278-0338dd323548' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.395, 25976311996458, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.396, 25976312004450, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.396, 25976312005741, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestKonstruktoraGlasacCSV (naid-da,Prezime,Adresa,1. 1. 2001. 00:00:00,123e123,) - 1f774a48-4622-2790-5d33-6df295f4b89f' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.399, 25976312032562, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.400, 25976312044496, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.400, 25976312045933, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestKonstruktoraGlasacCSV (naid-da,Prezime,Adresa,1. 1. 2001. 00:00:00,123e123,) - 1f774a48-4622-2790-5d33-6df295f4b89f' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.402, 25976312058602, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.402, 25976312064382, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.402, 25976312065497, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestPrikazaInformacijaOPrethodnomClanstvu1 - a05006c7-210f-5cfa-ee47-80581b2a92d2' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.431, 25976312356205, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.432, 25976312366128, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.433, 25976312368748, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestPrikazaInformacijaOPrethodnomClanstvu1 - a05006c7-210f-5cfa-ee47-80581b2a92d2' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.434, 25976312380044, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.435, 25976312393957, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.435, 25976312395626, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestPrikazaInformacijaOPrethodnomClanstvu2 - a60f8bfc-b5d1-e538-b8a0-92d7058b1df7' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.438, 25976312419464, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.439, 25976312428418, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.439, 25976312430511, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestPrikazaInformacijaOPrethodnomClanstvu2 - a60f8bfc-b5d1-e538-b8a0-92d7058b1df7' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.440, 25976312440925, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.440, 25976312446511, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.440, 25976312447796, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestPraznogOpisa - 2d3a9dd2-19dd-b59d-a9cb-077f7d0acf73' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.442, 25976312460873, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.442, 25976312466594, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.443, 25976312468482, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestPraznogOpisa - 2d3a9dd2-19dd-b59d-a9cb-077f7d0acf73' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.446, 25976312504812, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.447, 25976312510342, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.447, 25976312511826, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestPocetkaOpisa - 8efecc31-7e18-d1a3-c987-ea5a06d4b44a' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.448, 25976312524189, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.449, 25976312531013, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.449, 25976312534303, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestPocetkaOpisa - 8efecc31-7e18-d1a3-c987-ea5a06d4b44a' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.450, 25976312544633, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.451, 25976312549998, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.451, 25976312551268, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestNemaNazivaStranke - f69428b3-2b21-b8b1-cb20-758b3882bc76' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.452, 25976312563288, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.453, 25976312569322, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.453, 25976312571234, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestNemaNazivaStranke - f69428b3-2b21-b8b1-cb20-758b3882bc76' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.454, 25976312581956, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.454, 25976312587575, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.455, 25976312589015, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestNazivaStranke - 0b4cf853-d21b-67b0-85c3-2bed69e233a9' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.456, 25976312603045, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.457, 25976312608297, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.457, 25976312609836, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestNazivaStranke - 0b4cf853-d21b-67b0-85c3-2bed69e233a9' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.458, 25976312619132, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.458, 25976312627014, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.459, 25976312629006, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestUnosaDatuma - 100ddeb4-6e9b-43ae-0144-a3236b1cc157' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.460, 25976312643600, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.461, 25976312648896, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.461, 25976312650319, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestUnosaDatuma - 100ddeb4-6e9b-43ae-0144-a3236b1cc157' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.462, 25976312659872, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.462, 25976312665017, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.462, 25976312666284, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestUnosaDana - 30e41621-8cfc-6e8b-fce9-6482413325c1' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.464, 25976312679247, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.464, 25976312684900, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.464, 25976312686287, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestUnosaDana - 30e41621-8cfc-6e8b-fce9-6482413325c1' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.465, 25976312696734, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.466, 25976312702048, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.466, 25976312703305, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestUnosaMjeseca - 4c3eaf23-f41d-b963-d8ca-2972a3c38a4c' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.467, 25976312715681, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.468, 25976312723453, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.468, 25976312725178, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestUnosaMjeseca - 4c3eaf23-f41d-b963-d8ca-2972a3c38a4c' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.469, 25976312733943, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.470, 25976312738942, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.470, 25976312740095, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestUnosaGodine - e08a01af-2212-4d23-1735-6d763a99ed08' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.472, 25976312760392, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.472, 25976312766178, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.472, 25976312767695, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestUnosaGodine - e08a01af-2212-4d23-1735-6d763a99ed08' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.473, 25976312776327, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.474, 25976312781024, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.474, 25976312782249, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestDatumaPocetkaIKraja - 24d56d3d-ad49-5e2c-2929-f6ee11010c51' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.475, 25976312796313, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.476, 25976312801648, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.476, 25976312802981, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestDatumaPocetkaIKraja - 24d56d3d-ad49-5e2c-2929-f6ee11010c51' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.477, 25976312812364, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.478, 25976312819286, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.478, 25976312820451, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestPrikazPrethodnogClanstva (Bakir,Izetbegović,1) - bc1bb6ad-6f33-1ffb-e991-7e6c55b70a87' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.479, 25976312833699, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.480, 25976312842519, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.480, 25976312844462, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestPrikazPrethodnogClanstva (Bakir,Izetbegović,1) - bc1bb6ad-6f33-1ffb-e991-7e6c55b70a87' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.491, 25976312953172, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.492, 25976312960494, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.492, 25976312961860, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestPrikazPrethodnogClanstva (Šemsudin,Dedić,2) - 4aa717e8-89e4-23a5-5132-1f6cb2799a40' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.493, 25976312975590, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.494, 25976312981734, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.494, 25976312983430, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestPrikazPrethodnogClanstva (Šemsudin,Dedić,2) - 4aa717e8-89e4-23a5-5132-1f6cb2799a40' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.496, 25976312998164, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.496, 25976313004893, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.496, 25976313006517, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestPrikazPrethodnogClanstva (Sabina,Hotić,3) - cf3ea548-5aaa-e8d8-f7e5-0b636ee9bba0' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.498, 25976313018920, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.498, 25976313025060, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.499, 25976313030735, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestPrikazPrethodnogClanstva (Sabina,Hotić,3) - cf3ea548-5aaa-e8d8-f7e5-0b636ee9bba0' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.500, 25976313039061, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.500, 25976313045036, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.500, 25976313046420, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestPrikazPrethodnogClanstvaXML (Bakir,Izetbegović,1) - 94ba2653-058e-2142-624c-26d7d41f6162' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.502, 25976313064378, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.503, 25976313070845, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.503, 25976313072726, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestPrikazPrethodnogClanstvaXML (Bakir,Izetbegović,1) - 94ba2653-058e-2142-624c-26d7d41f6162' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.504, 25976313084062, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.505, 25976313090308, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.505, 25976313091580, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestPrikazPrethodnogClanstvaXML (Šemsudin,Dedić,2) - 44d4eb6a-fd15-a865-dbfc-aa57ce788931' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.506, 25976313105702, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.507, 25976313112302, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.507, 25976313114068, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestPrikazPrethodnogClanstvaXML (Šemsudin,Dedić,2) - 44d4eb6a-fd15-a865-dbfc-aa57ce788931' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.508, 25976313126985, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.555, 25976313587992, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.555, 25976313590965, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestPrikazPrethodnogClanstvaXML (Sabina,Hotić,3) - 11fc7d31-e8bd-2376-6489-7cd123d5e3ef' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.557, 25976313609424, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.558, 25976313619010, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.558, 25976313621035, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestPrikazPrethodnogClanstvaXML (Sabina,Hotić,3) - 11fc7d31-e8bd-2376-6489-7cd123d5e3ef' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.559, 25976313634006, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.560, 25976313641208, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.560, 25976313642921, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestIspisiUkupanBrojGlasova - 35291844-88b9-1f1e-eab3-55b1f5673264' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.600, 25976314047606, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.601, 25976314055879, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.602, 25976314058085, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestIspisiUkupanBrojGlasova - 35291844-88b9-1f1e-eab3-55b1f5673264' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.603, 25976314074999, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.604, 25976314083431, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.604, 25976314085653, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestRezultatiMandata - ca26fd48-2832-7ffb-3f8e-7ff329397499' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.620, 25976314240368, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.621, 25976314248674, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.621, 25976314251318, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestRezultatiMandata - ca26fd48-2832-7ffb-3f8e-7ff329397499' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.622, 25976314265920, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.623, 25976314274175, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.623, 25976314276557, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestRezultatiMandata2 - 315c8c61-f036-896a-69a0-07d33049f36d' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.626, 25976314300119, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.627, 25976314308664, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.627, 25976314311405, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestRezultatiMandata2 - 315c8c61-f036-896a-69a0-07d33049f36d' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.628, 25976314327268, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.629, 25976314337139, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.630, 25976314339674, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'Test1 (SDA,300) - 5c263b69-3173-ea1e-6cc1-b22a129422ab' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.633, 25976314368877, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.634, 25976314378943, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.634, 25976314381943, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'Test1 (SDA,300) - 5c263b69-3173-ea1e-6cc1-b22a129422ab' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.639, 25976314431208, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.639, 25976314437452, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.640, 25976314439136, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'Test2 (SDA,300) - dc0b01b6-73e9-e9f8-bd3f-5e444dc85fb9' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.641, 25976314457551, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.642, 25976314464115, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.642, 25976314465888, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'Test2 (SDA,300) - dc0b01b6-73e9-e9f8-bd3f-5e444dc85fb9' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.643, 25976314476052, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.644, 25976314482102, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.644, 25976314483564, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'Test2 (SDP,200) - 14f44700-676f-93a4-4c98-09341342fe69' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.645, 25976314494993, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.646, 25976314501114, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.646, 25976314502914, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'Test2 (SDP,200) - 14f44700-676f-93a4-4c98-09341342fe69' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.647, 25976314512861, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.648, 25976314526054, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.649, 25976314528408, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'Test2 (SNSD,100) - 64bf8313-bbfc-9d3b-8ec8-c078366e5d6f' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.650, 25976314540508, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.650, 25976314546750, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.651, 25976314548790, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'Test2 (SNSD,100) - 64bf8313-bbfc-9d3b-8ec8-c078366e5d6f' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.652, 25976314558366, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.652, 25976314563769, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.652, 25976314565429, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestPrikazaInformacijaORukovodstvu - 94944eb1-a19e-98b1-43a3-80788dc86b8f' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.656, 25976314598489, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.656, 25976314604700, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.656, 25976314606775, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestPrikazaInformacijaORukovodstvu - 94944eb1-a19e-98b1-43a3-80788dc86b8f' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.657, 25976314615917, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.658, 25976314620901, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.658, 25976314622040, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestPrikazaInformacijaORukovodstvu2 - 03707ca4-0863-2951-1d98-85b43100b5a9' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.659, 25976314637466, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.660, 25976314642731, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.660, 25976314644040, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'TestPrikazaInformacijaORukovodstvu2 - 03707ca4-0863-2951-1d98-85b43100b5a9' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.661, 25976314653489, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.662, 25976314659243, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.662, 25976314660418, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'Test1 (SDA,305) - d4b4c5f9-05d5-f1d6-5a09-41548eda399b' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.663, 25976314676058, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.664, 25976314682679, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.664, 25976314684332, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'Test1 (SDA,305) - d4b4c5f9-05d5-f1d6-5a09-41548eda399b' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.665, 25976314694587, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.666, 25976314700826, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.666, 25976314702490, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'Test1 (SDP,306) - 4b73f0c5-4a5f-6d24-15ec-bc6c4290c025' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.667, 25976314714210, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.668, 25976314720611, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.668, 25976314722474, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'Test1 (SDP,306) - 4b73f0c5-4a5f-6d24-15ec-bc6c4290c025' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.669, 25976314732537, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.670, 25976314738865, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.670, 25976314740755, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'Test1 (SNSD,307) - 7cb9de31-79fb-3a2a-394f-00cd8e007be0' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.671, 25976314753072, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.672, 25976314759509, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.672, 25976314762930, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'Test1 (SNSD,307) - 7cb9de31-79fb-3a2a-394f-00cd8e007be0' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.673, 25976314773289, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.674, 25976314779803, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.674, 25976314781625, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'Test2 (SDA,305) - 588ea7a0-78b1-6907-e4fb-698b979ae8bb' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.675, 25976314796834, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.676, 25976314803066, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.676, 25976314804493, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'Test2 (SDA,305) - 588ea7a0-78b1-6907-e4fb-698b979ae8bb' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.680, 25976314841094, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.680, 25976314847301, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.681, 25976314848868, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'Test2 (SDP,306) - f0e6c251-a993-5dc0-cf48-c2eeeabee080' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.682, 25976314860863, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.682, 25976314867040, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.683, 25976314868591, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'Test2 (SDP,306) - f0e6c251-a993-5dc0-cf48-c2eeeabee080' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.684, 25976314878333, datacollector.dll, DataCollectionTestCaseEventHandler: Test case starting.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.684, 25976314884253, datacollector.dll, Blame Collector : Test Case Start
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.684, 25976314885690, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'Test2 (SNSD,307) - d8a27319-19be-75f0-0df3-24ba63b13e86' started.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.685, 25976314896765, datacollector.dll, DataCollectionTestCaseEventHandler : Test case completing.
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.686, 25976314902831, datacollector.dll, Blame Collector : Test Case End
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.686, 25976314904340, datacollector.dll, DataCollectionTestCaseEventHandler: Test case 'Test2 (SNSD,307) - d8a27319-19be-75f0-0df3-24ba63b13e86' completed
+TpTrace Information: 0 : 10408, 8, 2022/12/11, 09:50:11.691, 25976314951223, datacollector.dll, DataCollectionTestCaseEventHandler: Test session ended
+TpTrace Information: 0 : 10408, 1, 2022/12/11, 09:50:11.742, 25976315464039, datacollector.dll, DataCollectionRequestHandler.ProcessRequests : Datacollector received message: (DataCollection.AfterTestRunEnd) -> false
+TpTrace Information: 0 : 10408, 1, 2022/12/11, 09:50:11.743, 25976315473928, datacollector.dll, Blame Collector : Session End
+TpTrace Information: 0 : 10408, 1, 2022/12/11, 09:50:11.743, 25976315474905, datacollector.dll, BlameCollector.CollectDumpAndAbortTesthost: Custom path to dump directory was provided via VSTEST_DUMP_PATH. Skipping attachment upload, the caller is responsible for collecting and uploading the dumps themselves.
+TpTrace Information: 0 : 10408, 1, 2022/12/11, 09:50:11.743, 25976315476647, datacollector.dll, DataCollectionManager.CleanupPlugins: CleanupPlugins called
+TpTrace Verbose: 0 : 10408, 1, 2022/12/11, 09:50:11.743, 25976315477368, datacollector.dll, DataCollectionManager.CleanupPlugins: Cleaning up 1 plugins
+TpTrace Verbose: 0 : 10408, 1, 2022/12/11, 09:50:11.744, 25976315479131, datacollector.dll, dataCollectorInfo.DisposeDataCollector: calling Dispose() on Microsoft.TestPlatform.Extensions.BlameDataCollector.BlameCollector
+TpTrace Information: 0 : 10408, 1, 2022/12/11, 09:50:11.744, 25976315479915, datacollector.dll, DataCollectionManager.CleanupPlugins: CleanupPlugins finished
+TpTrace Information: 0 : 10408, 1, 2022/12/11, 09:50:11.746, 25976315506831, datacollector.dll, DataCollectionRequestHandler.ProcessRequests : Session End message received from server. Closing the connection.
+TpTrace Information: 0 : 10408, 1, 2022/12/11, 09:50:11.747, 25976315509026, datacollector.dll, Closing the connection !
+TpTrace Information: 0 : 10408, 1, 2022/12/11, 09:50:11.747, 25976315509472, datacollector.dll, DataCollectionRequestHandler.ProcessRequests : DataCollection completed
+TpTrace Information: 0 : 10408, 1, 2022/12/11, 09:50:11.747, 25976315509794, datacollector.dll, Program.Main: exiting datacollector process.

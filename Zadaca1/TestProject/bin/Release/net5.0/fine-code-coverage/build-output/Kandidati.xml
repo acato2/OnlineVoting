@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Kandidati>
+	<Kandidat>
+		<Ime>Bakir</Ime>
+		<Prezime>Izetbegović</Prezime>
+		<Id>1</Id>
+	</Kandidat>
+	<Kandidat>
+		<Ime>Šemsudin</Ime>
+		<Prezime>Dedić</Prezime>
+		<Id>2</Id>
+	</Kandidat>
+	<Kandidat>
+		<Ime>Sabina</Ime>
+		<Prezime>Hotić</Prezime>
+		<Id>3</Id>
+	</Kandidat>
+
+</Kandidati>

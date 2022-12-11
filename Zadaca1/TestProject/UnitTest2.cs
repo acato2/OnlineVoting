@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace TestProject
 {
@@ -167,5 +168,49 @@ namespace TestProject
         }
 
         #endregion
+
+        #region XML Testovi
+
+        /* Napomena: Putanja xml fajla je VVS-Projekat\Zadaca1\TestProject\bin\Release\net5.0\Kandidati.xml jer inače test pada.
+           Drugo rješenje? */
+        static IEnumerable<object[]> KandidatiXML
+        {
+            get
+            {
+                return UcitajPodatkeXML();
+            }
+        }
+
+        public static IEnumerable<object[]> UcitajPodatkeXML()
+        {
+            XmlDocument doc = new XmlDocument();
+            doc.Load("Kandidati.xml");
+            foreach (XmlNode node in doc.DocumentElement.ChildNodes)
+            {
+                List<string> elements = new List<string>();
+                foreach (XmlNode innerNode in node)
+                {
+                    elements.Add(innerNode.InnerText);
+                }
+                yield return new object[] { elements[0], elements[1], elements[2] };
+            }
+        }
+
+            [TestMethod]
+            [DynamicData("KandidatiXML")]
+            public void TestPrikazPrethodnogClanstvaXML(string ime, string prezime, string id)
+            {
+                Kandidat k = new Kandidat(ime, prezime, id);
+                k.Opis = "Kandidat je bio član stranke SDA od 1.2.2000. do 5.6.2001., član stranke HDZ od 11.4.2002. do 15.12.2005.";
+
+                string ocekivaniPrikaz = "Stranka: SDA, Članstvo od: 1.2.2000., Članstvo do: 5.6.2001.\n" +
+                    "Stranka: HDZ, Članstvo od: 11.4.2002., Članstvo do: 15.12.2005.\n";
+
+                Assert.AreEqual(ocekivaniPrikaz, k.PrikazPrethodnogClanstva());
+
+            }
+
+            #endregion
+        
     }
 }
