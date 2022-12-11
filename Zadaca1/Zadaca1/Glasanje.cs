@@ -85,7 +85,7 @@ public class Glasanje
         bool ponisteno = false;
         foreach (Glasac x in Glasaci)
         {
-            if (x.Id.Equals(glasac_id) && x.Glasao == true)
+            if (x.Id.Equals(glasac_id) && x.Glasao)
             {
                 ponisteno = true;
                 if (x.Glas_stranci != -1)

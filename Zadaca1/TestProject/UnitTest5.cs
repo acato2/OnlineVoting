@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-
+using System.Security.Cryptography.X509Certificates;
 
 namespace TestProject
 {
@@ -107,6 +107,35 @@ namespace TestProject
             }
 
         }
+
+        [TestMethod]
+        public void TestPonistiStranciIKandidatima()
+        {
+            g.Stranke.ElementAt(5).BrojGlasova = 12;
+            g.Glasaci.ElementAt(0).Glas_stranci = 6;
+            g.Glasaci.ElementAt(0).Glas_kadnidatima = new List<int> { 1 };
+            g.Glasaci.ElementAt(0).Glasao = true;
+            g.Stranke.ElementAt(5).Kandidati.ElementAt(0).BrojGlasova = 10;
+            g.PonistiGlasanje(g.Glasaci.ElementAt(0).Id);
+            Assert.AreEqual(g.Stranke.ElementAt(5).BrojGlasova, 11);
+            Assert.AreEqual(g.Stranke.ElementAt(5).Kandidati.ElementAt(0).BrojGlasova, 9);
+            Assert.IsFalse(g.Glasaci.ElementAt(0).Glasao);
+            Assert.AreEqual(g.Glasaci.ElementAt(0).Glas_stranci, -1);
+            Assert.AreEqual(g.Glasaci.ElementAt(0).Glas_kadnidatima.Count, 0);
+        }
+        [TestMethod]
+        public void TestPonistiNezavisnom()
+        {
+            g.Nezavisni.ElementAt(0).BrojGlasova = 12;
+            g.Glasaci.ElementAt(0).Glas_nezavisnom = 1;            g.Glasaci.ElementAt(0).Glasao = true;
+            g.Stranke.ElementAt(5).Kandidati.ElementAt(0).BrojGlasova = 10;
+            g.PonistiGlasanje(g.Glasaci.ElementAt(0).Id);
+
+            Assert.AreEqual(g.Nezavisni.ElementAt(0).BrojGlasova, 11);
+            Assert.IsFalse(g.Glasaci.ElementAt(0).Glasao);
+            Assert.AreEqual(g.Glasaci.ElementAt(0).Glas_nezavisnom, -1);
+        }
+
 
         #region InlineTestovi
         static IEnumerable<object[]> Unosi
