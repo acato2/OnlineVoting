@@ -12,15 +12,17 @@ namespace TestProject
     [TestClass]
     public class UnitTest1
     {
+
         [TestMethod]
         [ExpectedException(typeof(Exception))]
-        public void StubTest1()
+        public void SpyTest1()
         {
             try
             {
                 Glasac g = new Glasac();
-                JesteGlasaoZamjenski jeste = new JesteGlasaoZamjenski();
-                g.VjerodostojnostGlasaca(jeste);
+                Spy spy = new Spy();
+                spy.Glasao = true;
+                g.VjerodostojnostGlasaca(spy);
             }
             catch(Exception ex)
             {
@@ -30,11 +32,12 @@ namespace TestProject
         }
 
         [TestMethod]
-        public void StubTes2t()
+        public void SpyTest2()
         {
             Glasac g = new Glasac();
-            NijeGlasaoZamjenski nije = new NijeGlasaoZamjenski();
-            Assert.IsTrue(g.VjerodostojnostGlasaca(nije));
+            Spy spy = new Spy();
+            spy.Glasao = false;
+            Assert.IsTrue(g.VjerodostojnostGlasaca(spy));
         }
 
         [TestMethod]

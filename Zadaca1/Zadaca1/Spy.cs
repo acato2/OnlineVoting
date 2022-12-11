@@ -5,10 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-public class JesteGlasaoZamjenski: IProvjera
+public class Spy : IProvjera
 {
+    public bool Glasao { get; set; }
     public bool DaLiJeVecGlasao(string IDBroj)
     {
-        return true;
+        return Glasao;
     }
 }
+
