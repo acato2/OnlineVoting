@@ -51,6 +51,74 @@ public class Glasanje
             glasaci = value;
         }
     }
+    //Reset glasanja glasaču - Funkcionalnost 5 - Filip Marić
+    public string UnosSifreIId()
+    {
+        Console.WriteLine("\nUnesite identifikacioni broj glasača: ");
+        string unos_id = Console.ReadLine();
+        Console.WriteLine("\nUnesite tajnu šifru za ponistavanje glasanja: ");
+        for (int i = 0; i < 3; i++)
+        {
+            string unos_sifre = Console.ReadLine();
+            if (unos_sifre.Equals("VVS20222023"))
+            {
+                return unos_id;
+            }
+            else if (!unos_sifre.Equals("VVS20222023") && i == 0)
+            {
+                Console.WriteLine("Pogrešna šifra, imate još 2 pokušaja: ");
+            }
+            else if (!unos_sifre.Equals("VVS20222023") && i == 1)
+            {
+                Console.WriteLine("Pogrešna šifra, imate još 1 pokušaj: ");
+            }
+            else
+            {
+                throw new Exception("Šifra pogrešno unesena 3 puta, prekid programa");
+            }
+        }
+        return null;
+    }
+    public void PonistiGlasanje(string glasac_id)
+    {
+        bool ponisteno = false;
+        foreach (Glasac x in Glasaci)
+        {
+            if (x.Id.Equals(glasac_id) && x.Glasao)
+            {
+                ponisteno = true;
+                if (x.Glas_stranci != -1)
+                {
+                    Stranke.ElementAt(x.Glas_stranci - 1).BrojGlasova--;
+
+                    if (x.Glas_kadnidatima.Count != 0)
+                    {
+                        foreach (int i in x.Glas_kadnidatima)
+                        {
+                            Stranke.ElementAt(x.Glas_stranci - 1).Kandidati.ElementAt(i - 1).BrojGlasova--;
+                        }
+                    }
+                    x.Glas_stranci = -1;
+                    x.Glas_kadnidatima = new List<int>();
+                }
+                if (x.Glas_nezavisnom != -1)
+                {
+                    Nezavisni.ElementAt(x.Glas_nezavisnom - 1).BrojGlasova--;
+                    x.Glas_nezavisnom = -1;
+                }
+
+                Console.WriteLine("Glasanje uspješno poništeno glasaču sa ID-ijem " + glasac_id);
+                x.Glasao = false;
+                break;
+
+
+            }
+        }
+        if (!ponisteno)
+        {
+            Console.WriteLine("Glasac sa datim ID-ijem nije glasao ili ne postoji.");
+        }
+    }
     public Glasac DodajGlasaca(Glasac glasac)
     {
         glasaci.Add(glasac);

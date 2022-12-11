@@ -5,13 +5,13 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 
-namespace Zadaca1
+namespace VvsProjekat
 {
-    internal class Izbori
+    public class Izbori
     {
         static void Main(string[] args)
         {
-            
+
             Glasanje glasanje = new Glasanje();
 
             //INICIJALIZIRAT CU TESTNE PODATKE
@@ -27,7 +27,7 @@ namespace Zadaca1
               "4. Izlaznost izbora\n" +
               "5. Izlistaj glasače\n" +
               "6. Trenutni mandati\n" +
-              "7. Poništi glasanje glasaču\n" + 
+              "7. Poništi glasanje glasaču\n" +
               "8. Izlaz iz programa"
 
               );
@@ -38,14 +38,16 @@ namespace Zadaca1
 
                 if (unos == 1)
                 {
-                    Glasac g=new Glasac();
+                    Glasac g = new Glasac();
                     Console.WriteLine("Unesite Ime: ");
                     while (true)
                     {
-                        try {
+                        try
+                        {
                             g.Ime = Console.ReadLine();
                             break;
-                        }catch(Exception e)
+                        }
+                        catch (Exception e)
                         {
                             Console.WriteLine(e.Message);
                             Console.WriteLine("Pokušajte ponovo!");
@@ -126,11 +128,12 @@ namespace Zadaca1
                     try
                     {
                         g.Id = g.generisi_id();
-                    }catch(Exception e)
+                    }
+                    catch (Exception e)
                     {
                         Console.WriteLine(e);
                     }
-                    
+
                     glasanje.DodajGlasaca(g);
 
                     Console.WriteLine("");
@@ -177,7 +180,7 @@ namespace Zadaca1
                             IspisNezavisnihKandidata(glasanje);//ispisuje Nezavisne clanove sa rednim brojevima
                             int odabirKandidata = Convert.ToInt32(Console.ReadLine()); // Upis odabira kandidata (za pocetak se moze izabrati samo jedan, kasnije cemo prosirit funkcionalnost)
                             glasanje.GlasajZaNezavisnog(odabirKandidata);//izvrsava se glasanje
-                            trenutniGlasac.Glasaj(-1,new List<int>(), odabirKandidata);
+                            trenutniGlasac.Glasaj(-1, new List<int>(), odabirKandidata);
                         }
                         else//odabrana stranka
                         {
@@ -203,7 +206,7 @@ namespace Zadaca1
                                 if (odabirKandidata == "0" && odabiriKandidata.Count == 1)
                                 {
                                     odabranaStranka.DodajGlas(); //glas samo stranci
-                                    trenutniGlasac.Glasaj(odabirStranke,new List<int>());
+                                    trenutniGlasac.Glasaj(odabirStranke, new List<int>());
 
                                 }
 
@@ -245,37 +248,22 @@ namespace Zadaca1
                 else if (unos == 6)
                 {
                     Console.WriteLine(glasanje.RezultatiMandata());
-                    
+
                 }
                 else if (unos == 7)
                 {
-                    Console.WriteLine("\nUnesite identifikacioni broj glasača: ");
-                    string unos_id = Console.ReadLine();
-                    Console.WriteLine("\nUnesite tajnu šifru za ponistavanje glasanja: ");
-                    for(int i = 0; i < 3; i++)
+                    try
                     {
-                        string unos_sifre = Console.ReadLine();
-                        if(unos_sifre.Equals("VVS20222023"))
-                        {
-                            break;
-                        }
-                        else if(!unos_sifre.Equals("VVS20222023") && i==0)
-                        {
-                            Console.WriteLine("Pogrešna šifra, imate još 2 pokušaja: ");
-                        }
-                        else if(!unos_sifre.Equals("VVS20222023") && i==1)
-                        {
-                            Console.WriteLine("Pogrešna šifra, imate još 1 pokušaj: ");
-                        }
-                        else
-                        {
-                            Console.WriteLine("Šifra pogrešno unesena 3 puta, prekid programa");
-                            System.Threading.Thread.Sleep(3000);
-                            return;
-                        }
+                        string unos_id = glasanje.UnosSifreIId();
+                        glasanje.PonistiGlasanje(unos_id);
                     }
-                    PonistiGlasanje(glasanje, unos_id);
-                    
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e.Message);
+                        System.Environment.Exit(0);
+                    }
+
+
 
                 }
                 else if (unos == 8)
@@ -290,54 +278,15 @@ namespace Zadaca1
                 "4. Izlaznost izbora\n" +
                 "5. Izlistaj glasače\n" +
                 "6. Trenutni mandati\n" +
-                "7. Poništi glasanje glasaču\n" + 
+                "7. Poništi glasanje glasaču\n" +
                 "8. Izlaz iz programa"
               );
             }
 
         }
 
-        
-        private static  void PonistiGlasanje(Glasanje glasanje, string glasac_id)
-        {
-            bool ponisteno = false;
-            foreach(Glasac x in glasanje.Glasaci)
-            {
-                if (x.Id.Equals(glasac_id) && x.Glasao)
-                {
-                    ponisteno = true;
-                    if(x.Glas_stranci != -1)
-                    {
-                        glasanje.Stranke.ElementAt(x.Glas_stranci-1).BrojGlasova--;
-                        
-                         if(x.Glas_kadnidatima.Count != 0)
-                         {
-                                foreach(int i in x.Glas_kadnidatima)
-                                {
-                                    glasanje.Stranke.ElementAt(x.Glas_stranci-1).Kandidati.ElementAt(i-1).BrojGlasova--;
-                                }
-                         }   
-                         x.Glas_stranci = -1;
-                        x.Glas_kadnidatima = new List<int>();
-                    }
-                    if(x.Glas_nezavisnom != -1)
-                    {
-                        glasanje.Nezavisni.ElementAt(x.Glas_nezavisnom-1).BrojGlasova--;
-                        x.Glas_nezavisnom = -1;
-                    }
-                   
-                    Console.WriteLine("Glasanje uspješno poništeno glasaču sa ID-ijem " + glasac_id);
-                    x.Glasao = false;
-                    break;
-                    
 
-                }
-            }
-            if (!ponisteno)
-            {
-                Console.WriteLine("Glasac sa datim ID-ijem nije glasao ili ne postoji.");
-            }
-        }
+
 
 
         private static int IspisStranaka(Glasanje glasanje)
@@ -396,7 +345,7 @@ namespace Zadaca1
             }
         }
 
-        
+
 
         private static List<Kandidat> TestniNezavisniKandidati()
         {
@@ -468,6 +417,6 @@ namespace Zadaca1
             return glasaci;
 
         }
-       
+
     }
 }
