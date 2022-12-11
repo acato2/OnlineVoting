@@ -79,12 +79,13 @@ public class Glasanje
         }
         return null;
     }
+    //Reset glasanja glasaču - Funkcionalnost 5 - Filip Marić
     public void PonistiGlasanje(string glasac_id)
     {
         bool ponisteno = false;
         foreach (Glasac x in Glasaci)
         {
-            if (x.Id.Equals(glasac_id) && x.Glasao)
+            if (x.Id.Equals(glasac_id) && x.Glasao == true)
             {
                 ponisteno = true;
                 if (x.Glas_stranci != -1)

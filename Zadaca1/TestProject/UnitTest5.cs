@@ -14,11 +14,11 @@ namespace TestProject
     [TestClass]
     public class UnitTest5
     {
-        static Glasanje g;
+        static Glasanje g = new Glasanje();
 
      
         [ClassInitialize]
-        public static void PočetnaInicijalizacija()
+        public static void PocetnaInicijalizacija(TestContext testContext)
         {
             g = new Glasanje();
         }
@@ -83,7 +83,7 @@ namespace TestProject
 
             };
         }
-
+    
         [TestMethod]
         public void TestPonistiNezavisni()
         {
@@ -91,6 +91,22 @@ namespace TestProject
         }
 
 
+        [TestMethod]
+        [ExpectedException(typeof(Exception))]
+        public void TestNeispravnaSifra()
+        {
+            try
+            {
+                Console.SetIn(new StringReader("Idglasaca \nvvvs\nafafafaf\npogresna"));
+                g.UnosSifreIId();
+            }
+            catch(Exception e) {
+                Assert.AreEqual(e.Message, "Šifra pogrešno unesena 3 puta, prekid programa");
+                throw;
+            
+            }
+
+        }
 
         #region InlineTestovi
         static IEnumerable<object[]> Unosi
@@ -111,11 +127,15 @@ namespace TestProject
         [DynamicData("Unosi")]
         public void TestIspravnaSifra(string idglasaca, string unos1, string unos2, string unos3)
         {
-            Glasanje g = new Glasanje();
             Console.SetIn(new StringReader(idglasaca + "\n" + unos1 + "\n" + unos2 + "\n" + unos3));
             Assert.AreEqual(idglasaca, g.UnosSifreIId());
 
         }
+
+
+
+
+
 
         #endregion
 
@@ -140,40 +160,35 @@ namespace TestProject
                 {
                     var values = ((IDictionary<String, Object>)row).Values;
                     var elements = values.Select(elem => elem.ToString()).ToList();
-                    yield return new object[] { elements[0], elements[1], elements[2], elements[3] };
+                    yield return new object[] { Int32.Parse( elements[0]), elements[1] };
                 }
             }
         }
 
-        [TestMethod]
-        [DynamicData("GlasaciCSV")]
-        public void TestIspravanGlasacIdGlasao(int index, string id)
-        {
-            g.Glasaci.ElementAt(index).Glasao = true;
-            Console.SetIn(new StringReader(id + "\n " + "VVS20222023"));
-            var stringOut = new StringWriter();
-            Console.SetOut(stringOut);
-            g.UnosSifreIId();
-            Assert.AreEqual(stringOut, "Glasanje uspješno poništeno glasaču sa ID-ijem" + id);
-            Assert.IsFalse(g.Glasaci.ElementAt(index).Glasao);
-
-        }
 
         [TestMethod]
         [DynamicData("GlasaciCSV")]
         public void TestIspravanGlasacIdNijeGlasao(int index, string id)
         {
-            foreach (Glasac x in g.Glasaci)
+            using (StringWriter sw = new StringWriter())
             {
-                x.Glasao = true;
-            }
-            g.Glasaci.ElementAt(index).Glasao = false;
-            Console.SetIn(new StringReader(id + "\n " + "VVS20222023"));
-            var stringOut = new StringWriter();
-            Console.SetOut(stringOut);
-            g.UnosSifreIId();
-            Assert.AreEqual(stringOut, "Glasac sa datim ID-ijem nije glasao ili ne postoji.");
+                Console.SetOut(sw);
+                for (int i = 0; i < 5; i++)
+                {
+                    
+                    if(g.Glasaci.ElementAt(i).id == id)
+                    {
+                        g.Glasaci.ElementAt(i).Glasao = false;
+                    }
+                    else
+                        g.Glasaci.ElementAt(i).Glasao = true;
+                }
+                Console.SetIn(new StringReader(id + "\n" + "VVS20222023" + "\n" + ""+ "\n" + ""));
 
+                g.PonistiGlasanje(g.UnosSifreIId());
+                string actual =sw.ToString();
+                StringAssert.Contains(actual, "Glasac sa datim ID-ijem nije glasao ili ne postoji.");
+            }
         }
         #endregion
 

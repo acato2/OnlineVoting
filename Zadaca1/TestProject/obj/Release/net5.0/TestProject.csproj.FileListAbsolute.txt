@@ -877,3 +877,4 @@ C:\Users\ASUS\Source\Repos\VVS-Projekat\Zadaca1\TestProject\obj\Release\net5.0\r
 C:\Users\ASUS\Source\Repos\VVS-Projekat\Zadaca1\TestProject\obj\Release\net5.0\TestProject.pdb
 C:\Users\ASUS\Source\Repos\VVS-Projekat\Zadaca1\TestProject\obj\Release\net5.0\TestProject.genruntimeconfig.cache
 C:\Users\ASUS\Source\Repos\VVS-Projekat\Zadaca1\TestProject\obj\Release\net5.0\ref\TestProject.dll
+C:\Users\ASUS\Source\Repos\VVS-Projekat\Zadaca1\TestProject\bin\Release\net5.0\podaci5.csv
