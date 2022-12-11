@@ -15,12 +15,15 @@ namespace TestProject
 
         [TestMethod]
         [ExpectedException(typeof(Exception))]
-        public void SpyTest1()
+        public void TestZamjenskiObjekat()
         {
             try
             {
                 Glasac g = new Glasac();
                 Spy spy = new Spy();
+                spy.Glasao = false;
+                Assert.IsTrue(g.VjerodostojnostGlasaca(spy));
+
                 spy.Glasao = true;
                 g.VjerodostojnostGlasaca(spy);
             }
@@ -29,15 +32,6 @@ namespace TestProject
                 Assert.AreEqual(ex.Message, "Glasač je već izvršio glasanje!");
                 throw;
             }
-        }
-
-        [TestMethod]
-        public void SpyTest2()
-        {
-            Glasac g = new Glasac();
-            Spy spy = new Spy();
-            spy.Glasao = false;
-            Assert.IsTrue(g.VjerodostojnostGlasaca(spy));
         }
 
         [TestMethod]

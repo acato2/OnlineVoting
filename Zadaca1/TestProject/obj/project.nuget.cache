@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mxJsYsTU0opTBO6bDgHr7H5+V2wy3dmFtC+yNiE/zmGP571P/jc70IRG8ZRRiyG2DuiwOZOtERfgbsLGRdqBlg==",
+  "dgSpecHash": "LOUCu4pMkGUeRzn6OtWnBb5x+4oxqdjcuNoZZUBoOEPOxNd8HfTLnoHntOjFI9+JXSt5dLXHMVuhDsQ2fjCyVA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Naida\\Source\\Repos\\VVS-Projekat\\Zadaca1\\TestProject\\TestProject.csproj",
+  "projectFilePath": "C:\\Users\\Naida\\source\\repos\\VVS-Projekat\\Zadaca1\\TestProject\\TestProject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Naida\\.nuget\\packages\\coverlet.collector\\3.1.0\\coverlet.collector.3.1.0.nupkg.sha512",
     "C:\\Users\\Naida\\.nuget\\packages\\csvhelper\\30.0.1\\csvhelper.30.0.1.nupkg.sha512",
