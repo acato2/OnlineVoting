@@ -120,7 +120,7 @@ public class Kandidat : Glasac, IComparable
             return 0;
     }
 
-	/* Implementaciju Funkcionalnosti br. 2 i njeno Unit testiranje radila je Anida Nezović */
+	/* Implementaciju Funkcionalnosti br. 2 radila je Anida Nezović. */
 
 	private bool ProvjeraOpisa()
     {

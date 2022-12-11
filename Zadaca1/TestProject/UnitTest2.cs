@@ -12,6 +12,8 @@ namespace TestProject
     [TestClass]
     public class UnitTest2
     {
+        /* Testiranje Funkcionalnosti br. 2  radila je Anida Nezović. */
+
         [TestMethod]
         public void TestPrikazaInformacijaOPrethodnomClanstvu1()
         {
