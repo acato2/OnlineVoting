@@ -6254,19 +6254,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\PC\\.nuget\\packages\\": {}
+    "C:\\Users\\anida\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\PC\\Source\\Repos\\VVS-Projekat3\\Zadaca1\\TestProject\\TestProject.csproj",
+      "projectUniqueName": "C:\\Users\\anida\\Source\\Repos\\VVS-Projekat\\Zadaca1\\TestProject\\TestProject.csproj",
       "projectName": "TestProject",
-      "projectPath": "C:\\Users\\PC\\Source\\Repos\\VVS-Projekat3\\Zadaca1\\TestProject\\TestProject.csproj",
-      "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\PC\\Source\\Repos\\VVS-Projekat3\\Zadaca1\\TestProject\\obj\\",
+      "projectPath": "C:\\Users\\anida\\Source\\Repos\\VVS-Projekat\\Zadaca1\\TestProject\\TestProject.csproj",
+      "packagesPath": "C:\\Users\\anida\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\anida\\Source\\Repos\\VVS-Projekat\\Zadaca1\\TestProject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\anida\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6280,8 +6280,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\PC\\Source\\Repos\\VVS-Projekat3\\Zadaca1\\Zadaca1\\Zadaca1.csproj": {
-              "projectPath": "C:\\Users\\PC\\Source\\Repos\\VVS-Projekat3\\Zadaca1\\Zadaca1\\Zadaca1.csproj"
+            "C:\\Users\\anida\\Source\\Repos\\VVS-Projekat\\Zadaca1\\Zadaca1\\Zadaca1.csproj": {
+              "projectPath": "C:\\Users\\anida\\Source\\Repos\\VVS-Projekat\\Zadaca1\\Zadaca1\\Zadaca1.csproj"
             }
           }
         }
@@ -6332,7 +6332,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

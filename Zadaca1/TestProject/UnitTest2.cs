@@ -136,5 +136,36 @@ namespace TestProject
             StringAssert.Contains(k.PrikazPrethodnogClanstva(), "Greška u unosu detaljnih informacija o kandidatu!");
         }
 
+        #region InlineTestovi
+
+        static IEnumerable<object[]> Kandidati
+        {
+            get
+            {
+                return new[]
+                {
+                 new object[] { "Bakir", "Izetbegović", "1" },
+                 new object[] { "Šemsudin", "Dedić", "2" },
+                 new object[] { "Sabina", "Hotić", "3" }
+
+                };
+            }
+        }
+
+        [TestMethod]
+        [DynamicData("Kandidati")]
+        public void TestPrikazPrethodnogClanstva(string ime, string prezime, string id)
+        {
+            Kandidat k = new Kandidat(ime, prezime, id);
+            k.Opis = "Kandidat je bio član stranke SDA od 1.2.2000. do 5.6.2001., član stranke HDZ od 11.4.2002. do 15.12.2005.";
+
+            string ocekivaniPrikaz = "Stranka: SDA, Članstvo od: 1.2.2000., Članstvo do: 5.6.2001.\n" +
+                "Stranka: HDZ, Članstvo od: 11.4.2002., Članstvo do: 15.12.2005.\n";
+
+            Assert.AreEqual(ocekivaniPrikaz, k.PrikazPrethodnogClanstva());
+
+        }
+
+        #endregion
     }
 }
