@@ -878,3 +878,4 @@ C:\Users\ASUS\Source\Repos\VVS-Projekat\Zadaca1\TestProject\obj\Release\net5.0\T
 C:\Users\ASUS\Source\Repos\VVS-Projekat\Zadaca1\TestProject\obj\Release\net5.0\TestProject.genruntimeconfig.cache
 C:\Users\ASUS\Source\Repos\VVS-Projekat\Zadaca1\TestProject\obj\Release\net5.0\ref\TestProject.dll
 C:\Users\ASUS\Source\Repos\VVS-Projekat\Zadaca1\TestProject\bin\Release\net5.0\podaci5.csv
+C:\Users\Naida\Source\Repos\VVS-Projekat\Zadaca1\TestProject\bin\Release\net5.0\podaci5.csv

@@ -183,42 +183,27 @@ public class Kandidat : Glasac, IComparable
 
 		String[] pomocniPocetak = new String[3];
 		String[] pomocniKraj = new String[3];
-		String trenutnaGodina = DateTime.Today.ToString("yyyy");
 
 		for (int i = 0; i < pocetak.Count(); i++)
         {
 			pomocniPocetak = pocetak[i].Split(".");
 
-			if (Int16.Parse(pomocniPocetak[0]) < 1 || Int16.Parse(pomocniPocetak[0]) > 31)
-			{
-				return false;
-			}
-			if (Int16.Parse(pomocniPocetak[1]) < 1 || Int16.Parse(pomocniPocetak[1]) > 12)
-			{
-				return false;
-			}
-			if(Int16.Parse(pomocniPocetak[2]) < 0 || Int16.Parse(pomocniPocetak[2]) > Int16.Parse(trenutnaGodina))
-			{
-				return false;
-			}
+			int dan = Int16.Parse(pomocniPocetak[0]);
+			int mjesec = Int16.Parse(pomocniPocetak[1]);
+			int godina = Int16.Parse(pomocniPocetak[2]);
+			if (!provjeraDatuma(dan, mjesec, godina)) return false;
+
 		}
 
 		for (int i = 0; i < kraj.Count(); i++)
 		{
 			pomocniKraj = kraj[i].Split(".");
 
-			if (Int16.Parse(pomocniKraj[0]) < 1 || Int16.Parse(pomocniKraj[0]) > 31)
-			{
-				return false;
-			}
-			if (Int16.Parse(pomocniKraj[1]) < 1 || Int16.Parse(pomocniKraj[1]) > 12)
-            {
-				return false;
-			}
-			if (Int16.Parse(pomocniKraj[2]) < 0 || Int16.Parse(pomocniKraj[2]) > Int16.Parse(trenutnaGodina))
-			{
-				return false;
-			}
+			int dan = Int16.Parse(pomocniKraj[0]);
+			int mjesec = Int16.Parse(pomocniKraj[1]);
+			int godina = Int16.Parse(pomocniKraj[2]);
+			if (!provjeraDatuma(dan, mjesec, godina)) return false;
+
 		}
 
 		/* Slučaj 5: Datum početka ne može biti poslije datuma kraja članstva */
@@ -248,6 +233,18 @@ public class Kandidat : Glasac, IComparable
 			}
 		}
 			return true;
+	}
+
+	private bool provjeraDatuma(int dan, int mjesec, int godina)
+    {
+		String trenutnaGodina = DateTime.Today.ToString("yyyy");
+		int trenGod=Int16.Parse(trenutnaGodina);
+
+		if (dan<1 || dan>31) return false;
+		if (mjesec<1 || mjesec>12) return false;
+		if (godina<0 || godina> trenGod) return false;
+
+		return true;
 	}
 	public String PrikazPrethodnogClanstva()
     {
