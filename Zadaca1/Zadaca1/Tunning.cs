@@ -183,6 +183,9 @@ public class Tunning
 		for (int i = 0; i < pocetak.Count(); i++)
 		{
 			pomocniPocetak = pocetak[i].Split(".");
+			pomocniKraj = kraj[i].Split(".");
+
+			/*Provjera datum pocetak*/
 
 			if (Int16.Parse(pomocniPocetak[0]) < 1 || Int16.Parse(pomocniPocetak[0]) > 31)
 			{
@@ -196,11 +199,8 @@ public class Tunning
 			{
 				return false;
 			}
-		}
-
-		for (int i = 0; i < kraj.Count(); i++)
-		{
-			pomocniKraj = kraj[i].Split(".");
+			
+			/*Provjera datum kraj*/
 
 			if (Int16.Parse(pomocniKraj[0]) < 1 || Int16.Parse(pomocniKraj[0]) > 31)
 			{
@@ -214,43 +214,29 @@ public class Tunning
 			{
 				return false;
 			}
-		}
 
-		/* Slučaj 5: Datum početka ne može biti poslije datuma kraja članstva */
+			/* Slučaj 5: Datum početka ne može biti poslije datuma kraja članstva */
 
-		for (int i = 0; i < pocetak.Count(); i++)
-		{
-			pomocniPocetak = pocetak[i].Split(".");
-			pomocniKraj = kraj[i].Split(".");
-
-			int danPocetak=Int16.Parse(pomocniPocetak[0]);
-			int danKraj=Int16.Parse(pomocniKraj[0]);
-
-			int mjesecPocetak= Int16.Parse(pomocniPocetak[1]);
-			int mjesecKraj= Int16.Parse(pomocniKraj[1]);
-
-			int godinaPocetak= Int16.Parse(pomocniPocetak[2]);
-			int godinaKraj = Int16.Parse(pomocniKraj[2]);
-
-			if (godinaPocetak > godinaKraj)
+			if (Int16.Parse(pomocniPocetak[2]) > Int16.Parse(pomocniKraj[2]))
 			{
 				return false;
 			}
-			else if (godinaPocetak == godinaKraj)
+			else if (Int16.Parse(pomocniPocetak[2]) == Int16.Parse(pomocniKraj[2]))
 			{
-				if (mjesecPocetak > mjesecKraj)
+				if (Int16.Parse(pomocniPocetak[1]) > Int16.Parse(pomocniKraj[1]))
 				{
 					return false;
 				}
-				else if (mjesecPocetak == mjesecKraj)
+				else if (Int16.Parse(pomocniPocetak[1]) == Int16.Parse(pomocniKraj[1]))
 				{
-					if (danPocetak > danKraj)
+					if (Int16.Parse(pomocniPocetak[0]) > Int16.Parse(pomocniKraj[0]))
 					{
 						return false;
 					}
 				}
 			}
 		}
+
 		return true;
 	}
 }

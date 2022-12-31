@@ -50,8 +50,8 @@ namespace TestProject
 
             for (int j = 0; j <= 5000; j++)
             {
-                tunning.ProvjeraOpisaOriginal(stranke, pocetak, kraj);
-                //tunning.ProvjeraOpisaTunning1(stranke, pocetak, kraj);
+                //tunning.ProvjeraOpisaOriginal(stranke, pocetak, kraj);
+                tunning.ProvjeraOpisaTunning1(stranke, pocetak, kraj);
             }
 
             int y = 0;
