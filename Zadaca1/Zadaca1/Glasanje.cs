@@ -51,6 +51,25 @@ public class Glasanje
             glasaci = value;
         }
     }
+    public string ProvjeriSifru(string unos_sifre, int i)
+    {
+        string poruka = "";
+        if (!unos_sifre.Equals("VVS20222023") && i == 0)
+        {
+            poruka = "Pogrešna šifra, imate još 2 pokušaja: ";
+        }
+        else if (!unos_sifre.Equals("VVS20222023") && i == 1)
+        {
+            poruka = "Pogrešna šifra, imate još 1 pokušaj: ";
+        }
+        else
+        {
+            throw new Exception("Šifra pogrešno unesena 3 puta, prekid programa");
+        }
+        return poruka;
+    }
+
+
     //Reset glasanja glasaču - Funkcionalnost 5 - Filip Marić
     public string UnosSifreIId()
     {
@@ -64,17 +83,9 @@ public class Glasanje
             {
                 return unos_id;
             }
-            else if (!unos_sifre.Equals("VVS20222023") && i == 0)
-            {
-                Console.WriteLine("Pogrešna šifra, imate još 2 pokušaja: ");
-            }
-            else if (!unos_sifre.Equals("VVS20222023") && i == 1)
-            {
-                Console.WriteLine("Pogrešna šifra, imate još 1 pokušaj: ");
-            }
             else
             {
-                throw new Exception("Šifra pogrešno unesena 3 puta, prekid programa");
+                Console.WriteLine(ProvjeriSifru(unos_sifre, i));
             }
         }
         return null;
@@ -234,10 +245,10 @@ public class Glasanje
 
     /*Informacije o rezultatima za neku stranku uključuju informaciju o ukupnom broju i postotku osvojenih glasova*/
     /* Pokrivenost ove funkcionalnost - zeleno sve*/
-    public string ispisiUkupanBrojGlasova(int brojacGlasova,int brojacKandidata)
+    public string ispisiUkupanBrojGlasova(int brojacGlasova, int brojacKandidata)
     {
         String ispis = "";
-        ispis = "\nUkupan broj glasova je: " + brojacGlasova +"\n";
+        ispis = "\nUkupan broj glasova je: " + brojacGlasova + "\n";
         ispis += "Ukupan broj glasova u postotcima je: " + (brojacGlasova / (double)brojacKandidata) * 100 + "%";
         return ispis;
     }
@@ -261,7 +272,7 @@ public class Glasanje
 
         }
 
-       
+
         foreach (Kandidat k in DajKandidateSaMandatima())
         {
             brojac++;
@@ -275,7 +286,7 @@ public class Glasanje
         ispis += "\nKandidati koji su trenutno osvojili mandat stranke:\n";
         foreach (KeyValuePair<Kandidat, Stranka> m in DajKandidateSaMandatimaUnutarStranke())
         {
-            
+
             brojac++;
             ispis += brojac + ". " + m.Key.Ime + " " + m.Key.Prezime + ", " + m.Value.Naziv;
             ispis += "\nUkupan broj glasova je: " + m.Key.BrojGlasova + "\n";
@@ -315,7 +326,7 @@ public class Glasanje
     public List<Kandidat> DajKandidateSaMandatima()
     {
         List<Kandidat> mandati = new List<Kandidat>();
-        
+
         foreach (Kandidat x in nezavisniKandidati)
         {
             double vrijednost = x.BrojGlasova / (double)DajUkupanBrojGlasova();
