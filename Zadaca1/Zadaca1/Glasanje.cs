@@ -73,42 +73,39 @@ public class Glasanje
     //Reset glasanja glasaču - Funkcionalnost 5 - Filip Marić
     public void PonistiGlasanje(string glasac_id)
     {
-        bool ponisteno = false;
-        foreach (Glasac x in Glasaci)
+        Glasac glasac =  Glasaci.Where(x => x.id.Equals(glasac_id) && x.Glasao).FirstOrDefault();
+        if (glasac != null)
         {
-            if (x.Id.Equals(glasac_id) && x.Glasao)
+            if (glasac.Glas_stranci != -1)
             {
-                ponisteno = true;
-                if (x.Glas_stranci != -1)
-                {
-                    Stranke.ElementAt(x.Glas_stranci - 1).BrojGlasova--;
-
-                    if (x.Glas_kadnidatima.Count != 0)
-                    {
-                        foreach (int i in x.Glas_kadnidatima)
-                        {
-                            Stranke.ElementAt(x.Glas_stranci - 1).Kandidati.ElementAt(i - 1).BrojGlasova--;
-                        }
-                    }
-                    x.Glas_stranci = -1;
-                    x.Glas_kadnidatima = new List<int>();
-                }
-                if (x.Glas_nezavisnom != -1)
-                {
-                    Nezavisni.ElementAt(x.Glas_nezavisnom - 1).BrojGlasova--;
-                    x.Glas_nezavisnom = -1;
-                }
-
-                Console.WriteLine("Glasanje uspješno poništeno glasaču sa ID-ijem " + glasac_id);
-                x.Glasao = false;
-                break;
-
+                IzbrisiGlasStranciIKandidatima(glasac);
+            }
+            else if (glasac.Glas_nezavisnom != -1)
+            {
+                Nezavisni.ElementAt(glasac.Glas_nezavisnom - 1).BrojGlasova--;
 
             }
+            glasac.Glas_stranci = -1;
+            glasac.Glas_kadnidatima = new List<int>();
+            glasac.Glas_nezavisnom = -1;
+            Console.WriteLine("Glasanje uspješno poništeno glasaču sa ID-ijem " + glasac_id);
         }
-        if (!ponisteno)
+        else
         {
             Console.WriteLine("Glasac sa datim ID-ijem nije glasao ili ne postoji.");
+        }
+        
+    }
+    public void IzbrisiGlasStranciIKandidatima(Glasac glasac)
+    {
+        Stranke.ElementAt(glasac.Glas_stranci - 1).BrojGlasova--;
+
+        if (glasac.Glas_kadnidatima.Count != 0)
+        {
+            foreach (int i in glasac.Glas_kadnidatima)
+            {
+                Stranke.ElementAt(glasac.Glas_stranci - 1).Kandidati.ElementAt(i - 1).BrojGlasova--;
+            }
         }
     }
     public Glasac DodajGlasaca(Glasac glasac)
