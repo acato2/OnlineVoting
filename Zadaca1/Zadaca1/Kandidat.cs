@@ -210,18 +210,15 @@ public class Kandidat : Glasac, IComparable
 
 		/* Slučaj 5: Datum početka ne može biti poslije datuma kraja članstva */
 
-		for (int i= 0; i < pocetak.Count(); i++)
+		for (int i = 0; i < pocetak.Count(); i++)
 		{
-			pomocniPocetak = pocetak[i].Split(".");
-			pomocniKraj = kraj[i].Split(".");
+			DateTime datumPocetka = new DateTime();
+			datumPocetka = DateTime.Parse(pocetak[i]);
 
-			/* Pretvaramo datum pocetka i datum kraja u broj, a onda gledamo da li je broj pocetka veci od broja kraja. */
+			DateTime datumKraja = new DateTime();
+			datumKraja = DateTime.Parse(kraj[i]);
 
-			String joinPocetak = pomocniPocetak[0] + pomocniPocetak[1] + pomocniPocetak[2];
-			String joinKraj = pomocniKraj[0] + pomocniKraj[1] + pomocniKraj[2];
-
-			if (Int32.Parse(joinPocetak) > Int32.Parse(joinKraj)) return false;
-
+			if (datumPocetka > datumKraja) return false;
 		}
 
 		return true;
