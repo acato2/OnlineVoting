@@ -138,6 +138,8 @@ public class Kandidat : Glasac, IComparable
 
 		return validno;
     }
+
+	
 	private bool ProvjeraOpisa(List<String> stranke, List<String> pocetak, List<String> kraj)
 	{
 
@@ -208,31 +210,21 @@ public class Kandidat : Glasac, IComparable
 
 		/* Slučaj 5: Datum početka ne može biti poslije datuma kraja članstva */
 
-		for (int i = 0; i < pocetak.Count(); i++)
+		for (int i= 0; i < pocetak.Count(); i++)
 		{
 			pomocniPocetak = pocetak[i].Split(".");
 			pomocniKraj = kraj[i].Split(".");
 
-			if(Int16.Parse(pomocniPocetak[2]) > Int16.Parse(pomocniKraj[2]))
-            {
-				return false;
-			}
-			else if (Int16.Parse(pomocniPocetak[2]) == Int16.Parse(pomocniKraj[2]))
-            {
-				if (Int16.Parse(pomocniPocetak[1]) > Int16.Parse(pomocniKraj[1]))
-                {
-					return false;
-				}
-				else if(Int16.Parse(pomocniPocetak[1]) == Int16.Parse(pomocniKraj[1]))
-                {
-					if (Int16.Parse(pomocniPocetak[0]) > Int16.Parse(pomocniKraj[0]))
-					{
-						return false;
-					}
-				}
-			}
+			/* Pretvaramo datum pocetka i datum kraja u broj, a onda gledamo da li je broj pocetka veci od broja kraja. */
+
+			String joinPocetak = pomocniPocetak[0] + pomocniPocetak[1] + pomocniPocetak[2];
+			String joinKraj = pomocniKraj[0] + pomocniKraj[1] + pomocniKraj[2];
+
+			if (Int32.Parse(joinPocetak) > Int32.Parse(joinKraj)) return false;
+
 		}
-			return true;
+
+		return true;
 	}
 
 	private bool provjeraDatuma(int dan, int mjesec, int godina)
