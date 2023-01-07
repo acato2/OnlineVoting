@@ -36,8 +36,9 @@ public class Glasac : IComparable
 		DatumRodjenja = datum_rodenja;
 		BrojLicne = br_licne;
 		Jmbg = jmbg;
-		Id = generisi_id();
-		glas_stranci = -1;
+		Id = generisi_id( ime,  prezime,  adresa,  br_licne,  jmbg);
+
+        glas_stranci = -1;
 		glas_kandidatima = new List<int> ();
 		glas_nezavisnom = -1;
 	}
@@ -45,20 +46,20 @@ public class Glasac : IComparable
     {
 	}
 
-	public string generisi_id()
+    public string generisi_id(String ime, String prezime, String adresa, String br_licne, String jmbg)
     {
-		if (String.IsNullOrEmpty(ime) || String.IsNullOrEmpty(prezime) || String.IsNullOrEmpty(adresa)
-									 || String.IsNullOrEmpty(br_licne) || String.IsNullOrEmpty(jmbg))
-			throw new Exception("Nije moguce generisati ispravan id");
+        if (String.IsNullOrEmpty(ime) || String.IsNullOrEmpty(prezime) || String.IsNullOrEmpty(adresa)
+                                     || String.IsNullOrEmpty(br_licne) || String.IsNullOrEmpty(jmbg))
+            throw new Exception("Nije moguce generisati ispravan id");
 
-		return ((ime.Length >= 2) ? ime.Substring(0, 2) : ime)
-			+ ((prezime.Length >= 2) ? prezime.Substring(0, 2) : prezime)
-			+ ((adresa.Length >= 2) ? adresa.Substring(0, 2) : adresa)
-			+ datum_rodenja.ToString("dd/MM/yyyy").Substring(0, 2)
-			+ ((br_licne.Length >= 2) ? br_licne.Substring(0, 2) : br_licne)
-			+ ((jmbg.Length >= 2) ? jmbg.Substring(0, 2) : jmbg);
-	}
-	public void Glasaj(int stranka, List<int> kandidati, int nezavisni=-1)
+        return ((ime.Length >= 2) ? ime.Substring(0, 2) : ime)
+            + ((prezime.Length >= 2) ? prezime.Substring(0, 2) : prezime)
+            + ((adresa.Length >= 2) ? adresa.Substring(0, 2) : adresa)
+            + datum_rodenja.ToString("dd/MM/yyyy").Substring(0, 2)
+            + ((br_licne.Length >= 2) ? br_licne.Substring(0, 2) : br_licne)
+            + ((jmbg.Length >= 2) ? jmbg.Substring(0, 2) : jmbg);
+    }
+    public void Glasaj(int stranka, List<int> kandidati, int nezavisni=-1)
 	{
 		if (glasao) throw new InvalidOperationException("Glasac ne moze dva puta glasati!");
 		glasao = true;

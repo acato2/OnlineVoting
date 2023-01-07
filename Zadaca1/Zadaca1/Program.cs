@@ -127,7 +127,7 @@ namespace VvsProjekat
                     }
                     try
                     {
-                        g.Id = g.generisi_id();
+                        g.Id = g.generisi_id(g.Ime, g.Prezime, g.Adresa, g.BrojLicne, g.Jmbg);
                     }
                     catch (Exception e)
                     {
